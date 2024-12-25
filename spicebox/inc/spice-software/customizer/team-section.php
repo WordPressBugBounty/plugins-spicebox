@@ -94,7 +94,7 @@ endif;
 $wp_customize->add_setting('team_animation_speed', array('default' => 3000));
 $wp_customize->add_control('team_animation_speed',
         array(
-            'label' => esc_html__('Animation speed', 'spice-software-plus'),
+            'label' => esc_html__('Animation speed', 'spicebox'),
             'section' => 'spice_software_team_section',
             'type' => 'select',
             'priority' => 53,
@@ -127,7 +127,7 @@ $wp_customize->add_control('team_nav_style', array(
 $wp_customize->add_setting('team_smooth_speed', array('default' => 1000));
 $wp_customize->add_control('team_smooth_speed',
         array(
-            'label' => esc_html__('Smooth speed', 'spice-software-plus'),
+            'label' => esc_html__('Smooth speed', 'spicebox'),
             'section' => 'spice_software_team_section',
             'type' => 'select',
             'priority' => 17,

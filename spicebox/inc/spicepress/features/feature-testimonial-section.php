@@ -171,16 +171,16 @@ if ($theme->name == 'Stacy' && version_compare(wp_get_theme()->get('Version'), '
     
         $wp_customize->add_control(new Spicebox_Image_Radio_Button_Custom_Control($wp_customize, 'testimonial_design',
             array(
-                'label' => esc_html__('Testimonial Design', 'stacy'),
+                'label' => esc_html__('Testimonial Design', 'spicebox'),
                 'section' => 'testimonial_section',
                 'choices' => array(
                     'default' => array(
                         'image' => SPICEB_PLUGIN_URL . '/inc/spicepress/images/stacy/stacy-testimonial-default.png',
-                        'name' => esc_html__('Standard', 'stacy')
+                        'name' => esc_html__('Standard', 'spicebox')
                     ),
                     'center-effect' => array(
                         'image' => SPICEB_PLUGIN_URL . '/inc/spicepress/images/stacy/stacy-testimonial-center.png',
-                        'name' => esc_html__('Center-effect', 'stacy')
+                        'name' => esc_html__('Center-effect', 'spicebox')
                     )
                 )
             )

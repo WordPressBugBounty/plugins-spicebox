@@ -33,7 +33,7 @@ if ( ! function_exists( 'spiceb_spicepress_service' ) ) :
                     
 		?>
 	    <!-- Section Title -->
-<section class="<?php echo ($section_class) ? $section_class : 'service-section'; ?>">
+<section class="<?php echo esc_attr( ($section_class) ? $section_class : 'service-section' ); ?>">
 	<div class="container">		
 		<?php if( ($home_service_section_title) || ($home_service_section_discription)!='' ) { ?>
 		<div class="row">
@@ -41,14 +41,14 @@ if ( ! function_exists( 'spiceb_spicepress_service' ) ) :
 				<div class="section-header">
 					<?php if ( ! empty( $home_service_section_title ) || is_customize_preview() ) : ?>
 					<h1 class="widget-title">
-					<?php echo $home_service_section_title; ?>
+					<?php echo esc_html($home_service_section_title); ?>
 					</h1>
 					<?php endif; ?>
 					<div class="widget-separator"><span></span></div>
 					<?php if($home_service_section_discription) {?>
 					<div class="separator"><span></span></div>
 					<p class="wow fadeInDown animated">
-					<?php echo $home_service_section_discription; ?>
+					<?php echo wp_kses_post($home_service_section_discription); ?>
 					</p>
 					<?php } ?>
 				</div>

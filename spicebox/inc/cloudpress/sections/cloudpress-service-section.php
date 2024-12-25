@@ -91,7 +91,7 @@ function spiceb_cloudpress_service_content( $cloudpress_service_content, $is_cal
 
 				?>
 				<div class="col-md-4 col-sm-6 col-xs-12">
-					<article class="post <?php echo $service_article_class;?>">
+					<article class="post <?php echo esc_attr($service_article_class);?>">
 							<?php if($choice == 'customizer_repeater_image'){ ?>
 								<?php if ( ! empty( $image ) ) : ?>
 								<figure class="post-thumbnail">

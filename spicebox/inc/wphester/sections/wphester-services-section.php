@@ -51,9 +51,9 @@ if($wphester_service_section_enabled ==true)
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="section-header">
                     <?php if ($wphester_service_section_title != '') { ?>
-                    <h2 class="section-title"><?php echo esc_html($wphester_service_section_title); ?></h2>
+                    <h2 class="section-title"><?php echo wp_kses_post($wphester_service_section_title); ?></h2>
                     <?php if ($wphester_service_section_discription != '') { ?>
-                    <p class="section-subtitle"><?php echo esc_html($wphester_service_section_discription); ?></p>
+                    <p class="section-subtitle"><?php echo wp_kses_post($wphester_service_section_discription); ?></p>
                     <?php } ?>
                     <?php } ?>
                 </div>
@@ -65,12 +65,22 @@ if($wphester_service_section_enabled ==true)
             <?php
             $service_data = json_decode($service_data);
             if (!empty($service_data)) {
+                $allowed_html = array(
+                    'br' => array(),
+                    'em' => array(),
+                    'strong' => array(),
+                    'b' => array(),
+                    'i' => array(),
+                );
                 foreach ($service_data as $service_team) {
                     $service_icon = !empty($service_team->icon_value) ? apply_filters('wphester_translate_single_string', $service_team->icon_value, 'Service section') : '';
                     $service_image = !empty($service_team->image_url) ? apply_filters('wphester_translate_single_string', $service_team->image_url, 'Service section') : '';
                     $service_title = !empty($service_team->title) ? apply_filters('wphester_translate_single_string', $service_team->title, 'Service section') : '';
                     $service_desc = !empty($service_team->text) ? apply_filters('wphester_translate_single_string', $service_team->text, 'Service section') : '';
                     $service_link = !empty($service_team->link) ? apply_filters('wphester_translate_single_string', $service_team->link, 'Service section') : '';
+
+                    // Convert image URL to attachment ID if necessary
+                    $attachment_id = attachment_url_to_postid($service_image);
             ?>
             <div class="col-md-4 col-sm-6 col-xs-12"> 
                 <div class="card">
@@ -89,12 +99,12 @@ if($wphester_service_section_enabled ==true)
                             <?php
                         }
                     } else if ($service_team->choice == 'customizer_repeater_image') {
-                        if ($service_image != '') { ?> 
+                        if ($service_image != '' && $attachment_id) { ?> 
                             <p class="service-icon">
                             <?php if ($service_link != '') { ?>
                                 <a <?php if ($service_team->open_new_tab == 'yes') { echo "target='_blank'";}?> href="<?php echo esc_url($service_link); ?>">
-                            <?php }?>
-                            <img class='img-fluid' src="<?php echo esc_url($service_image); ?>">
+                            <?php }
+                            echo wp_get_attachment_image($attachment_id, 'full', false, ['class' => 'img-fluid']); ?>
                             <?php if ($service_link != '') { ?>
                                 </a>
                             <?php }?>
@@ -107,7 +117,7 @@ if($wphester_service_section_enabled ==true)
                                 <?php if ($service_link != '') { ?>
                                     <a href="<?php echo esc_url($service_link); ?>" <?php if ($service_team->open_new_tab == 'yes') {
                                             echo "target='_blank'";
-                                        } ?>><?php } echo esc_html($service_title);
+                                        } ?>><?php } echo wp_kses(html_entity_decode($service_title), $allowed_html);
                                     if ($service_link != '') { ?></a>
                                 <?php } ?>
                             </h4>
@@ -115,7 +125,7 @@ if($wphester_service_section_enabled ==true)
                     }?>
                     <div class="section-separator"></div>
                     <?php if ($service_desc != ""){ ?>
-                        <p class="description"><?php echo wp_kses_post($service_desc); ?></p>
+                        <p class="description"><?php echo wp_kses(html_entity_decode($service_desc), $allowed_html); ?></p>
                     <?php
                     }
                     if ($service_team->choice == 'customizer_repeater_icon') {
@@ -128,7 +138,9 @@ if($wphester_service_section_enabled ==true)
                             <?php
                         }
                     } elseif ($service_team->choice == 'customizer_repeater_image'){?>
-                        <p class="service-big-icon"><a><img class='card-img-top' src="<?php echo esc_url($service_image); ?>"></a></p>
+                        <p class="service-big-icon"><a>
+                            <?php echo wp_get_attachment_image($attachment_id, 'full', false, ['class' => 'card-img-top']); ?>
+                        </a></p>
                     <?php }?>
                 </div>
             </div>              

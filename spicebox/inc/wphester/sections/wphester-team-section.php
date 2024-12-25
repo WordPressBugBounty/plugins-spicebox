@@ -9,7 +9,7 @@ $team_smooth_speed = get_theme_mod('team_smooth_speed', 1000);
 $team_nav_style = get_theme_mod('team_nav_style', 'bullets');
 $isRTL = (is_rtl()) ? (bool) true : (bool) false;
 $teamsettings = array('team_animation_speed' => $team_animation_speed, 'team_smooth_speed' => $team_smooth_speed, 'team_nav_style' => $team_nav_style, 'rtl' => $isRTL);
-wp_register_script('wphester-team', SPICEB_PLUGIN_URL . 'inc/wphester/js/front-page/team.js', array('jquery'));
+wp_register_script('wphester-team', SPICEB_PLUGIN_URL . 'inc/wphester/js/front-page/team.js', array('jquery'), SPICEBOX_PLUGIN_VERSION, true);
 wp_localize_script('wphester-team', 'team_settings', $teamsettings);
 wp_enqueue_script('wphester-team');
 
@@ -159,8 +159,8 @@ $team_section_class = 'team bg-default';
             <div class="col-lg-12 col-md-12 col-xs-12">
                 <div class="section-header">
                 <?php                
-                if(!empty($home_team_section_title)):?><h2 class="section-title"><?php echo esc_html($home_team_section_title); ?></h2><?php endif;
-                if(!empty($home_team_section_discription)):?><p class="section-subtitle"><?php echo esc_html($home_team_section_discription); ?></p>
+                if(!empty($home_team_section_title)):?><h2 class="section-title"><?php echo wp_kses_post($home_team_section_title); ?></h2><?php endif;
+                if(!empty($home_team_section_discription)):?><p class="section-subtitle"><?php echo wp_kses_post($home_team_section_discription); ?></p>
                 <?php endif;?>
                 </div>
             </div>                      
@@ -179,9 +179,16 @@ $team_section_class = 'team bg-default';
                     $aboutme = !empty($team_item->text) ? apply_filters('wphester_translate_single_string', $team_item->text, 'Team section') : '';?>                    
                     <div class="item">
                         <div class="team-grid text-center">
-                        <?php if(!empty($image)){ ?>
+                        <?php 
+                        $open_new_tab = 'yes';
+                        if(!empty($image)){ ?>
                             <div class="img-holder"> 
-                                <img src="<?php echo esc_url($image); ?>" class="img-fluid"> 
+                                <?php $attachment_id = spiceb_save_image_to_media_library($image);
+                                    $attributes = array(
+                                       'class' => 'img-fluid'
+                                    );
+                                    echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                                ?> 
                             </div>   
                         <?php }                        
                         $icons = html_entity_decode($team_item->social_repeater);
@@ -210,7 +217,7 @@ $team_section_class = 'team bg-default';
                         endif;?>
                         <!-- Content -->
                         <div class="card-body">
-                            <h4 class="name mt-1 mb-2"><?php echo esc_html($title);?></h4>
+                            <h4 class="name mt-1 mb-2"><?php echo wp_kses_post($title);?></h4>
                             <p class="mt-1 mb-2"><?php echo esc_html($subtitle);?></p>
                         </div>
                         </div>               

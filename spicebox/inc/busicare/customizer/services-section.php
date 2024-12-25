@@ -74,8 +74,8 @@ if (class_exists('Spicebox_Limit_Repeater')) {
 class Busicare_services__section_upgrade extends WP_Customize_Control {
             public function render_content() { ?>
                 <h3 class="customizer_busicareservice_upgrade_section" style="display: none;">
-        <?php _e('To add More Service? Then','spicebox'); ?><a href="<?php echo esc_url( 'https://spicethemes.com/busicare-plus/' ); ?>" target="_blank">
-                    <?php _e('Upgrade to Plus','spicebox'); ?> </a>  
+        <?php esc_html_e('To add More Service? Then','spicebox'); ?><a href="<?php echo esc_url( 'https://spicethemes.com/busicare-plus/' ); ?>" target="_blank">
+                    <?php esc_html_e('Upgrade to Plus','spicebox'); ?> </a>  
                 </h3>
             <?php
             }

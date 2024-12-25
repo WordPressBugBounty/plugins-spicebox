@@ -523,16 +523,16 @@ class Spicebox_Limit_Repeater extends WP_Customize_Control {
 		if( !empty($options['type']) ){
 			switch ($options['type']) {
 				case 'textarea':?>
-					<textarea class="<?php echo esc_attr( $options['class'] ); ?>" placeholder="<?php echo esc_attr( $options['label'] ); ?>"><?php echo ( !empty($options['sanitize_callback']) ?  call_user_func_array( $options['sanitize_callback'], array( $value ) ) : esc_attr($value) ); ?></textarea>
+					<textarea class="<?php echo esc_attr( $options['class'] ); ?>" placeholder="<?php echo esc_attr( $options['label'] ); ?>"><?php echo ( !empty($options['sanitize_callback']) ?  esc_textarea(call_user_func_array( $options['sanitize_callback'], array( $value ) )) : esc_attr($value) ); ?></textarea>
 					<?php
                     break;
 				case 'color': ?>
-					<input type="text" value="<?php echo ( !empty($options['sanitize_callback']) ?  call_user_func_array( $options['sanitize_callback'], array( $value ) ) : esc_attr($value) ); ?>" class="<?php echo esc_attr($options['class']); ?>" />
+					<input type="text" value="<?php echo esc_attr( !empty($options['sanitize_callback']) ?  call_user_func_array( $options['sanitize_callback'], array( $value ) ) : $value ); ?>" class="<?php echo esc_attr($options['class']); ?>" />
 					<?php
 					break;
 			}
 		} else { ?>
-			<input type="text" value="<?php echo ( !empty($options['sanitize_callback']) ?  call_user_func_array( $options['sanitize_callback'], array( $value ) ) : esc_attr($value) ); ?>" class="<?php echo esc_attr($options['class']); ?>" placeholder="<?php echo esc_attr( $options['label'] ); ?>"/>
+			<input type="text" value="<?php echo esc_attr( !empty($options['sanitize_callback']) ?  call_user_func_array( $options['sanitize_callback'], array( $value ) ) : $value ); ?>" class="<?php echo esc_attr($options['class']); ?>" placeholder="<?php echo esc_attr( $options['label'] ); ?>"/>
 			<?php
 		}
 	}
@@ -556,10 +556,12 @@ class Spicebox_Limit_Repeater extends WP_Customize_Control {
             </span>
 			<span class="description customize-control-description">
                 <?php
-                echo sprintf(
-	                esc_html__( 'Note: Some icons may not be displayed here. You can see the full list of icons at %1$s.', 'spicebox' ),
-	                sprintf( '<a href="%1$s" rel="nofollow">%s</a>', esc_html__( 'http://fontawesome.io/icons/', 'spicebox' ) )
-                ); ?>
+				    // Translators: %1$s is the URL to the FontAwesome icons page.
+				    $icon_page_url = sprintf('<a href="%1$s" rel="nofollow">%s</a>', esc_url( 'http://fontawesome.io/icons/' )
+				    );
+				    // Translators: %1$s is the URL link for FontAwesome icons.
+				    echo sprintf(esc_html__( 'Note: Some icons may not be displayed here. You can see the full list of icons at %1$s.', 'spicebox' ), wp_kses_post($icon_page_url));
+				?>
             </span>
 			<div class="input-group icp-container">
 				<input data-placement="bottomRight" class="icp icp-auto" value="<?php if(!empty($value)) { echo esc_attr( $value );} ?>" type="text">
@@ -629,7 +631,7 @@ private function star_rating_select($value = 'customizer_repeater_star_5') {
         ?>
 
         <span class="customize-control-title">
-            <?php esc_html_e('Rating', 'spice-software-plus'); ?>
+            <?php esc_html_e('Rating', 'spicebox'); ?>
         </span>
         <select class="customizer-repeater-star-rating-select">
             <option value="customizer_repeater_star_1" <?php
@@ -637,7 +639,7 @@ private function star_rating_select($value = 'customizer_repeater_star_5') {
                 echo 'selected';
             }
             ?>>
-                        <?php esc_html_e('1', 'spice-software-plus') ?>
+                        <?php esc_html_e('1', 'spicebox') ?>
             </option>
 
             <option value="customizer_repeater_star_1.5" <?php
@@ -645,7 +647,7 @@ private function star_rating_select($value = 'customizer_repeater_star_5') {
                 echo 'selected';
             }
             ?>>
-                        <?php esc_html_e('1.5', 'spice-software-plus') ?>
+                        <?php esc_html_e('1.5', 'spicebox') ?>
             </option>
 
             <option value="customizer_repeater_star_2" <?php
@@ -653,7 +655,7 @@ private function star_rating_select($value = 'customizer_repeater_star_5') {
                 echo 'selected';
             }
             ?>>
-                        <?php esc_html_e('2', 'spice-software-plus') ?>
+                        <?php esc_html_e('2', 'spicebox') ?>
             </option>
 
             <option value="customizer_repeater_star_2.5" <?php
@@ -661,7 +663,7 @@ private function star_rating_select($value = 'customizer_repeater_star_5') {
                 echo 'selected';
             }
             ?>>
-                        <?php esc_html_e('2.5', 'spice-software-plus') ?>
+                        <?php esc_html_e('2.5', 'spicebox') ?>
             </option>
 
             <option value="customizer_repeater_star_3" <?php
@@ -669,7 +671,7 @@ private function star_rating_select($value = 'customizer_repeater_star_5') {
                 echo 'selected';
             }
             ?>>
-                        <?php esc_html_e('3', 'spice-software-plus') ?>
+                        <?php esc_html_e('3', 'spicebox') ?>
             </option>
 
             <option value="customizer_repeater_star_3.5" <?php
@@ -677,7 +679,7 @@ private function star_rating_select($value = 'customizer_repeater_star_5') {
                 echo 'selected';
             }
             ?>>
-                        <?php esc_html_e('3.5', 'spice-software-plus') ?>
+                        <?php esc_html_e('3.5', 'spicebox') ?>
             </option>
 
             <option value="customizer_repeater_star_4" <?php
@@ -685,7 +687,7 @@ private function star_rating_select($value = 'customizer_repeater_star_5') {
                 echo 'selected';
             }
             ?>>
-                        <?php esc_html_e('4', 'spice-software-plus') ?>
+                        <?php esc_html_e('4', 'spicebox') ?>
             </option>
 
             <option value="customizer_repeater_star_4.5" <?php
@@ -693,7 +695,7 @@ private function star_rating_select($value = 'customizer_repeater_star_5') {
                 echo 'selected';
             }
             ?>>
-                        <?php esc_html_e('4.5', 'spice-software-plus') ?>
+                        <?php esc_html_e('4.5', 'spicebox') ?>
             </option>
 
             <option value="customizer_repeater_star_5" <?php
@@ -701,7 +703,7 @@ private function star_rating_select($value = 'customizer_repeater_star_5') {
                 echo 'selected';
             }
             ?>>
-                        <?php esc_html_e('5', 'spice-software-plus') ?>
+                        <?php esc_html_e('5', 'spicebox') ?>
             </option>
 
         </select>

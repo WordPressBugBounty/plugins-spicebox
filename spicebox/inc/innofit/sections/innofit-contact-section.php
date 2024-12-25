@@ -14,22 +14,22 @@ $contact_form_image_overlay = get_theme_mod('contact_form_image_overlay',true);
 			<section class="section-module contact" id="contact">
 	<?php } ?>
 	<?php if($contact_form_image_overlay != false) { ?>
-	<div class="overlay" style="background-color:<?php echo $contact_overlay_section_color; ?>"></div>
+	<div class="overlay" style="background-color:<?php echo esc_attr($contact_overlay_section_color); ?>"></div>
 	<?php } ?>
  				<div class="container">
 					<div class="row v-center">
 <?php
-		$contact_form_title_one = get_theme_mod('contact_form_title_one',__('Send us a message','innofit'));
-		$contact_form_title_two = get_theme_mod('contact_form_title_two',__('Contact Us','innofit'));
+		$contact_form_title_one = get_theme_mod('contact_form_title_one',__('Send us a message','spicebox'));
+		$contact_form_title_two = get_theme_mod('contact_form_title_two',__('Contact Us','spicebox'));
 	
 	?>
 						<div class="col-md-<?php if( get_theme_mod('contact_info_enable',true) == false ): echo '12'; else: echo '6'; endif; ?> col-sm-6 col-xs-12">
 							<div class="contact-form">
 							<?php if($contact_form_title_one != null): ?>
-								<h6 class="subtitle"><?php echo $contact_form_title_one; ?></h6>
+								<h6 class="subtitle"><?php echo esc_html($contact_form_title_one); ?></h6>
                             <?php endif; ?>
 							<?php if($contact_form_title_two != null): ?>
-								<h2 class="title"><?php echo $contact_form_title_two; ?></h2>
+								<h2 class="title"><?php echo esc_html($contact_form_title_two); ?></h2>
 							<?php endif; ?>
 							
 							<?php
@@ -51,7 +51,7 @@ $contact_form_image_overlay = get_theme_mod('contact_form_image_overlay',true);
 					
 								<div class="col-md-6 col-sm-6 col-xs-12">
 									<div class="contact-info">
-										<?php echo $contact_info_content; ?>
+										<?php echo wp_kses_post($contact_info_content); ?>
 									</div>
 								</div>
 						

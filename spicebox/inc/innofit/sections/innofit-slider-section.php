@@ -18,19 +18,19 @@ function innofit_slider_section()
 		?>
 		<!-- Slider Section -->
 		<section class="main-slider" id="totop">
-			<div class="item home-section home-full-height" style="background-image:url(<?php echo $home_slider_image; ?>);" >
+			<div class="item home-section home-full-height" style="background-image:url(<?php echo esc_url($home_slider_image); ?>);" >
 						<div class="container slider-caption">
 							<div class="caption-content">
 								<?php if ( ! empty( $home_slider_discription ) || is_customize_preview() ) { ?>
-								<h5 class="subtitle"><?php echo $home_slider_discription; ?></h5>
+								<h5 class="subtitle"><?php echo wp_kses_post($home_slider_discription); ?></h5>
 								<?php } if ( ! empty( $home_slider_title ) || is_customize_preview() ) { ?>
-								<h1 class="title"><?php echo $home_slider_title;  ?></h1>
+								<h1 class="title"><?php echo wp_kses_post($home_slider_title);  ?></h1>
 								<?php }
 								if($home_slider_btn_txt) { ?>
 								<div class="ptop-15">
-								<a <?php if($home_slider_btn_link) { ?> href="<?php echo $home_slider_btn_link; } ?>"
+								<a <?php if($home_slider_btn_link) { ?> href="<?php echo esc_url($home_slider_btn_link); } ?>"
 								<?php if($home_slider_btn_target) { ?> target="_blank" <?php } ?> class="btn-small btn-default">
-								<?php if($home_slider_btn_txt) { echo $home_slider_btn_txt; } ?></a>
+								<?php if($home_slider_btn_txt) { echo esc_html($home_slider_btn_txt); } ?></a>
 								</div>
 								<?php } ?>
 							</div>
@@ -38,7 +38,7 @@ function innofit_slider_section()
 			<?php $slider_image_overlay = get_theme_mod('slider_image_overlay',true);
 			$slider_overlay_section_color = get_theme_mod('slider_overlay_section_color','rgba(0,0,0,0.30)');
 			if($slider_image_overlay != false) { ?>
-			<div class="overlay" style="background-color:<?php echo $slider_overlay_section_color;?>"></div>
+			<div class="overlay" style="background-color:<?php echo esc_attr($slider_overlay_section_color);?>"></div>
 			<?php } ?>
             </div>
 

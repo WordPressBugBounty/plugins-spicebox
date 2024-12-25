@@ -102,8 +102,8 @@ $wp_customize->add_section( 'testimonial_section' , array(
 		//Testimonial plus
 		class Innofit_testimonial__section_upgrade extends WP_Customize_Control {
 			public function render_content() { ?>
-			<h3 class="customizer_testimonial_upgrade_section" style="display: none;"><?php _e('To add More Testimonial? Then','spicebox'); ?><a href="<?php echo esc_url( 'https://helpdoc.spicethemes.com/innofit-plus/homepage-section-settings-2/#innofitTestimonials' ); ?>" target="_blank">
-			<?php _e('Upgrade to Plus','spicebox'); ?> </a>  
+			<h3 class="customizer_testimonial_upgrade_section" style="display: none;"><?php esc_html_e('To add More Testimonial? Then','spicebox'); ?><a href="<?php echo esc_url( 'https://helpdoc.spicethemes.com/innofit-plus/homepage-section-settings-2/#innofitTestimonials' ); ?>" target="_blank">
+			<?php esc_html_e('Upgrade to Plus','spicebox'); ?> </a>  
 			<?php
 			}
 		}

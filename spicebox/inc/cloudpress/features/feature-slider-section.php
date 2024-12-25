@@ -106,7 +106,7 @@ function spiceb_cloudpress_slider_customize_register($wp_customize){
 
 	// Slider button link
 	$wp_customize->add_setting( 'home_slider_btn_link',array(
-	'default' => __('#','spicebox'),
+	'default' => '#',
 	'sanitize_callback' => 'spiceb_cloudpress_home_page_sanitize_text',
 	'transport'         => $selective_refresh,
 	));	
@@ -143,7 +143,7 @@ function spiceb_cloudpress_slider_customize_register($wp_customize){
 
 	// Slider button link
 	$wp_customize->add_setting( 'home_slider_btn_link2',array(
-	'default' => __('#','spicebox'),
+	'default' => '#',
 	'sanitize_callback' => 'spiceb_cloudpress_home_page_sanitize_text',
 	'transport'         => $selective_refresh,
 	));	

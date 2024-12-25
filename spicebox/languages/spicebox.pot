@@ -8,7 +8,7 @@ msgstr ""
 "<translations@example."
 "com>\n"
 "POT-Creation-Date: "
-"2024-05-02 11:35+0530\n"
+"2024-12-17 17:41+0530\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Your "
 "Name <you@example.com>\n"
@@ -42,8 +42,7 @@ msgstr ""
 "__ngettext_noop:1,2;_c,"
 "_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
-"X-Generator: Poedit "
-"3.4.2\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-"
 "SearchPath-0: .\n"
 
@@ -55,8 +54,6 @@ msgstr ""
 #: inc/spice-software/sections/spice-software-services-section.php:11
 #: inc/spiko/customizer.php:12
 #: inc/spiko/sections/spiko-services-section.php:11
-#: inc/wpblack/customizer.php:12
-#: inc/wpblack/sections/wpblack-services-section.php:11
 #: inc/wphester/customizer.php:12
 #: inc/wphester/sections/wphester-services-section.php:11
 #: inc/wpkites/customizer.php:12
@@ -83,12 +80,6 @@ msgstr ""
 #: inc/spiko/sections/spiko-services-section.php:12
 #: inc/spiko/sections/spiko-services-section.php:21
 #: inc/spiko/sections/spiko-services-section.php:30
-#: inc/wpblack/customizer.php:13
-#: inc/wpblack/customizer.php:23
-#: inc/wpblack/customizer.php:33
-#: inc/wpblack/sections/wpblack-services-section.php:12
-#: inc/wpblack/sections/wpblack-services-section.php:22
-#: inc/wpblack/sections/wpblack-services-section.php:32
 #: inc/wphester/customizer.php:13
 #: inc/wphester/customizer.php:22
 #: inc/wphester/customizer.php:31
@@ -118,8 +109,6 @@ msgstr ""
 #: inc/spice-software/sections/spice-software-services-section.php:20
 #: inc/spiko/customizer.php:21
 #: inc/spiko/sections/spiko-services-section.php:20
-#: inc/wpblack/customizer.php:22
-#: inc/wpblack/sections/wpblack-services-section.php:21
 #: inc/wphester/customizer.php:21
 #: inc/wphester/sections/wphester-services-section.php:20
 #: inc/wpkites/customizer.php:21
@@ -135,8 +124,6 @@ msgstr ""
 #: inc/spice-software/sections/spice-software-services-section.php:29
 #: inc/spiko/customizer.php:30
 #: inc/spiko/sections/spiko-services-section.php:29
-#: inc/wpblack/customizer.php:32
-#: inc/wpblack/sections/wpblack-services-section.php:31
 #: inc/wphester/customizer.php:30
 #: inc/wphester/sections/wphester-services-section.php:29
 #: inc/wpkites/customizer.php:30
@@ -150,7 +137,7 @@ msgstr ""
 #: inc/busicare/customizer/news-section.php:64
 #: inc/busicare/customizer/slider-section.php:240
 #: inc/busicare/sections/busicare-news-dark-section.php:8
-#: inc/busicare/sections/busicare-news-dark-section.php:85
+#: inc/busicare/sections/busicare-news-dark-section.php:88
 #: inc/busicare/sections/busicare-news-section.php:8
 #: inc/busicare/sections/busicare-slider-section.php:26
 #: inc/busicare/sections/busicare-testimonial-section.php:22
@@ -168,21 +155,17 @@ msgstr ""
 #: inc/spice-software/customizer/news-section.php:55
 #: inc/spice-software/customizer/slider-section.php:224
 #: inc/spice-software/sections/spice-software-news-section.php:7
-#: inc/spice-software/sections/spice-software-news-section.php:94
-#: inc/spice-software/sections/spice-software-news-section.php:173
+#: inc/spice-software/sections/spice-software-news-section.php:98
+#: inc/spice-software/sections/spice-software-news-section.php:169
 #: inc/spice-software/sections/spice-software-slider-section.php:21
 #: inc/spiko/customizer/news-section.php:55
 #: inc/spiko/customizer/news-section.php:87
 #: inc/spiko/customizer/slider-section.php:240
 #: inc/spiko/sections/spiko-news-section.php:31
 #: inc/spiko/sections/spiko-slider-section.php:23
-#: inc/wpblack/customizer/news-section.php:55
-#: inc/wpblack/customizer/slider-section.php:232
-#: inc/wpblack/sections/wpblack-news-section.php:104
-#: inc/wpblack/sections/wpblack-slider-section.php:17
 #: inc/wphester/customizer/news-section.php:55
 #: inc/wphester/customizer/slider-section.php:232
-#: inc/wphester/sections/wphester-news-section.php:99
+#: inc/wphester/sections/wphester-news-section.php:97
 #: inc/wphester/sections/wphester-slider-section.php:17
 #: inc/wpkites/customizer/news-section.php:55
 #: inc/wpkites/customizer/slider-section.php:219
@@ -207,13 +190,11 @@ msgstr ""
 #: inc/busicare/customizer.php:102
 #: inc/busicare/sections/busicare-team-section.php:18
 #: inc/innofit/customizer.php:107
-#: inc/innofit/sections/innofit-team-section.php:132
+#: inc/innofit/sections/innofit-team-section.php:141
 #: inc/spice-software/customizer.php:109
 #: inc/spice-software/sections/spice-software-team-section.php:22
 #: inc/spiko/customizer.php:109
 #: inc/spiko/sections/spiko-team-section.php:21
-#: inc/wpblack/customizer.php:105
-#: inc/wpblack/sections/wpblack-team-section.php:21
 #: inc/wphester/customizer.php:102
 #: inc/wphester/sections/wphester-team-section.php:21
 #: inc/wpkites/customizer.php:102
@@ -224,13 +205,11 @@ msgstr ""
 #: inc/busicare/customizer.php:133
 #: inc/busicare/sections/busicare-team-section.php:50
 #: inc/innofit/customizer.php:139
-#: inc/innofit/sections/innofit-team-section.php:149
+#: inc/innofit/sections/innofit-team-section.php:163
 #: inc/spice-software/customizer.php:142
 #: inc/spice-software/sections/spice-software-team-section.php:55
 #: inc/spiko/customizer.php:142
 #: inc/spiko/sections/spiko-team-section.php:53
-#: inc/wpblack/customizer.php:136
-#: inc/wpblack/sections/wpblack-team-section.php:53
 #: inc/wphester/customizer.php:133
 #: inc/wphester/sections/wphester-team-section.php:53
 #: inc/wpkites/customizer.php:133
@@ -241,13 +220,11 @@ msgstr ""
 #: inc/busicare/customizer.php:164
 #: inc/busicare/sections/busicare-team-section.php:82
 #: inc/innofit/customizer.php:170
-#: inc/innofit/sections/innofit-team-section.php:166
+#: inc/innofit/sections/innofit-team-section.php:185
 #: inc/spice-software/customizer.php:175
 #: inc/spice-software/sections/spice-software-team-section.php:88
 #: inc/spiko/customizer.php:175
 #: inc/spiko/sections/spiko-team-section.php:85
-#: inc/wpblack/customizer.php:167
-#: inc/wpblack/sections/wpblack-team-section.php:85
 #: inc/wphester/customizer.php:164
 #: inc/wphester/sections/wphester-team-section.php:85
 #: inc/wpkites/customizer.php:164
@@ -258,13 +235,11 @@ msgstr ""
 #: inc/busicare/customizer.php:195
 #: inc/busicare/sections/busicare-team-section.php:114
 #: inc/innofit/customizer.php:203
-#: inc/innofit/sections/innofit-team-section.php:183
+#: inc/innofit/sections/innofit-team-section.php:207
 #: inc/spice-software/customizer.php:208
 #: inc/spice-software/sections/spice-software-team-section.php:121
 #: inc/spiko/customizer.php:208
 #: inc/spiko/sections/spiko-team-section.php:117
-#: inc/wpblack/customizer.php:198
-#: inc/wpblack/sections/wpblack-team-section.php:117
 #: inc/wphester/customizer.php:195
 #: inc/wphester/sections/wphester-team-section.php:117
 #: inc/wpkites/customizer.php:195
@@ -275,7 +250,6 @@ msgstr ""
 #: inc/busicare/customizer.php:238
 #: inc/spice-software/customizer.php:252
 #: inc/spiko/customizer.php:252
-#: inc/wpblack/customizer.php:241
 #: inc/wphester/customizer.php:238
 #: inc/wpkites/customizer.php:238
 msgid ""
@@ -285,7 +259,6 @@ msgstr ""
 #: inc/busicare/customizer/news-section.php:13
 #: inc/spice-software/customizer/news-section.php:4
 #: inc/spiko/customizer/news-section.php:4
-#: inc/wpblack/customizer/news-section.php:4
 #: inc/wphester/customizer/news-section.php:4
 #: inc/wpkites/customizer/news-section.php:4
 msgid ""
@@ -295,7 +268,6 @@ msgstr ""
 #: inc/busicare/customizer/news-section.php:27
 #: inc/spice-software/customizer/news-section.php:18
 #: inc/spiko/customizer/news-section.php:18
-#: inc/wpblack/customizer/news-section.php:18
 #: inc/wphester/customizer/news-section.php:18
 #: inc/wpkites/customizer/news-section.php:18
 msgid ""
@@ -310,8 +282,6 @@ msgstr ""
 #: inc/spice-software/sections/spice-software-news-section.php:17
 #: inc/spiko/customizer/news-section.php:40
 #: inc/spiko/sections/spiko-news-section.php:51
-#: inc/wpblack/customizer/news-section.php:41
-#: inc/wpblack/sections/wpblack-news-section.php:27
 #: inc/wphester/customizer/news-section.php:28
 #: inc/wphester/sections/wphester-news-section.php:28
 #: inc/wpkites/customizer/news-section.php:28
@@ -364,11 +334,6 @@ msgstr ""
 #: inc/spiko/customizer/slider-section.php:181
 #: inc/spiko/customizer/team-section.php:42
 #: inc/spiko/customizer/testimonial-section.php:42
-#: inc/wpblack/customizer/news-section.php:46
-#: inc/wpblack/customizer/services-section.php:46
-#: inc/wpblack/customizer/slider-section.php:173
-#: inc/wpblack/customizer/team-section.php:42
-#: inc/wpblack/customizer/testimonial-section.php:43
 #: inc/wphester/customizer/news-section.php:33
 #: inc/wphester/customizer/services-section.php:31
 #: inc/wphester/customizer/slider-section.php:173
@@ -389,8 +354,6 @@ msgstr ""
 #: inc/spice-software/sections/spice-software-news-section.php:18
 #: inc/spiko/customizer/news-section.php:26
 #: inc/spiko/sections/spiko-news-section.php:52
-#: inc/wpblack/customizer/news-section.php:27
-#: inc/wpblack/sections/wpblack-news-section.php:28
 #: inc/wphester/customizer/news-section.php:41
 #: inc/wphester/sections/wphester-news-section.php:29
 #: inc/wpkites/customizer/news-section.php:41
@@ -413,11 +376,6 @@ msgstr ""
 #: inc/spiko/customizer/slider-section.php:168
 #: inc/spiko/customizer/team-section.php:30
 #: inc/spiko/customizer/testimonial-section.php:29
-#: inc/wpblack/customizer/news-section.php:32
-#: inc/wpblack/customizer/services-section.php:31
-#: inc/wpblack/customizer/slider-section.php:160
-#: inc/wpblack/customizer/team-section.php:30
-#: inc/wpblack/customizer/testimonial-section.php:30
 #: inc/wphester/customizer/news-section.php:46
 #: inc/wphester/customizer/services-section.php:47
 #: inc/wphester/customizer/slider-section.php:160
@@ -433,7 +391,6 @@ msgstr ""
 #: inc/busicare/customizer/news-section.php:69
 #: inc/spice-software/customizer/news-section.php:60
 #: inc/spiko/customizer/news-section.php:60
-#: inc/wpblack/customizer/news-section.php:59
 #: inc/wphester/customizer/news-section.php:59
 #: inc/wpkites/customizer/news-section.php:59
 msgid "Read More Text"
@@ -442,7 +399,6 @@ msgstr ""
 #: inc/busicare/customizer/news-section.php:86
 #: inc/spice-software/customizer/news-section.php:77
 #: inc/spiko/customizer/news-section.php:77
-#: inc/wpblack/customizer/news-section.php:76
 #: inc/wphester/customizer/news-section.php:76
 #: inc/wpkites/customizer/news-section.php:76
 msgid ""
@@ -452,12 +408,12 @@ msgstr ""
 
 #: inc/busicare/customizer/news-section.php:96
 #: inc/spice-software/customizer/news-section.php:87
-#: inc/wpkites/extensions/view.php:38
-#: inc/wpkites/extensions/view.php:57
-#: inc/wpkites/extensions/view.php:76
-#: inc/wpkites/extensions/view.php:95
-#: inc/wpkites/extensions/view.php:114
-#: inc/wpkites/extensions/view.php:133
+#: inc/wpkites/extensions/view.php:43
+#: inc/wpkites/extensions/view.php:63
+#: inc/wpkites/extensions/view.php:83
+#: inc/wpkites/extensions/view.php:103
+#: inc/wpkites/extensions/view.php:123
+#: inc/wpkites/extensions/view.php:143
 msgid "View More"
 msgstr ""
 
@@ -493,9 +449,6 @@ msgstr ""
 #: inc/spiko/customizer/news-section.php:131
 #: inc/spiko/customizer/slider-section.php:232
 #: inc/spiko/customizer/slider-section.php:270
-#: inc/wpblack/customizer/services-section.php:133
-#: inc/wpblack/customizer/slider-section.php:224
-#: inc/wpblack/customizer/slider-section.php:262
 #: inc/wpkites/customizer/slider-section.php:211
 #: inc/wpkites/customizer/slider-section.php:249
 msgid ""
@@ -505,7 +458,6 @@ msgstr ""
 #: inc/busicare/customizer/services-section.php:3
 #: inc/spice-software/customizer/services-section.php:3
 #: inc/spiko/customizer/services-section.php:3
-#: inc/wpblack/customizer/services-section.php:3
 #: inc/wphester/customizer/services-section.php:3
 #: inc/wpkites/customizer/services-section.php:3
 msgid "Services Settings"
@@ -514,7 +466,6 @@ msgstr ""
 #: inc/busicare/customizer/services-section.php:16
 #: inc/spice-software/customizer/services-section.php:16
 #: inc/spiko/customizer/services-section.php:16
-#: inc/wpblack/customizer/services-section.php:16
 #: inc/wphester/customizer/services-section.php:16
 #: inc/wpkites/customizer/services-section.php:16
 msgid ""
@@ -541,8 +492,6 @@ msgstr ""
 #: inc/spice-software/sections/spice-software-services-section.php:39
 #: inc/spiko/customizer/services-section.php:25
 #: inc/spiko/sections/spiko-services-section.php:39
-#: inc/wpblack/customizer/services-section.php:25
-#: inc/wpblack/sections/wpblack-services-section.php:42
 #: inc/wphester/customizer/services-section.php:41
 #: inc/wphester/sections/wphester-services-section.php:39
 #: inc/wpkites/customizer/services-section.php:41
@@ -556,7 +505,6 @@ msgstr ""
 #: inc/spice-software/customizer/services-section.php:59
 #: inc/spicepress/features/feature-service-section.php:63
 #: inc/spiko/customizer/services-section.php:57
-#: inc/wpblack/customizer/services-section.php:58
 #: inc/wpkites/customizer/services-section.php:58
 msgid "Service content"
 msgstr ""
@@ -573,7 +521,6 @@ msgstr ""
 #: inc/spice-software/customizer/services-section.php:63
 #: inc/spicepress/features/feature-service-section.php:67
 #: inc/spiko/customizer/services-section.php:61
-#: inc/wpblack/customizer/services-section.php:62
 #: inc/wphester/customizer/services-section.php:62
 #: inc/wpkites/customizer/services-section.php:62
 msgid "Service"
@@ -585,7 +532,6 @@ msgstr ""
 #: inc/innofit/customizer/services-section.php:72
 #: inc/spice-software/customizer/services-section.php:77
 #: inc/spiko/customizer/services-section.php:75
-#: inc/wpblack/customizer/services-section.php:77
 #: inc/wphester/customizer/services-section.php:76
 #: inc/wpkites/customizer/services-section.php:76
 msgid ""
@@ -602,7 +548,6 @@ msgstr ""
 #: inc/innofit/customizer/testimonial-section.php:138
 #: inc/spice-software/customizer/services-section.php:78
 #: inc/spiko/customizer/services-section.php:76
-#: inc/wpblack/customizer/services-section.php:78
 #: inc/wphester/customizer/services-section.php:77
 #: inc/wpkites/customizer/services-section.php:77
 msgid "Upgrade to Plus"
@@ -611,7 +556,6 @@ msgstr ""
 #: inc/busicare/customizer/slider-section.php:14
 #: inc/spice-software/customizer/slider-section.php:5
 #: inc/spiko/customizer/slider-section.php:5
-#: inc/wpblack/customizer/slider-section.php:5
 #: inc/wphester/customizer/slider-section.php:5
 #: inc/wpkites/customizer/slider-section.php:5
 msgid "Slider Settings"
@@ -620,7 +564,6 @@ msgstr ""
 #: inc/busicare/customizer/slider-section.php:27
 #: inc/spice-software/customizer/slider-section.php:18
 #: inc/spiko/customizer/slider-section.php:18
-#: inc/wpblack/customizer/slider-section.php:18
 #: inc/wphester/customizer/slider-section.php:18
 #: inc/wpkites/customizer/slider-section.php:18
 msgid ""
@@ -632,7 +575,6 @@ msgstr ""
 #: inc/honeypress/features/feature-slider-section.php:31
 #: inc/spice-software/customizer/slider-section.php:29
 #: inc/spiko/customizer/slider-section.php:29
-#: inc/wpblack/customizer/slider-section.php:29
 #: inc/wphester/customizer/slider-section.php:29
 #: inc/wpkites/customizer/slider-section.php:29
 msgid ""
@@ -643,18 +585,19 @@ msgstr ""
 #: inc/busicare/customizer/slider-section.php:102
 #: inc/cloudpress/features/feature-slider-section.php:35
 #: inc/cloudpress/features/feature-testimonial-section.php:90
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:578
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:589
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:718
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:626
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:771
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:580
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:591
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:720
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:627
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:772
 #: inc/honeypress/features/feature-slider-section.php:35
 #: inc/honeypress/features/feature-slider-section.php:113
 #: inc/honeypress/features/feature-testimonial-section.php:131
-#: inc/innofit/customizer/about-section.php:73
+#: inc/innofit/customizer/about-section.php:77
 #: inc/innofit/customizer/slider-section.php:32
 #: inc/spice-software/customizer/slider-section.php:34
 #: inc/spice-software/customizer/slider-section.php:99
+#: inc/spicepress/default-pages/about-page.php:4
 #: inc/spicepress/features/feature-portfolio-section.php:59
 #: inc/spicepress/features/feature-portfolio-section.php:108
 #: inc/spicepress/features/feature-portfolio-section.php:157
@@ -663,8 +606,6 @@ msgstr ""
 #: inc/spicepress/features/feature-testimonial-section.php:105
 #: inc/spiko/customizer/slider-section.php:34
 #: inc/spiko/customizer/slider-section.php:103
-#: inc/wpblack/customizer/slider-section.php:34
-#: inc/wpblack/customizer/slider-section.php:95
 #: inc/wphester/customizer/slider-section.php:34
 #: inc/wphester/customizer/slider-section.php:95
 #: inc/wpkites/customizer/slider-section.php:34
@@ -673,12 +614,11 @@ msgid "Image"
 msgstr ""
 
 #: inc/busicare/customizer/slider-section.php:44
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:621
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:757
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:623
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:758
 #: inc/honeypress/features/feature-slider-section.php:36
 #: inc/spice-software/customizer/slider-section.php:35
 #: inc/spiko/customizer/slider-section.php:35
-#: inc/wpblack/customizer/slider-section.php:35
 #: inc/wphester/customizer/slider-section.php:35
 #: inc/wpkites/customizer/slider-section.php:35
 msgid "Video"
@@ -688,7 +628,6 @@ msgstr ""
 #: inc/honeypress/features/feature-slider-section.php:50
 #: inc/spice-software/customizer/slider-section.php:49
 #: inc/spiko/customizer/slider-section.php:49
-#: inc/wpblack/customizer/slider-section.php:49
 #: inc/wphester/customizer/slider-section.php:49
 #: inc/wpkites/customizer/slider-section.php:49
 msgid "Slider video"
@@ -698,7 +637,6 @@ msgstr ""
 #: inc/honeypress/features/feature-slider-section.php:51
 #: inc/spice-software/customizer/slider-section.php:50
 #: inc/spiko/customizer/slider-section.php:50
-#: inc/wpblack/customizer/slider-section.php:50
 #: inc/wphester/customizer/slider-section.php:50
 #: inc/wpkites/customizer/slider-section.php:50
 msgid ""
@@ -718,8 +656,6 @@ msgstr ""
 #: inc/spice-software/customizer/slider-section.php:60
 #: inc/spiko/customizer/slider-section.php:55
 #: inc/spiko/customizer/slider-section.php:60
-#: inc/wpblack/customizer/slider-section.php:55
-#: inc/wpblack/customizer/slider-section.php:60
 #: inc/wphester/customizer/slider-section.php:55
 #: inc/wphester/customizer/slider-section.php:60
 #: inc/wpkites/customizer/slider-section.php:55
@@ -731,7 +667,6 @@ msgstr ""
 #: inc/honeypress/features/feature-slider-section.php:56
 #: inc/spice-software/customizer/slider-section.php:56
 #: inc/spiko/customizer/slider-section.php:56
-#: inc/wpblack/customizer/slider-section.php:56
 #: inc/wphester/customizer/slider-section.php:56
 #: inc/wpkites/customizer/slider-section.php:56
 msgid "Change File"
@@ -741,7 +676,6 @@ msgstr ""
 #: inc/honeypress/features/feature-slider-section.php:57
 #: inc/spice-software/customizer/slider-section.php:57
 #: inc/spiko/customizer/slider-section.php:57
-#: inc/wpblack/customizer/slider-section.php:57
 #: inc/wphester/customizer/slider-section.php:57
 #: inc/wpkites/customizer/slider-section.php:57
 msgid "Default"
@@ -751,7 +685,6 @@ msgstr ""
 #: inc/honeypress/features/feature-slider-section.php:58
 #: inc/spice-software/customizer/slider-section.php:58
 #: inc/spiko/customizer/slider-section.php:58
-#: inc/wpblack/customizer/slider-section.php:58
 #: inc/wphester/customizer/slider-section.php:58
 #: inc/wpkites/customizer/slider-section.php:58
 msgid "Remove"
@@ -761,7 +694,6 @@ msgstr ""
 #: inc/honeypress/features/feature-slider-section.php:59
 #: inc/spice-software/customizer/slider-section.php:59
 #: inc/spiko/customizer/slider-section.php:59
-#: inc/wpblack/customizer/slider-section.php:59
 #: inc/wphester/customizer/slider-section.php:59
 #: inc/wpkites/customizer/slider-section.php:59
 msgid "No file selected"
@@ -771,7 +703,6 @@ msgstr ""
 #: inc/honeypress/features/feature-slider-section.php:61
 #: inc/spice-software/customizer/slider-section.php:61
 #: inc/spiko/customizer/slider-section.php:61
-#: inc/wpblack/customizer/slider-section.php:61
 #: inc/wphester/customizer/slider-section.php:61
 #: inc/wpkites/customizer/slider-section.php:61
 msgid "Choose File"
@@ -781,7 +712,6 @@ msgstr ""
 #: inc/honeypress/features/feature-slider-section.php:75
 #: inc/spice-software/customizer/slider-section.php:74
 #: inc/spiko/customizer/slider-section.php:74
-#: inc/wpblack/customizer/slider-section.php:74
 #: inc/wphester/customizer/slider-section.php:74
 #: inc/wpkites/customizer/slider-section.php:74
 msgid ""
@@ -791,7 +721,6 @@ msgstr ""
 #: inc/busicare/customizer/slider-section.php:118
 #: inc/spice-software/customizer/slider-section.php:115
 #: inc/spiko/customizer/slider-section.php:119
-#: inc/wpblack/customizer/slider-section.php:111
 #: inc/wphester/customizer/slider-section.php:111
 #: inc/wpkites/customizer/slider-section.php:111
 msgid ""
@@ -806,7 +735,6 @@ msgstr ""
 #: inc/spice-software/customizer/slider-section.php:130
 #: inc/spicepress/features/feature-slider-section.php:90
 #: inc/spiko/customizer/slider-section.php:134
-#: inc/wpblack/customizer/slider-section.php:126
 #: inc/wpkites/customizer/slider-section.php:126
 msgid ""
 "Slider image overlay "
@@ -817,7 +745,6 @@ msgstr ""
 #: inc/honeypress/features/feature-slider-section.php:155
 #: inc/spice-software/customizer/slider-section.php:146
 #: inc/spiko/customizer/slider-section.php:150
-#: inc/wpblack/customizer/slider-section.php:142
 #: inc/wphester/customizer/slider-section.php:142
 #: inc/wpkites/customizer/slider-section.php:142
 msgid ""
@@ -828,7 +755,6 @@ msgstr ""
 #: inc/honeypress/features/feature-slider-section.php:158
 #: inc/spice-software/customizer/slider-section.php:150
 #: inc/spiko/customizer/slider-section.php:154
-#: inc/wpblack/customizer/slider-section.php:146
 #: inc/wphester/customizer/slider-section.php:146
 #: inc/wpkites/customizer/slider-section.php:146
 msgid "Left"
@@ -838,7 +764,6 @@ msgstr ""
 #: inc/honeypress/features/feature-slider-section.php:159
 #: inc/spice-software/customizer/slider-section.php:151
 #: inc/spiko/customizer/slider-section.php:155
-#: inc/wpblack/customizer/slider-section.php:147
 #: inc/wphester/customizer/slider-section.php:147
 #: inc/wpkites/customizer/slider-section.php:147
 msgid "Center"
@@ -848,14 +773,12 @@ msgstr ""
 #: inc/honeypress/features/feature-slider-section.php:160
 #: inc/spice-software/customizer/slider-section.php:152
 #: inc/spiko/customizer/slider-section.php:156
-#: inc/wpblack/customizer/slider-section.php:148
 #: inc/wphester/customizer/slider-section.php:148
 #: inc/wpkites/customizer/slider-section.php:148
 msgid "Right"
 msgstr ""
 
 #: inc/busicare/customizer/slider-section.php:163
-#: inc/wpblack/customizer/slider-section.php:155
 msgid "Nulla nec dolor sit"
 msgstr ""
 
@@ -870,7 +793,6 @@ msgstr ""
 #: inc/spice-software/sections/spice-software-slider-section.php:15
 #: inc/spiko/customizer/slider-section.php:176
 #: inc/spiko/sections/spiko-slider-section.php:16
-#: inc/wpblack/sections/wpblack-slider-section.php:10
 msgid ""
 "Nulla nec dolor sit amet "
 "lacus molestie"
@@ -921,7 +843,6 @@ msgstr ""
 #: inc/spicepress/features/feature-testimonial-section.php:83
 #: inc/spicepress/features/feature-testimonial-section.php:122
 #: inc/spiko/customizer/slider-section.php:193
-#: inc/wpblack/customizer/slider-section.php:185
 #: inc/wphester/customizer/slider-section.php:185
 #: inc/wpkites/customizer/slider-section.php:172
 msgid "Description"
@@ -937,8 +858,6 @@ msgstr ""
 #: inc/spice-software/sections/spice-software-slider-section.php:17
 #: inc/spiko/customizer/slider-section.php:202
 #: inc/spiko/sections/spiko-slider-section.php:19
-#: inc/wpblack/customizer/slider-section.php:194
-#: inc/wpblack/sections/wpblack-slider-section.php:13
 #: inc/wphester/customizer/slider-section.php:194
 #: inc/wphester/sections/wphester-slider-section.php:13
 #: inc/wpkites/customizer/slider-section.php:181
@@ -958,40 +877,9 @@ msgstr ""
 #: inc/spice-software/customizer/slider-section.php:190
 #: inc/spicepress/features/feature-slider-section.php:124
 #: inc/spiko/customizer/slider-section.php:206
-#: inc/wpblack/customizer/services-section.php:104
-#: inc/wpblack/customizer/slider-section.php:198
 #: inc/wphester/customizer/slider-section.php:198
 #: inc/wpkites/customizer/slider-section.php:185
 msgid "Button Text"
-msgstr ""
-
-#: inc/busicare/customizer/slider-section.php:214
-#: inc/busicare/customizer/slider-section.php:252
-#: inc/busicare/sections/busicare-news-dark-section.php:7
-#: inc/busicare/sections/busicare-news-section.php:7
-#: inc/cloudpress/features/feature-cta-section.php:65
-#: inc/cloudpress/features/feature-slider-section.php:109
-#: inc/cloudpress/features/feature-slider-section.php:146
-#: inc/cloudpress/features/feature-testimonial-section.php:129
-#: inc/cloudpress/sections/cloudpress-testimonail-section.php:10
-#: inc/honeypress/features/feature-slider-section.php:206
-#: inc/honeypress/features/feature-slider-section.php:243
-#: inc/innofit/customizer/callout-section.php:68
-#: inc/innofit/customizer/slider-section.php:105
-#: inc/spice-software/customizer/slider-section.php:198
-#: inc/spice-software/customizer/slider-section.php:236
-#: inc/spice-software/sections/spice-software-news-section.php:6
-#: inc/spicepress/features/feature-slider-section.php:130
-#: inc/spiko/customizer/slider-section.php:214
-#: inc/spiko/customizer/slider-section.php:252
-#: inc/spiko/sections/spiko-news-section.php:30
-#: inc/wpblack/customizer/slider-section.php:206
-#: inc/wpblack/customizer/slider-section.php:244
-#: inc/wphester/customizer/slider-section.php:206
-#: inc/wphester/customizer/slider-section.php:244
-#: inc/wpkites/customizer/slider-section.php:193
-#: inc/wpkites/customizer/slider-section.php:231
-msgid "#"
 msgstr ""
 
 #: inc/busicare/customizer/slider-section.php:218
@@ -1003,8 +891,6 @@ msgstr ""
 #: inc/spice-software/customizer/slider-section.php:202
 #: inc/spicepress/features/feature-slider-section.php:135
 #: inc/spiko/customizer/slider-section.php:218
-#: inc/wpblack/customizer/services-section.php:117
-#: inc/wpblack/customizer/slider-section.php:210
 #: inc/wphester/customizer/slider-section.php:210
 #: inc/wpkites/customizer/slider-section.php:197
 msgid "Button Link"
@@ -1015,7 +901,6 @@ msgstr ""
 #: inc/honeypress/features/feature-slider-section.php:236
 #: inc/spice-software/customizer/slider-section.php:228
 #: inc/spiko/customizer/slider-section.php:244
-#: inc/wpblack/customizer/slider-section.php:236
 #: inc/wphester/customizer/slider-section.php:236
 #: inc/wpkites/customizer/slider-section.php:223
 msgid "Button 2 Text"
@@ -1026,7 +911,6 @@ msgstr ""
 #: inc/honeypress/features/feature-slider-section.php:248
 #: inc/spice-software/customizer/slider-section.php:240
 #: inc/spiko/customizer/slider-section.php:256
-#: inc/wpblack/customizer/slider-section.php:248
 #: inc/wphester/customizer/slider-section.php:248
 #: inc/wpkites/customizer/slider-section.php:235
 msgid "Button 2 Link"
@@ -1036,7 +920,6 @@ msgstr ""
 #: inc/cloudpress/features/feature-team-section.php:8
 #: inc/spice-software/customizer/team-section.php:5
 #: inc/spiko/customizer/team-section.php:5
-#: inc/wpblack/customizer/team-section.php:5
 #: inc/wphester/customizer/team-section.php:5
 #: inc/wpkites/customizer/team-section.php:5
 msgid "Team Settings"
@@ -1045,7 +928,6 @@ msgstr ""
 #: inc/busicare/customizer/team-section.php:25
 #: inc/spice-software/customizer/team-section.php:17
 #: inc/spiko/customizer/team-section.php:17
-#: inc/wpblack/customizer/team-section.php:17
 #: inc/wphester/customizer/team-section.php:17
 #: inc/wpkites/customizer/team-section.php:17
 msgid ""
@@ -1070,7 +952,6 @@ msgstr ""
 #: inc/spice-software/customizer/team-section.php:57
 #: inc/spice-software/customizer/team-section.php:76
 #: inc/spiko/customizer/team-section.php:59
-#: inc/wpblack/customizer/team-section.php:58
 #: inc/wpkites/customizer/team-section.php:57
 msgid "Team content"
 msgstr ""
@@ -1085,7 +966,6 @@ msgstr ""
 #: inc/spice-software/customizer/team-section.php:61
 #: inc/spice-software/customizer/team-section.php:80
 #: inc/spiko/customizer/team-section.php:63
-#: inc/wpblack/customizer/team-section.php:62
 #: inc/wphester/customizer/team-section.php:61
 #: inc/wpkites/customizer/team-section.php:61
 msgid "Team Member"
@@ -1098,9 +978,6 @@ msgstr ""
 #: inc/spice-software/customizer/testimonial-section.php:114
 #: inc/spiko/customizer/team-section.php:98
 #: inc/spiko/customizer/testimonial-section.php:96
-#: inc/wpblack/customizer/news-section.php:85
-#: inc/wpblack/customizer/team-section.php:76
-#: inc/wpblack/customizer/testimonial-section.php:110
 #: inc/wphester/customizer/news-section.php:85
 #: inc/wphester/customizer/team-section.php:75
 #: inc/wphester/customizer/testimonial-section.php:72
@@ -1117,9 +994,6 @@ msgstr ""
 #: inc/spice-software/customizer/testimonial-section.php:119
 #: inc/spiko/customizer/team-section.php:103
 #: inc/spiko/customizer/testimonial-section.php:101
-#: inc/wpblack/customizer/news-section.php:89
-#: inc/wpblack/customizer/team-section.php:81
-#: inc/wpblack/customizer/testimonial-section.php:115
 #: inc/wphester/customizer/news-section.php:89
 #: inc/wphester/customizer/team-section.php:80
 #: inc/wphester/customizer/testimonial-section.php:77
@@ -1136,9 +1010,6 @@ msgstr ""
 #: inc/spice-software/customizer/testimonial-section.php:120
 #: inc/spiko/customizer/team-section.php:104
 #: inc/spiko/customizer/testimonial-section.php:102
-#: inc/wpblack/customizer/news-section.php:90
-#: inc/wpblack/customizer/team-section.php:82
-#: inc/wpblack/customizer/testimonial-section.php:116
 #: inc/wphester/customizer/news-section.php:90
 #: inc/wphester/customizer/team-section.php:81
 #: inc/wphester/customizer/testimonial-section.php:78
@@ -1155,9 +1026,6 @@ msgstr ""
 #: inc/spice-software/customizer/testimonial-section.php:121
 #: inc/spiko/customizer/team-section.php:105
 #: inc/spiko/customizer/testimonial-section.php:103
-#: inc/wpblack/customizer/news-section.php:91
-#: inc/wpblack/customizer/team-section.php:83
-#: inc/wpblack/customizer/testimonial-section.php:117
 #: inc/wphester/customizer/news-section.php:91
 #: inc/wphester/customizer/team-section.php:82
 #: inc/wphester/customizer/testimonial-section.php:79
@@ -1170,7 +1038,6 @@ msgstr ""
 #: inc/busicare/customizer/testimonial-section.php:4
 #: inc/spice-software/customizer/testimonial-section.php:5
 #: inc/spiko/customizer/testimonial-section.php:4
-#: inc/wpblack/customizer/testimonial-section.php:4
 #: inc/wphester/customizer/testimonial-section.php:4
 #: inc/wpkites/customizer/testimonial-section.php:4
 msgid ""
@@ -1180,7 +1047,6 @@ msgstr ""
 #: inc/busicare/customizer/testimonial-section.php:17
 #: inc/spice-software/customizer/testimonial-section.php:18
 #: inc/spiko/customizer/testimonial-section.php:17
-#: inc/wpblack/customizer/testimonial-section.php:17
 #: inc/wphester/customizer/testimonial-section.php:17
 #: inc/wpkites/customizer/testimonial-section.php:17
 msgid ""
@@ -1197,8 +1063,6 @@ msgstr ""
 #: inc/spice-software/sections/spice-software-testimonial-section.php:20
 #: inc/spiko/customizer/testimonial-section.php:38
 #: inc/spiko/sections/spiko-testimonial-section.php:23
-#: inc/wpblack/customizer/testimonial-section.php:39
-#: inc/wpblack/sections/wpblack-testimonial-section.php:19
 #: inc/wphester/customizer/testimonial-section.php:27
 #: inc/wphester/sections/wphester-testimonial-section.php:19
 #: inc/wpkites/customizer/testimonial-section.php:27
@@ -1211,7 +1075,6 @@ msgstr ""
 #: inc/spice-software/customizer/testimonial-section.php:54
 #: inc/spiko/customizer/testimonial-section.php:57
 #: inc/spiko/customizer/testimonial-section.php:77
-#: inc/wpblack/customizer/testimonial-section.php:54
 #: inc/wpkites/customizer/testimonial-section.php:55
 msgid "Testimonial content"
 msgstr ""
@@ -1225,7 +1088,6 @@ msgstr ""
 #: inc/spice-software/customizer/testimonial-section.php:57
 #: inc/spiko/customizer/testimonial-section.php:60
 #: inc/spiko/customizer/testimonial-section.php:80
-#: inc/wpblack/customizer/testimonial-section.php:57
 #: inc/wphester/customizer/testimonial-section.php:58
 #: inc/wpkites/customizer/testimonial-section.php:58
 msgid "Testimonial"
@@ -1233,19 +1095,17 @@ msgstr ""
 
 #: inc/busicare/customizer/testimonial-section.php:77
 #: inc/cloudpress/features/feature-testimonial-section.php:31
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:641
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:642
 #: inc/innofit/customizer/contact-section.php:28
 #: inc/innofit/customizer/subscriber-section.php:71
 #: inc/innofit/customizer/testimonial-section.php:27
 #: inc/spice-software/customizer/testimonial-section.php:76
 #: inc/spicepress/features/feature-testimonial-section.php:31
 #: inc/spiko/customizer/testimonial-section.php:123
-#: inc/wpblack/customizer/testimonial-section.php:75
 msgid "Background Image"
 msgstr ""
 
 #: inc/busicare/customizer/testimonial-section.php:90
-#: inc/wpblack/customizer/testimonial-section.php:88
 msgid ""
 "Enable/Disable "
 "testimonial image overlay"
@@ -1256,20 +1116,28 @@ msgstr ""
 #: inc/spice-software/customizer/testimonial-section.php:104
 #: inc/spicepress/features/feature-testimonial-section.php:56
 #: inc/spiko/customizer/testimonial-section.php:156
-#: inc/wpblack/customizer/testimonial-section.php:101
 msgid ""
 "Testimonial image "
 "overlay color"
 msgstr ""
 
-#: inc/busicare/sections/busicare-news-dark-section.php:63
-#: inc/busicare/sections/busicare-news-section.php:70
+#: inc/busicare/default-widgets/default-widget.php:24
+#: inc/innofit/customizer/about-section.php:26
+#: inc/innofit/sections/innofit-about-section.php:12
+#: inc/spice-software/default-widgets/default-widget.php:24
+#: inc/spicepress/default-widgets/default-widget.php:25
+msgid "Logo"
+msgstr ""
+
+#: inc/busicare/sections/busicare-news-dark-section.php:66
+#: inc/busicare/sections/busicare-news-section.php:76
+#: inc/innofit/sections/innofit-news-section.php:103
 msgid "By"
 msgstr ""
 
-#: inc/busicare/sections/busicare-news-section.php:94
-#: inc/innofit/sections/innofit-news-section.php:97
-#: inc/spiko/sections/spiko-news-section.php:126
+#: inc/busicare/sections/busicare-news-section.php:100
+#: inc/innofit/sections/innofit-news-section.php:94
+#: inc/spiko/sections/spiko-news-section.php:130
 #: inc/wpkites/sections/wpkites-news-section.php:99
 msgid "Read More"
 msgstr ""
@@ -1297,8 +1165,6 @@ msgstr ""
 #: inc/spice-software/sections/spice-software-testimonial-section.php:21
 #: inc/spiko/customizer/testimonial-section.php:25
 #: inc/spiko/sections/spiko-testimonial-section.php:24
-#: inc/wpblack/customizer/testimonial-section.php:26
-#: inc/wpblack/sections/wpblack-testimonial-section.php:20
 #: inc/wphester/customizer/testimonial-section.php:40
 #: inc/wphester/sections/wphester-testimonial-section.php:20
 #: inc/wpkites/customizer/testimonial-section.php:40
@@ -1464,7 +1330,6 @@ msgstr ""
 #: inc/spice-software/customizer/services-section.php:62
 #: inc/spicepress/features/feature-service-section.php:66
 #: inc/spiko/customizer/services-section.php:60
-#: inc/wpblack/customizer/services-section.php:61
 #: inc/wphester/customizer/services-section.php:61
 #: inc/wpkites/customizer/services-section.php:61
 msgid "Add new Service"
@@ -1515,7 +1380,6 @@ msgstr ""
 #: inc/spice-software/customizer/team-section.php:60
 #: inc/spice-software/customizer/team-section.php:79
 #: inc/spiko/customizer/team-section.php:62
-#: inc/wpblack/customizer/team-section.php:61
 #: inc/wphester/customizer/team-section.php:60
 #: inc/wpkites/customizer/team-section.php:60
 msgid "Add new Team Member"
@@ -1526,9 +1390,6 @@ msgstr ""
 #: inc/spice-software/customizer/testimonial-section.php:130
 #: inc/spiko/customizer/team-section.php:81
 #: inc/spiko/customizer/testimonial-section.php:166
-#: inc/wpblack/customizer/news-section.php:100
-#: inc/wpblack/customizer/team-section.php:92
-#: inc/wpblack/customizer/testimonial-section.php:126
 #: inc/wpkites/customizer/news-section.php:100
 #: inc/wpkites/customizer/team-section.php:91
 #: inc/wpkites/customizer/testimonial-section.php:88
@@ -1540,9 +1401,6 @@ msgstr ""
 #: inc/spice-software/customizer/testimonial-section.php:147
 #: inc/spiko/customizer/team-section.php:114
 #: inc/spiko/customizer/testimonial-section.php:183
-#: inc/wpblack/customizer/news-section.php:117
-#: inc/wpblack/customizer/team-section.php:110
-#: inc/wpblack/customizer/testimonial-section.php:143
 #: inc/wpkites/customizer/news-section.php:117
 #: inc/wpkites/customizer/team-section.php:109
 #: inc/wpkites/customizer/testimonial-section.php:105
@@ -1577,8 +1435,8 @@ msgstr ""
 #: inc/honeypress/sections/honeypress-testimonail-section.php:92
 #: inc/spicepress/features/feature-testimonial-section.php:117
 #: inc/spicepress/sections/spicepress-testimonail-section.php:47
-#: inc/spicepress/sections/spicepress-testimonail-section.php:124
-#: inc/spicepress/sections/spicepress-testimonail-section.php:199
+#: inc/spicepress/sections/spicepress-testimonail-section.php:130
+#: inc/spicepress/sections/spicepress-testimonail-section.php:211
 msgid ""
 "Sed ut Perspiciatis Unde "
 "Omnis Iste Sed ut "
@@ -1600,12 +1458,12 @@ msgstr ""
 #: inc/cloudpress/features/feature-testimonial-section.php:134
 #: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:300
 #: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:455
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:741
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:763
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:743
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:765
 #: inc/controls/customizer-repeater/class/customizer-repeater-control.php:339
 #: inc/controls/customizer-repeater/class/customizer-repeater-control.php:487
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:794
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:816
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:795
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:817
 msgid "Link"
 msgstr ""
 
@@ -1651,58 +1509,58 @@ msgstr ""
 msgid "Voluptate Velit"
 msgstr ""
 
-#: inc/cloudpress/sections/cloudpress-team-section.php:86
-#: inc/cloudpress/sections/cloudpress-team-section.php:89
-#: inc/cloudpress/sections/cloudpress-team-section.php:199
+#: inc/cloudpress/sections/cloudpress-team-section.php:94
+#: inc/cloudpress/sections/cloudpress-team-section.php:102
+#: inc/cloudpress/sections/cloudpress-team-section.php:240
 msgid "Curabitur maximus"
 msgstr ""
 
-#: inc/cloudpress/sections/cloudpress-team-section.php:90
-#: inc/cloudpress/sections/cloudpress-team-section.php:200
+#: inc/cloudpress/sections/cloudpress-team-section.php:103
+#: inc/cloudpress/sections/cloudpress-team-section.php:241
 msgid "Duis lobortis"
 msgstr ""
 
-#: inc/cloudpress/sections/cloudpress-team-section.php:104
-#: inc/cloudpress/sections/cloudpress-team-section.php:107
-#: inc/cloudpress/sections/cloudpress-team-section.php:229
+#: inc/cloudpress/sections/cloudpress-team-section.php:119
+#: inc/cloudpress/sections/cloudpress-team-section.php:127
+#: inc/cloudpress/sections/cloudpress-team-section.php:270
 msgid "Nulla sit amet"
 msgstr ""
 
-#: inc/cloudpress/sections/cloudpress-team-section.php:108
-#: inc/cloudpress/sections/cloudpress-team-section.php:230
+#: inc/cloudpress/sections/cloudpress-team-section.php:128
+#: inc/cloudpress/sections/cloudpress-team-section.php:271
 msgid "Quisque suscipit"
 msgstr ""
 
-#: inc/cloudpress/sections/cloudpress-team-section.php:122
-#: inc/cloudpress/sections/cloudpress-team-section.php:125
-#: inc/cloudpress/sections/cloudpress-team-section.php:259
+#: inc/cloudpress/sections/cloudpress-team-section.php:144
+#: inc/cloudpress/sections/cloudpress-team-section.php:152
+#: inc/cloudpress/sections/cloudpress-team-section.php:300
 msgid "Nam maximus"
 msgstr ""
 
-#: inc/cloudpress/sections/cloudpress-team-section.php:126
-#: inc/cloudpress/sections/cloudpress-team-section.php:260
+#: inc/cloudpress/sections/cloudpress-team-section.php:153
+#: inc/cloudpress/sections/cloudpress-team-section.php:301
 msgid "Mauris convallis"
 msgstr ""
 
-#: inc/cloudpress/sections/cloudpress-team-section.php:140
-#: inc/cloudpress/sections/cloudpress-team-section.php:143
-#: inc/cloudpress/sections/cloudpress-team-section.php:289
+#: inc/cloudpress/sections/cloudpress-team-section.php:169
+#: inc/cloudpress/sections/cloudpress-team-section.php:177
+#: inc/cloudpress/sections/cloudpress-team-section.php:330
 msgid "Aliquam maximus"
 msgstr ""
 
-#: inc/cloudpress/sections/cloudpress-team-section.php:144
-#: inc/cloudpress/sections/cloudpress-team-section.php:290
+#: inc/cloudpress/sections/cloudpress-team-section.php:178
+#: inc/cloudpress/sections/cloudpress-team-section.php:331
 msgid "Mauris feugiat"
 msgstr ""
 
-#: inc/cloudpress/sections/cloudpress-team-section.php:158
-#: inc/cloudpress/sections/cloudpress-team-section.php:161
-#: inc/cloudpress/sections/cloudpress-team-section.php:319
+#: inc/cloudpress/sections/cloudpress-team-section.php:194
+#: inc/cloudpress/sections/cloudpress-team-section.php:202
+#: inc/cloudpress/sections/cloudpress-team-section.php:360
 msgid "Aenean sit amet"
 msgstr ""
 
-#: inc/cloudpress/sections/cloudpress-team-section.php:162
-#: inc/cloudpress/sections/cloudpress-team-section.php:320
+#: inc/cloudpress/sections/cloudpress-team-section.php:203
+#: inc/cloudpress/sections/cloudpress-team-section.php:361
 msgid "Morbi sollicitudin"
 msgstr ""
 
@@ -1752,20 +1610,20 @@ msgid "Delete field"
 msgstr ""
 
 #: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:544
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:592
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:591
 msgid ""
 "Open link in a new tab:"
 msgstr ""
 
 #: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:555
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:717
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:603
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:770
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:719
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:602
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:771
 msgid "Icon"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:560
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:608
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:563
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:610
 #, php-format
 msgid ""
 "Note: Some icons may not "
@@ -1774,123 +1632,116 @@ msgid ""
 "icons at %1$s."
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:561
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:609
-msgid ""
-"http://fontawesome.io/"
-"icons/"
-msgstr ""
-
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:581
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:592
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:629
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:644
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:583
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:594
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:630
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:645
 msgid "Upload Image"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:601
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:737
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:603
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:738
 msgid "Slide Format"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:605
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:741
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:607
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:742
 #: inc/spicepress/features/feature-service-section.php:101
 #: inc/spicepress/features/feature-testimonial-section.php:179
 msgid "Standard"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:609
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:745
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:611
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:746
 msgid "Aside"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:613
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:749
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:615
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:750
 msgid "Quote"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:617
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:753
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:619
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:754
 msgid "Status"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:632
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:653
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:634
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:654
 msgid "Rating"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:640
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:661
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:642
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:662
 msgid "1"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:648
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:669
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:650
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:670
 msgid "1.5"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:656
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:677
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:658
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:678
 msgid "2"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:664
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:685
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:666
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:686
 msgid "2.5"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:672
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:693
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:674
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:694
 msgid "3"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:680
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:701
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:682
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:702
 msgid "3.5"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:688
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:709
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:690
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:710
 msgid "4"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:696
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:717
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:698
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:718
 msgid "4.5"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:704
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:725
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:706
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:726
 msgid "5"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:714
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:767
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:716
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:768
 msgid "Image type"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:719
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:772
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:721
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:773
 msgid "None"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:727
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:780
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:729
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:781
 msgid "Social icons"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:744
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:774
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:797
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:827
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:746
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:776
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:798
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:828
 msgid "Remove Icon"
 msgstr ""
 
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:749
-#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:782
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:802
-#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:835
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:751
+#: inc/controls/customizer-repeater/class/customizer-limit-repeater-control.php:784
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:803
+#: inc/controls/customizer-repeater/class/customizer-repeater-control.php:836
 msgid "Add Icon"
 msgstr ""
 
@@ -1902,67 +1753,6 @@ msgstr ""
 #: inc/controls/customizer-repeater/class/customizer-repeater-control.php:312
 #: inc/controls/customizer-repeater/class/customizer-repeater-control.php:536
 msgid "Name"
-msgstr ""
-
-#: inc/feedback-pop-up-form.php:29
-msgid "Quick Feedback"
-msgstr ""
-
-#: inc/feedback-pop-up-form.php:30
-msgid ""
-"Your feedback is "
-"valuable to us."
-msgstr ""
-
-#: inc/feedback-pop-up-form.php:42
-msgid ""
-"I found a better theme"
-msgstr ""
-
-#: inc/feedback-pop-up-form.php:48
-msgid ""
-"It's a temporary "
-"deactivation. I'm just "
-"debugging an issue."
-msgstr ""
-
-#: inc/feedback-pop-up-form.php:54
-msgid ""
-"It does not have a "
-"feature I require. If "
-"possible, mention them "
-"in text box."
-msgstr ""
-
-#: inc/feedback-pop-up-form.php:60
-msgid "Others"
-msgstr ""
-
-#: inc/feedback-pop-up-form.php:64
-msgid ""
-"Your feedback means a "
-"lot to us"
-msgstr ""
-
-#: inc/feedback-pop-up-form.php:72
-#: inc/innofit-feedback-pop-up-form.php:74
-msgid "Submit Feedback"
-msgstr ""
-
-#: inc/feedback-pop-up-form.php:80
-#: inc/innofit-feedback-pop-up-form.php:82
-msgid "Skip & Deactive"
-msgstr ""
-
-#: inc/feedback-pop-up-form.php:104
-msgid ""
-"Now create your own "
-"JotForm - It's free!"
-msgstr ""
-
-#: inc/feedback-pop-up-form.php:106
-msgid ""
-"Create your own JotForm"
 msgstr ""
 
 #: inc/honeypress/features/feature-testimonial-section.php:77
@@ -1986,13 +1776,11 @@ msgid "Powerful Options"
 msgstr ""
 
 #: inc/innofit/customizer.php:60
-#: inc/innofit/sections/innofit-testimonial-section.php:95
+#: inc/innofit/sections/innofit-testimonial-section.php:101
 #: inc/spice-software/customizer.php:57
 #: inc/spice-software/sections/spice-software-testimonial-section.php:31
 #: inc/spiko/customizer.php:57
 #: inc/spiko/sections/spiko-testimonial-section.php:38
-#: inc/wpblack/customizer.php:60
-#: inc/wpblack/sections/wpblack-testimonial-section.php:29
 #: inc/wphester/customizer.php:57
 #: inc/wphester/sections/wphester-testimonial-section.php:29
 #: inc/wpkites/customizer.php:57
@@ -2001,13 +1789,11 @@ msgid "Developer"
 msgstr ""
 
 #: inc/innofit/customizer.php:70
-#: inc/innofit/sections/innofit-testimonial-section.php:95
+#: inc/innofit/sections/innofit-testimonial-section.php:101
 #: inc/spice-software/customizer.php:69
 #: inc/spice-software/sections/spice-software-testimonial-section.php:43
 #: inc/spiko/customizer.php:69
 #: inc/spiko/sections/spiko-testimonial-section.php:50
-#: inc/wpblack/customizer.php:70
-#: inc/wpblack/sections/wpblack-testimonial-section.php:41
 #: inc/wphester/customizer.php:67
 #: inc/wphester/sections/wphester-testimonial-section.php:41
 #: inc/wpkites/customizer.php:67
@@ -2016,13 +1802,11 @@ msgid "Team Leader"
 msgstr ""
 
 #: inc/innofit/customizer.php:79
-#: inc/innofit/sections/innofit-testimonial-section.php:95
+#: inc/innofit/sections/innofit-testimonial-section.php:101
 #: inc/spice-software/customizer.php:81
 #: inc/spice-software/sections/spice-software-testimonial-section.php:55
 #: inc/spiko/customizer.php:81
 #: inc/spiko/sections/spiko-testimonial-section.php:62
-#: inc/wpblack/customizer.php:80
-#: inc/wpblack/sections/wpblack-testimonial-section.php:53
 #: inc/wphester/customizer.php:77
 #: inc/wphester/sections/wphester-testimonial-section.php:53
 #: inc/wpkites/customizer.php:77
@@ -2039,25 +1823,25 @@ msgid ""
 "Enable About on homepage"
 msgstr ""
 
-#: inc/innofit/customizer/about-section.php:34
-#: inc/innofit/sections/innofit-about-section.php:20
+#: inc/innofit/customizer/about-section.php:38
+#: inc/innofit/sections/innofit-about-section.php:24
 msgid "Welcome to"
 msgstr ""
 
-#: inc/innofit/customizer/about-section.php:34
-#: inc/innofit/sections/innofit-about-section.php:20
+#: inc/innofit/customizer/about-section.php:38
+#: inc/innofit/sections/innofit-about-section.php:24
 msgid "Innofit"
 msgstr ""
 
-#: inc/innofit/customizer/about-section.php:35
-#: inc/innofit/sections/innofit-about-section.php:21
+#: inc/innofit/customizer/about-section.php:39
+#: inc/innofit/sections/innofit-about-section.php:25
 msgid ""
 "We have the right "
 "solutions"
 msgstr ""
 
-#: inc/innofit/customizer/about-section.php:36
-#: inc/innofit/sections/innofit-about-section.php:22
+#: inc/innofit/customizer/about-section.php:40
+#: inc/innofit/sections/innofit-about-section.php:26
 msgid ""
 "Sed ut perspiciatis unde "
 "omnis iste natus error "
@@ -2073,8 +1857,8 @@ msgid ""
 "voluptatem."
 msgstr ""
 
-#: inc/innofit/customizer/about-section.php:37
-#: inc/innofit/sections/innofit-about-section.php:23
+#: inc/innofit/customizer/about-section.php:41
+#: inc/innofit/sections/innofit-about-section.php:27
 msgid ""
 "Lorem ipsum dolor sit "
 "amet, consectetur "
@@ -2084,12 +1868,12 @@ msgid ""
 "dolore."
 msgstr ""
 
-#: inc/innofit/customizer/about-section.php:38
-#: inc/innofit/sections/innofit-about-section.php:24
+#: inc/innofit/customizer/about-section.php:42
+#: inc/innofit/sections/innofit-about-section.php:28
 msgid "Our Story"
 msgstr ""
 
-#: inc/innofit/customizer/about-section.php:54
+#: inc/innofit/customizer/about-section.php:58
 msgid "About content"
 msgstr ""
 
@@ -2388,7 +2172,6 @@ msgstr ""
 #: inc/spice-software/customizer/testimonial-section.php:56
 #: inc/spiko/customizer/testimonial-section.php:59
 #: inc/spiko/customizer/testimonial-section.php:79
-#: inc/wpblack/customizer/testimonial-section.php:56
 #: inc/wphester/customizer/testimonial-section.php:57
 #: inc/wpkites/customizer/testimonial-section.php:57
 msgid "Add new Testimonial"
@@ -2417,12 +2200,12 @@ msgid ""
 msgstr ""
 
 #: inc/innofit/customizer/wooproduct-section.php:21
-#: inc/innofit/sections/innofit-wooproduct-section.php:16
+#: inc/innofit/sections/innofit-wooproduct-section.php:12
 msgid "Featured Products"
 msgstr ""
 
 #: inc/innofit/customizer/wooproduct-section.php:33
-#: inc/innofit/sections/innofit-wooproduct-section.php:17
+#: inc/innofit/sections/innofit-wooproduct-section.php:13
 msgid ""
 "Our amazing products"
 msgstr ""
@@ -2447,25 +2230,17 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
-#: inc/innofit/sections/innofit-wooproduct-section.php:56
-msgid "On Sale!"
+#: inc/innofit/sections/innofit-team-section.php:134
+#: inc/innofit/sections/innofit-team-section.php:140
+msgid "Danial Wilson"
 msgstr ""
 
-#: inc/innofit/sections/innofit-wooproduct-section.php:68
-#, php-format
-msgid "Rated %s out of 5"
-msgstr ""
-
-#: inc/innofit/sections/innofit-wooproduct-section.php:68
-msgid "out of 5"
-msgstr ""
-
+#: inc/innofit/sections/innofit-team-section.php:156
+#: inc/innofit/sections/innofit-team-section.php:162
 #: inc/spice-software/customizer.php:56
 #: inc/spice-software/sections/spice-software-testimonial-section.php:30
 #: inc/spiko/customizer.php:56
 #: inc/spiko/sections/spiko-testimonial-section.php:37
-#: inc/wpblack/customizer.php:59
-#: inc/wpblack/sections/wpblack-testimonial-section.php:28
 #: inc/wphester/customizer.php:56
 #: inc/wphester/sections/wphester-testimonial-section.php:28
 #: inc/wpkites/customizer.php:56
@@ -2473,25 +2248,12 @@ msgstr ""
 msgid "Amanda Smith"
 msgstr ""
 
-#: inc/spice-software/customizer.php:68
-#: inc/spice-software/sections/spice-software-testimonial-section.php:42
-#: inc/spiko/customizer.php:68
-#: inc/spiko/sections/spiko-testimonial-section.php:49
-#: inc/wpblack/customizer.php:69
-#: inc/wpblack/sections/wpblack-testimonial-section.php:40
-#: inc/wphester/customizer.php:66
-#: inc/wphester/sections/wphester-testimonial-section.php:40
-#: inc/wpkites/customizer.php:66
-#: inc/wpkites/sections/wpkites-testimonial-section.php:40
-msgid "Travis Cullan"
-msgstr ""
-
+#: inc/innofit/sections/innofit-team-section.php:178
+#: inc/innofit/sections/innofit-team-section.php:184
 #: inc/spice-software/customizer.php:80
 #: inc/spice-software/sections/spice-software-testimonial-section.php:54
 #: inc/spiko/customizer.php:80
 #: inc/spiko/sections/spiko-testimonial-section.php:61
-#: inc/wpblack/customizer.php:79
-#: inc/wpblack/sections/wpblack-testimonial-section.php:52
 #: inc/wphester/customizer.php:76
 #: inc/wphester/sections/wphester-testimonial-section.php:52
 #: inc/wpkites/customizer.php:76
@@ -2499,12 +2261,39 @@ msgstr ""
 msgid "Victoria Wills"
 msgstr ""
 
+#: inc/innofit/sections/innofit-team-section.php:200
+#: inc/innofit/sections/innofit-team-section.php:206
+msgid "Travis Marcus"
+msgstr ""
+
+#: inc/innofit/sections/innofit-wooproduct-section.php:40
+msgid "On Sale!"
+msgstr ""
+
+#: inc/innofit/sections/innofit-wooproduct-section.php:55
+#, php-format
+msgid "Rated %s out of 5"
+msgstr ""
+
+#: inc/innofit/sections/innofit-wooproduct-section.php:61
+msgid "out of 5"
+msgstr ""
+
+#: inc/spice-software/customizer.php:68
+#: inc/spice-software/sections/spice-software-testimonial-section.php:42
+#: inc/spiko/customizer.php:68
+#: inc/spiko/sections/spiko-testimonial-section.php:49
+#: inc/wphester/customizer.php:66
+#: inc/wphester/sections/wphester-testimonial-section.php:40
+#: inc/wpkites/customizer.php:66
+#: inc/wpkites/sections/wpkites-testimonial-section.php:40
+msgid "Travis Cullan"
+msgstr ""
+
 #: inc/spice-software/customizer/services-section.php:25
 #: inc/spice-software/sections/spice-software-services-section.php:38
 #: inc/spiko/customizer/services-section.php:40
 #: inc/spiko/sections/spiko-services-section.php:38
-#: inc/wpblack/customizer/services-section.php:40
-#: inc/wpblack/sections/wpblack-services-section.php:41
 #: inc/wphester/customizer/services-section.php:25
 #: inc/wphester/sections/wphester-services-section.php:38
 #: inc/wpkites/customizer/services-section.php:25
@@ -2516,8 +2305,6 @@ msgstr ""
 #: inc/spice-software/sections/spice-software-team-section.php:158
 #: inc/spiko/customizer/team-section.php:38
 #: inc/spiko/sections/spiko-team-section.php:161
-#: inc/wpblack/customizer/team-section.php:38
-#: inc/wpblack/sections/wpblack-team-section.php:155
 #: inc/wphester/customizer/team-section.php:25
 #: inc/wphester/sections/wphester-team-section.php:155
 #: inc/wpkites/customizer/team-section.php:25
@@ -2529,14 +2316,24 @@ msgstr ""
 #: inc/spice-software/sections/spice-software-team-section.php:159
 #: inc/spiko/customizer/team-section.php:25
 #: inc/spiko/sections/spiko-team-section.php:162
-#: inc/wpblack/customizer/team-section.php:25
-#: inc/wpblack/sections/wpblack-team-section.php:156
 #: inc/wphester/customizer/team-section.php:37
 #: inc/wphester/sections/wphester-team-section.php:156
 #: inc/wpkites/customizer/team-section.php:37
 #: inc/wpkites/sections/wpkites-team-section.php:156
 msgid ""
 "Ullamco Laboris Nisi"
+msgstr ""
+
+#: inc/spice-software/sections/spice-software-team-section.php:292
+msgid "About me"
+msgstr ""
+
+#: inc/spice-software/sections/spice-software-testimonial-section.php:28
+#: inc/spice-software/sections/spice-software-testimonial-section.php:40
+#: inc/spice-software/sections/spice-software-testimonial-section.php:52
+msgid ""
+"Exellent Theme & Very "
+"Fast Support"
 msgstr ""
 
 #: inc/spicepress/features/feature-portfolio-section.php:6
@@ -2562,8 +2359,8 @@ msgstr ""
 #: inc/spicepress/sections/spicepress-portfolio-section.php:10
 #: inc/spicepress/sections/spicepress-slider-section.php:18
 #: inc/spicepress/sections/spicepress-testimonail-section.php:43
-#: inc/spicepress/sections/spicepress-testimonail-section.php:120
-#: inc/spicepress/sections/spicepress-testimonail-section.php:195
+#: inc/spicepress/sections/spicepress-testimonail-section.php:126
+#: inc/spicepress/sections/spicepress-testimonail-section.php:207
 msgid ""
 "Sea summo mazim ex, ea "
 "errem eleifend "
@@ -2646,22 +2443,22 @@ msgstr ""
 
 #: inc/spicepress/features/feature-testimonial-section.php:65
 #: inc/spicepress/sections/spicepress-testimonail-section.php:42
-#: inc/spicepress/sections/spicepress-testimonail-section.php:119
-#: inc/spicepress/sections/spicepress-testimonail-section.php:194
+#: inc/spicepress/sections/spicepress-testimonail-section.php:125
+#: inc/spicepress/sections/spicepress-testimonail-section.php:206
 msgid "Lorem ipsum dolor"
 msgstr ""
 
 #: inc/spicepress/features/feature-testimonial-section.php:131
 #: inc/spicepress/sections/spicepress-testimonail-section.php:44
-#: inc/spicepress/sections/spicepress-testimonail-section.php:121
-#: inc/spicepress/sections/spicepress-testimonail-section.php:196
+#: inc/spicepress/sections/spicepress-testimonail-section.php:127
+#: inc/spicepress/sections/spicepress-testimonail-section.php:208
 msgid "Ipsum dolor"
 msgstr ""
 
 #: inc/spicepress/features/feature-testimonial-section.php:144
 #: inc/spicepress/sections/spicepress-testimonail-section.php:45
-#: inc/spicepress/sections/spicepress-testimonail-section.php:122
-#: inc/spicepress/sections/spicepress-testimonail-section.php:197
+#: inc/spicepress/sections/spicepress-testimonail-section.php:128
+#: inc/spicepress/sections/spicepress-testimonail-section.php:209
 msgid "Ligula Eget"
 msgstr ""
 
@@ -2704,45 +2501,19 @@ msgid ""
 "Quis hendrerit purus"
 msgstr ""
 
+#: inc/spicepress/sections/spicepress-portfolio-section.php:51
+#: inc/spicepress/sections/spicepress-portfolio-section.php:71
+#: inc/spicepress/sections/spicepress-portfolio-section.php:91
+#: inc/spicepress/sections/spicepress-testimonail-section.php:76
+#: inc/spicepress/sections/spicepress-testimonail-section.php:160
+#: inc/spicepress/sections/spicepress-testimonail-section.php:242
+#: inc/wpkites/sections/wpkites-testimonial-section.php:159
+msgid "img"
+msgstr ""
+
 #: inc/spiko/customizer/slider-section.php:163
 #: inc/spiko/sections/spiko-slider-section.php:17
 msgid "Lorem Ipsum"
-msgstr ""
-
-#: inc/wpblack/customizer.php:15
-#: inc/wpblack/customizer.php:25
-#: inc/wpblack/customizer.php:35
-#: inc/wpblack/sections/wpblack-services-section.php:14
-#: inc/wpblack/sections/wpblack-services-section.php:24
-#: inc/wpblack/sections/wpblack-services-section.php:34
-msgid "Learn More"
-msgstr ""
-
-#: inc/wpblack/customizer/services-section.php:100
-#: inc/wpblack/sections/wpblack-services-section.php:46
-msgid "Duis Aute"
-msgstr ""
-
-#: inc/wpblack/customizer/slider-section.php:168
-#: inc/wpblack/sections/wpblack-slider-section.php:11
-#: inc/wpkites/customizer/slider-section.php:155
-#: inc/wpkites/sections/wpkites-slider-section.php:10
-msgid ""
-"Nulla nec dolor sit "
-"amet<br> lacus molestie"
-msgstr ""
-
-#: inc/wpblack/customizer/slider-section.php:181
-#: inc/wpblack/sections/wpblack-slider-section.php:12
-#: inc/wpkites/customizer/slider-section.php:168
-#: inc/wpkites/sections/wpkites-slider-section.php:11
-msgid ""
-"Sea summo mazim ex, ea "
-"errem eleifend "
-"definitionem vim.<br> Ut "
-"nec hinc dolor possim "
-"mei ludus efficiendi ei "
-"sea summo mazim ex."
 msgstr ""
 
 #: inc/wphester/customizer/news-section.php:100
@@ -2816,33 +2587,51 @@ msgid ""
 "Overlay Color"
 msgstr ""
 
+#: inc/wpkites/customizer/slider-section.php:155
+#: inc/wpkites/sections/wpkites-slider-section.php:10
+msgid ""
+"Nulla nec dolor sit "
+"amet<br> lacus molestie"
+msgstr ""
+
+#: inc/wpkites/customizer/slider-section.php:168
+#: inc/wpkites/sections/wpkites-slider-section.php:11
+msgid ""
+"Sea summo mazim ex, ea "
+"errem eleifend "
+"definitionem vim.<br> Ut "
+"nec hinc dolor possim "
+"mei ludus efficiendi ei "
+"sea summo mazim ex."
+msgstr ""
+
 #: inc/wpkites/extensions/view.php:16
-#: spicebox.php:355
-#: spicebox.php:356
+#: spicebox.php:366
+#: spicebox.php:367
 msgid "Extensions"
 msgstr ""
 
-#: inc/wpkites/extensions/view.php:33
+#: inc/wpkites/extensions/view.php:38
 msgid "Spice Post Slider"
 msgstr ""
 
-#: inc/wpkites/extensions/view.php:52
+#: inc/wpkites/extensions/view.php:58
 msgid "Spice Social Share"
 msgstr ""
 
-#: inc/wpkites/extensions/view.php:71
+#: inc/wpkites/extensions/view.php:78
 msgid "Spice White Label"
 msgstr ""
 
-#: inc/wpkites/extensions/view.php:90
+#: inc/wpkites/extensions/view.php:98
 msgid "Spice Side Panel"
 msgstr ""
 
-#: inc/wpkites/extensions/view.php:109
+#: inc/wpkites/extensions/view.php:118
 msgid "Spice Popup Login"
 msgstr ""
 
-#: inc/wpkites/extensions/view.php:128
+#: inc/wpkites/extensions/view.php:138
 msgid "Spice Instagram"
 msgstr ""
 
@@ -2850,35 +2639,35 @@ msgstr ""
 msgid "Starter Sites"
 msgstr ""
 
-#: inc/wpkites/starter-sites/view.php:33
+#: inc/wpkites/starter-sites/view.php:39
 msgid "Photography"
 msgstr ""
 
-#: inc/wpkites/starter-sites/view.php:38
-#: inc/wpkites/starter-sites/view.php:57
-#: inc/wpkites/starter-sites/view.php:76
-#: inc/wpkites/starter-sites/view.php:95
-#: inc/wpkites/starter-sites/view.php:114
+#: inc/wpkites/starter-sites/view.php:44
+#: inc/wpkites/starter-sites/view.php:66
+#: inc/wpkites/starter-sites/view.php:88
+#: inc/wpkites/starter-sites/view.php:110
+#: inc/wpkites/starter-sites/view.php:132
 msgid "Demo"
 msgstr ""
 
-#: inc/wpkites/starter-sites/view.php:52
+#: inc/wpkites/starter-sites/view.php:61
 msgid "Job Portal"
 msgstr ""
 
-#: inc/wpkites/starter-sites/view.php:71
+#: inc/wpkites/starter-sites/view.php:83
 msgid "Restaurant"
 msgstr ""
 
-#: inc/wpkites/starter-sites/view.php:90
+#: inc/wpkites/starter-sites/view.php:105
 msgid "Corporate"
 msgstr ""
 
-#: inc/wpkites/starter-sites/view.php:109
+#: inc/wpkites/starter-sites/view.php:127
 msgid "Business"
 msgstr ""
 
-#: spicebox.php:345
-#: spicebox.php:346
+#: spicebox.php:356
+#: spicebox.php:357
 msgid "Starer Sites"
 msgstr ""

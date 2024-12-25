@@ -24,14 +24,14 @@ $testimonial_overlay_section_color = get_theme_mod('testimonial_overlay_section_
 $testimonial_image_overlay = get_theme_mod('testimonial_image_overlay',true);
 ?>
     <?php if($testimonial_image_overlay != false) { ?>
-	<div class="overlay" style="background-color:<?php echo $testimonial_overlay_section_color; ?>"></div>
+	<div class="overlay" style="background-color:<?php echo esc_attr($testimonial_overlay_section_color); ?>"></div>
 	<?php } ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="section-header text-left">
-						<h1 class="section-title text-white"><?php echo esc_attr($home_testimonial_section_title); ?></h1>
-						<p class="section-subtitle text-white"><?php echo esc_attr($home_testimonial_section_discription); ?></p>
+						<h1 class="section-title text-white"><?php echo esc_html($home_testimonial_section_title); ?></h1>
+						<p class="section-subtitle text-white"><?php echo esc_html($home_testimonial_section_discription); ?></p>
 					</div>
 				</div>						
 			</div>
@@ -70,9 +70,15 @@ $testimonial_image_overlay = get_theme_mod('testimonial_image_overlay',true);
 						<?php $default_arg =array('class' => "img-circle"); ?>
 						<?php if($testimonial_iteam->image_url != ''): ?>
 						<figure class="avatar">
-						<a href="<?php echo $test_link; ?>" <?php if($open_new_tab == 'yes'){ echo 'target="_blank"';}?>>
-						<img alt="img" class="img-circle" src="<?php echo $testimonial_iteam->image_url; ?>" draggable="false">
-						</a>
+						<a href="<?php echo esc_url($test_link); ?>" <?php if($open_new_tab == 'yes'){ echo 'target="_blank"';}?>>
+							<?php $attachment_id = spiceb_save_image_to_media_library($testimonial_iteam->image_url);
+                                $attributes = array(
+                                  'alt' => 'img',
+                                  'class' => 'img-circle'
+                                );
+                                echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                            ?>
+							</a>
 						</figure>
 						<?php endif; ?>
 							
@@ -81,7 +87,7 @@ $testimonial_image_overlay = get_theme_mod('testimonial_image_overlay',true);
 						</div>
 						
 						<figcaption>
-							<cite class="name"> <a href="<?php echo $test_link; ?>" <?php if($open_new_tab == 'yes'){ echo 'target="_blank"';}?>><?php echo $title; ?> </a> <span class="designation"><?php echo $designation; ?></span>
+							<cite class="name"> <a href="<?php echo esc_url($test_link); ?>" <?php if($open_new_tab == 'yes'){ echo 'target="_blank"';}?>><?php echo esc_html($title); ?> </a> <span class="designation"><?php echo esc_html($designation); ?></span>
 							</cite>
 						</figcaption>
 							
@@ -98,13 +104,19 @@ $testimonial_image_overlay = get_theme_mod('testimonial_image_overlay',true);
 					<div class="item col-md-4 col-sm-6 col-xs-12">
 						<blockquote class="testmonial-block text-center">
 							<figure class="avatar">
-								<img src="<?php echo SPICEB_PLUGIN_URL ?>/inc/innofit/images/testimonial/<?php echo $image[$i]; ?>.jpg" class="img-circle" alt="img">
+								<?php $attachment_id = spiceb_save_image_to_media_library(SPICEB_PLUGIN_URL . '/inc/innofit/images/testimonial/' . esc_attr( $image[$i] ) . '.jpg');
+                                $attributes = array(
+                                  'alt' => 'img',
+                                  'class' => 'img-circle 1'
+                                );
+                                echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                            	?>	
 							</figure>
 							<div class="description">
 								<p><?php echo "We are so glad that we made the switch to use Innofit this year and our results were fantastic."; ?></p>
 							</div>	
 							<figcaption>
-								<cite class="name"><a href="#"><?php echo $name[$i]; ?></a><span class="designation"><?php echo $desc[$i]; ?></span></cite>
+								<cite class="name"><a href="#"><?php echo esc_html($name[$i]); ?></a><span class="designation"><?php echo esc_html($desc[$i]); ?></span></cite>
 							</figcaption>
 						</blockquote>
 					</div>

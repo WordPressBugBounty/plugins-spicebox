@@ -1,7 +1,7 @@
 <?php
 	//Latest News Section
 	$wp_customize->add_section('innofit_latest_news_section',array(
-			'title' => __('Latest News settings','innofit'),
+			'title' => __('Latest News settings','spicebox'),
 			'panel' => 'section_settings',
 			'priority'       => 11,
 			));
@@ -10,36 +10,36 @@
 			// Enable news section
 			$wp_customize->add_setting( 'latest_news_section_enable' , array( 'default' => 'on',   'sanitize_callback' => 'innofit_sanitize_radio',) );
 			$wp_customize->add_control(	'latest_news_section_enable' , array(
-					'label'    => __( 'Enable Home News section', 'innofit' ),
+					'label'    => __( 'Enable Home News section', 'spicebox' ),
 					'section'  => 'innofit_latest_news_section',
 					'type'     => 'radio',
 					'choices' => array(
-						'on'=>__('ON', 'innofit'),
-						'off'=>__('OFF', 'innofit')
+						'on'=>__('ON', 'spicebox'),
+						'off'=>__('OFF', 'spicebox')
 					)
 			));
 
 		// News section title
 		$wp_customize->add_setting( 'home_news_section_title',array(
 		'capability'     => 'edit_theme_options',
-		'default' => __('Latest News','innofit'),
+		'default' => __('Latest News','spicebox'),
 		'sanitize_callback' => 'spiceb_innofit_home_page_sanitize_text',
 		'transport'         => $selective_refresh,
 		));	
 		$wp_customize->add_control( 'home_news_section_title',array(
-		'label'   => __('Title','innofit'),
+		'label'   => __('Title','spicebox'),
 		'section' => 'innofit_latest_news_section',
 		'type' => 'text',
 		));	
 		
 		//News section discription
 		$wp_customize->add_setting( 'home_news_section_discription',array(
-		'default'=> __('From our blog','innofit'),
+		'default'=> __('From our blog','spicebox'),
 		'sanitize_callback' => 'spiceb_innofit_home_page_sanitize_text',
 		'transport'         => $selective_refresh,
 		));	
 		$wp_customize->add_control( 'home_news_section_discription',array(
-		'label'   => __('Description','innofit'),
+		'label'   => __('Description','spicebox'),
 		'section' => 'innofit_latest_news_section',
 		'type' => 'textarea',
 		));	
@@ -56,7 +56,7 @@
 			'home_meta_section_settings',
 			array(
 				'type' => 'checkbox',
-				'label' => __('Enable post meta in blog section','innofit'),
+				'label' => __('Enable post meta in blog section','spicebox'),
 				'section' => 'innofit_latest_news_section',
 			)
 		);

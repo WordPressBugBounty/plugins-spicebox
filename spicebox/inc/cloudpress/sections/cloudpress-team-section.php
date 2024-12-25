@@ -11,7 +11,7 @@ if ( ! function_exists( 'spiceb_cloudpress_team' ) ) :
           'team_smooth_speed'     => $team_smooth_speed,
           'team_nav_style'        => $team_nav_style
         );
-        wp_register_script('cloudpress-team', SPICEB_PLUGIN_URL.'inc/js/cloudpress/team.js',array('jquery'));
+        wp_register_script('cloudpress-team', SPICEB_PLUGIN_URL.'inc/js/cloudpress/team.js', array('jquery'), SPICEBOX_PLUGIN_VERSION, true);
         wp_localize_script('cloudpress-team','team_settings',$teamsettings);
         wp_enqueue_script('cloudpress-team');
         if($team_section_enable !='off')
@@ -45,13 +45,19 @@ if ( ! function_exists( 'spiceb_cloudpress_team' ) ) :
                           $subtitle = ! empty( $team_item->subtitle ) ? apply_filters( 'cloudpress_translate_single_string', $team_item->subtitle, 'Team section' ) : '';
                           $link     = ! empty( $team_item->link ) ? apply_filters( 'cloudpress_translate_single_string', $team_item->link, 'Team section' ) : '#';
                           $open_new_tab = $team_item->open_new_tab; ?>
-                          <div class="item">
+                          <div class="item 01">
                               <div class="team-grid">
                                    <div class="img-holder">
-                                     <img src="<?php echo esc_url($image);?>" >
+                                    <?php $attachment_id = spiceb_save_image_to_media_library($image);
+                                      $attributes = array(
+                                        'width' => '100', // Optional: Set width
+                                        'height'=> '100', // Optional: Set height
+                                      );
+                                      echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                                      ?>
                                    </div>
                                    <div class="details">
-                                     <a href="<?php echo $link;?>" <?php if($open_new_tab=='yes'):?> target="_blank" <?php endif;?>><h6 class="name"><?php echo esc_html( $title ); ?></h6></a>
+                                     <a href="<?php echo esc_url($link);?>" <?php if($open_new_tab=='yes'):?> target="_blank" <?php endif;?>><h6 class="name"><?php echo esc_html( $title ); ?></h6></a>
                                      <span class="position"><?php echo esc_html( $subtitle ); ?></span>
                                      <?php
                                      $icons         = html_entity_decode( $team_item->social_repeater );
@@ -83,7 +89,14 @@ if ( ! function_exists( 'spiceb_cloudpress_team' ) ) :
                       <div class="item">
                           <div class="team-grid">
                               <div class="img-holder">
-                              <img src="<?php echo SPICEB_PLUGIN_URL ?>inc/cloudpress/images/team/team01.jpg" alt="<?php esc_attr_e('Curabitur maximus','spicebox'); ?>">
+                                <?php $attachment_id = spiceb_save_image_to_media_library(SPICEB_PLUGIN_URL . 'inc/cloudpress/images/team/team01.jpg');
+                                $attributes = array(
+                                  'alt' => esc_attr__('Curabitur maximus', 'spicebox'),
+                                  'width' => '100', // Optional: Set width
+                                  'height'=> '100', // Optional: Set height
+                                );
+                                echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                                ?>
                               </div>
                               <div class="details">
                                   <h5 class="name"><?php esc_html_e('Curabitur maximus','spicebox'); ?></h5>
@@ -101,7 +114,14 @@ if ( ! function_exists( 'spiceb_cloudpress_team' ) ) :
                         <div class="item">
                             <div class="team-grid">
                                 <div class="img-holder">
-                                <img src="<?php echo SPICEB_PLUGIN_URL ?>inc/cloudpress/images/team/team02.jpg" alt="<?php esc_attr_e('Nulla sit amet','spicebox'); ?>">
+                                  <?php $attachment_id = spiceb_save_image_to_media_library(SPICEB_PLUGIN_URL . 'inc/cloudpress/images/team/team02.jpg');
+                                  $attributes = array(
+                                    'alt' => esc_attr__('Nulla sit amet', 'spicebox'),
+                                    'width' => '100', // Optional: Set width
+                                    'height'=> '100', // Optional: Set height
+                                  );
+                                  echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                                  ?>
                                 </div>
                                 <div class="details">
                                     <h5 class="name"><?php esc_html_e('Nulla sit amet','spicebox'); ?></h5>
@@ -119,7 +139,14 @@ if ( ! function_exists( 'spiceb_cloudpress_team' ) ) :
                           <div class="item">
                               <div class="team-grid">
                                   <div class="img-holder">
-                                   <img src="<?php echo SPICEB_PLUGIN_URL ?>inc/cloudpress/images/team/team03.jpg" alt="<?php esc_attr_e('Nam maximus','spicebox'); ?>">
+                                    <?php $attachment_id = spiceb_save_image_to_media_library(SPICEB_PLUGIN_URL . 'inc/cloudpress/images/team/team03.jpg');
+                                    $attributes = array(
+                                      'alt' => esc_attr__('Nam maximus', 'spicebox'),
+                                      'width' => '100', // Optional: Set width
+                                      'height'=> '100', // Optional: Set height
+                                    );
+                                    echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                                    ?>
                                   </div>
                                   <div class="details">
                                       <h5 class="name"><?php esc_html_e('Nam maximus','spicebox'); ?></h5>
@@ -137,7 +164,14 @@ if ( ! function_exists( 'spiceb_cloudpress_team' ) ) :
                           <div class="item">
                               <div class="team-grid">
                                   <div class="img-holder">
-                                   <img src="<?php echo SPICEB_PLUGIN_URL ?>inc/cloudpress/images/team/team04.jpg" alt="<?php esc_attr_e('Aliquam maximus','spicebox'); ?>">
+                                    <?php $attachment_id = spiceb_save_image_to_media_library(SPICEB_PLUGIN_URL . 'inc/cloudpress/images/team/team04.jpg');
+                                    $attributes = array(
+                                      'alt' => esc_attr__('Aliquam maximus', 'spicebox'),
+                                      'width' => '100', // Optional: Set width
+                                      'height'=> '100', // Optional: Set height
+                                    );
+                                    echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                                    ?>
                                   </div>
                                   <div class="details">
                                       <h5 class="name"><?php esc_html_e('Aliquam maximus','spicebox'); ?></h5>
@@ -155,7 +189,14 @@ if ( ! function_exists( 'spiceb_cloudpress_team' ) ) :
                           <div class="item">
                               <div class="team-grid">
                                   <div class="img-holder">
-                                      <img src="<?php echo SPICEB_PLUGIN_URL ?>inc/cloudpress/images/team/team05.jpg" alt="<?php esc_attr_e('Aenean sit amet','spicebox'); ?>">
+                                    <?php $attachment_id = spiceb_save_image_to_media_library(SPICEB_PLUGIN_URL . 'inc/cloudpress/images/team/team05.jpg');
+                                    $attributes = array(
+                                      'alt' => esc_attr__('Aenean sit amet', 'spicebox'),
+                                      'width' => '100', // Optional: Set width
+                                      'height'=> '100', // Optional: Set height
+                                    );
+                                    echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                                    ?>
                                   </div>
                                   <div class="details">
                                       <h5 class="name"><?php esc_html_e('Aenean sit amet','spicebox'); ?></h5>

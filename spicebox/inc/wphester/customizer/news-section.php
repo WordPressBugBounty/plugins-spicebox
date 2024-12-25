@@ -82,13 +82,13 @@
 	//Navigation Type
 	$wp_customize->add_setting('news_nav_style', array('default' => 'bullets'));
 	$wp_customize->add_control('news_nav_style', array(
-	    'label' => __('Navigation Style', 'wphester-plus'),
+	    'label' => __('Navigation Style', 'spicebox'),
 	    'section' => 'wphester_latest_news_section',
 	    'type' => 'radio',
 	    'choices' => array(
-	        'bullets' => __('Bullets', 'wphester-plus'),
-	        'navigation' => __('Navigation', 'wphester-plus'),
-	        'both' => __('Both', 'wphester-plus'),
+	        'bullets' => __('Bullets', 'spicebox'),
+	        'navigation' => __('Navigation', 'spicebox'),
+	        'both' => __('Both', 'spicebox'),
 	    ),
 	    'active_callback' => 'spiceb_wphester_news_callback'
 	));
@@ -97,7 +97,7 @@
 	$wp_customize->add_setting('newz_animation_speed', array('default' => 3000));
 	$wp_customize->add_control('newz_animation_speed',
 	        array(
-	            'label' => __('Animation Speed', 'wphester-plus'),
+	            'label' => __('Animation Speed', 'spicebox'),
 	            'section' => 'wphester_latest_news_section',
 	            'type' => 'select',
 	            'choices' => array(
@@ -114,7 +114,7 @@
 $wp_customize->add_setting('news_smooth_speed', array('default' => 1000));
 $wp_customize->add_control('news_smooth_speed',
         array(
-            'label' => __('Smooth Speed', 'wphester-plus'),
+            'label' => __('Smooth Speed', 'spicebox'),
             'section' => 'wphester_latest_news_section',
             'type' => 'select',
             'active_callback' => 'spiceb_wphester_news_callback',

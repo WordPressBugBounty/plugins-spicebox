@@ -73,7 +73,7 @@ $wp_customize->add_setting('testimonial_callout_background', array(
 ));
 
 $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'testimonial_callout_background', array(
-            'label' => esc_html__('Background Image', 'spice-software-plus'),
+            'label' => esc_html__('Background Image', 'spicebox'),
             'section' => 'testimonial_section',
             'settings' => 'testimonial_callout_background',
             'active_callback' => 'spiceb_spice_software_testimonial_callback'
@@ -87,7 +87,7 @@ $wp_customize->add_setting('testimonial_image_overlay', array(
 ));
 
 $wp_customize->add_control('testimonial_image_overlay', array(
-    'label' => esc_html__('Enable testimonial image overlay', 'spice-software-plus'),
+    'label' => esc_html__('Enable testimonial image overlay', 'spicebox'),
     'section' => 'testimonial_section',
     'type' => 'checkbox',
     'active_callback' => 'spiceb_spice_software_testimonial_callback'
@@ -101,7 +101,7 @@ $wp_customize->add_setting('testimonial_overlay_section_color', array(
 ));
 
 $wp_customize->add_control(new SpiceBox_Customize_Alpha_Color_Control($wp_customize, 'testimonial_overlay_section_color', array(
-            'label' => esc_html__('Testimonial image overlay color', 'spice-software-plus'),
+            'label' => esc_html__('Testimonial image overlay color', 'spicebox'),
             'palette' => true,
             'section' => 'testimonial_section',
             'active_callback' => 'spiceb_spice_software_testimonial_callback',
@@ -127,7 +127,7 @@ $wp_customize->add_control('testimonial_nav_style', array(
 $wp_customize->add_setting('testimonial_animation_speed', array('default' => 3000));
 $wp_customize->add_control('testimonial_animation_speed',
         array(
-            'label' => esc_html__('Animation speed', 'spice-software-plus'),
+            'label' => esc_html__('Animation speed', 'spicebox'),
             'section' => 'testimonial_section',
             'type' => 'select',
             'choices' => array(
@@ -144,7 +144,7 @@ $wp_customize->add_control('testimonial_animation_speed',
 $wp_customize->add_setting('testimonial_smooth_speed', array('default' => 1000));
 $wp_customize->add_control('testimonial_smooth_speed',
         array(
-            'label' => esc_html__('Smooth speed', 'spice-software-plus'),
+            'label' => esc_html__('Smooth speed', 'spicebox'),
             'section' => 'testimonial_section',
             'type' => 'select',
             'choices' => array('500' => '0.5',

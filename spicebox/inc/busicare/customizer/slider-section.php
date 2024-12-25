@@ -55,19 +55,19 @@
     );
     $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'slide_video_upload',
        array(
-          'label' => esc_html__( 'Slider video' ),
-          'description' => esc_html__( 'Upload your video in .mp4 format and minimize its file size for best results. For this theme the recommended size is 1150 × 2000 pixels.','innofit' ),
+          'label' => esc_html__( 'Slider video','spicebox' ),
+          'description' => esc_html__( 'Upload your video in .mp4 format and minimize its file size for best results. For this theme the recommended size is 1150 × 2000 pixels.','spicebox' ),
           'section' => 'slider_section',
           'mime_type' => 'video',  // Required. Can be image, audio, video, application, text
           'active_callback' => 'spiceb_busicare_slider_callback',
           'button_labels' => array( // Optional
-             'select' => esc_html__( 'Select File' ),
-             'change' => esc_html__( 'Change File' ),
-             'default' => esc_html__( 'Default' ),
-             'remove' => esc_html__( 'Remove' ),
-             'placeholder' => esc_html__( 'No file selected' ),
-             'frame_title' => esc_html__( 'Select File' ),
-             'frame_button' => esc_html__( 'Choose File' ),
+             'select' => esc_html__( 'Select File','spicebox' ),
+             'change' => esc_html__( 'Change File','spicebox' ),
+             'default' => esc_html__( 'Default','spicebox' ),
+             'remove' => esc_html__( 'Remove','spicebox' ),
+             'placeholder' => esc_html__( 'No file selected','spicebox' ),
+             'frame_title' => esc_html__( 'Select File','spicebox' ),
+             'frame_button' => esc_html__( 'Choose File','spicebox' ),
 
           )
        )
@@ -150,9 +150,9 @@
         'section' => 'slider_section',
         'active_callback' => 'spiceb_busicare_slider_callback',
         'choices' => array(
-            'left' => __( 'Left' ), // Required. Setting for this particular radio button choice and the text to display
-            'center' => __( 'Center' ), // Required. Setting for this particular radio button choice and the text to display
-            'right' => __( 'Right' ) // Required. Setting for this particular radio button choice and the text to display
+            'left' => __( 'Left','spicebox' ), // Required. Setting for this particular radio button choice and the text to display
+            'center' => __( 'Center','spicebox' ), // Required. Setting for this particular radio button choice and the text to display
+            'right' => __( 'Right','spicebox' ) // Required. Setting for this particular radio button choice and the text to display
 		        )
 		    )
 		) );
@@ -211,7 +211,7 @@
 
 	// Slider button link
 	$wp_customize->add_setting('home_slider_btn_link', array(
-	    'default' => esc_html__('#', 'spicebox'),
+	    'default' => '#',
 	    'sanitize_callback' => 'esc_url_raw',
 	));
 	$wp_customize->add_control('home_slider_btn_link', array(
@@ -249,7 +249,7 @@
 
 	// Slider button link
 	$wp_customize->add_setting('home_slider_btn_link2', array(
-	    'default' => esc_html__('#', 'spicebox'),
+	    'default' => '#',
 	    'sanitize_callback' => 'esc_url_raw',
 	));
 	$wp_customize->add_control('home_slider_btn_link2', array(

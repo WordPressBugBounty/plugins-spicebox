@@ -120,7 +120,7 @@ $wp_customize->add_setting('testimonial_callout_background', array(
 }
 
 $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'testimonial_callout_background', array(
-            'label' => __('Background Image', 'spiko-plus'),
+            'label' => __('Background Image', 'spicebox'),
             'section' => 'testimonial_section',
             'settings' => 'testimonial_callout_background',
             'active_callback' => 'spiceb_spiko_testimonial_callback'
@@ -133,7 +133,7 @@ $wp_customize->add_setting('testimonial_image_overlay', array(
 ));
 
 $wp_customize->add_control('testimonial_image_overlay', array(
-    'label' => __('Enable testimonial image overlay', 'spiko-plus'),
+    'label' => __('Enable testimonial image overlay', 'spicebox'),
     'section' => 'testimonial_section',
     'type' => 'checkbox',
     'active_callback' => 'spiceb_spiko_testimonial_callback'
@@ -153,7 +153,7 @@ $wp_customize->add_setting('testimonial_overlay_section_color', array(
 }
 
 $wp_customize->add_control(new SpiceBox_Customize_Alpha_Color_Control($wp_customize, 'testimonial_overlay_section_color', array(
-            'label' => __('Testimonial image overlay color', 'spiko-plus'),
+            'label' => __('Testimonial image overlay color', 'spicebox'),
             'palette' => true,
             'section' => 'testimonial_section',
             'active_callback' => 'spiceb_spiko_testimonial_callback')

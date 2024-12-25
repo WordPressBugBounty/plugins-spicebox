@@ -65,7 +65,7 @@
 			
 			
 			$wp_customize->add_setting( 'home_call_out_btn_link',array(
-			'default' => __('#','spicebox'),
+			'default' => '#',
 			'sanitize_callback' => 'spiceb_innofit_home_page_sanitize_text',
 			'transport'         => $selective_refresh,
 			));	

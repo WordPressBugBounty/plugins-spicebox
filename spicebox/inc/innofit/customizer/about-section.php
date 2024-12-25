@@ -21,11 +21,15 @@
 	
 	//About section content
 		if ( class_exists( 'Innofit_Page_Editor' ) ) {
-		$about_image = SPICEB_PLUGIN_URL.'inc/innofit/images/about/about.jpg';
+		$attachment_id = spiceb_save_image_to_media_library(SPICEB_PLUGIN_URL.'inc/innofit/images/about/about.jpg');
+		$attributes = array(
+	       'alt'   => esc_attr__('Logo', 'spicebox')
+	    );
+    	$about_image = wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes);
 		$default = '<div class="row v-center">
 						<div class="col-md-5 col-sm-5 col-xs-12">	
 							<figure class="about-thumbnail mbottom-50">	
-								<img src="'.esc_url($about_image).'" alt="About">
+								'. $about_image .'
 							</figure>
 						</div>
 						
@@ -70,7 +74,7 @@
 			$wp_customize,
 			'innofit_about_section_background',
 			array(
-				'label' => __('Image','spasalon'),
+				'label' => __('Image','spicebox'),
 				'settings' =>'innofit_about_section_background',
 				'section' => 'about_section',
 				'type' => 'upload',

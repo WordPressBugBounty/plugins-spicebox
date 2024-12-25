@@ -19,12 +19,22 @@ $activate = array(
             'archives-2',
         ),
     );
+
+    $logo_attachment_id = spiceb_save_image_to_media_library(SPICEB_PLUGIN_URL.'inc/spicepress/images/logo-footer.png');
+    $attributes = array(
+       'alt'   => esc_attr__('Logo', 'spicebox'),
+       'class' => 'img-responsive',
+    );
+
+    // Prepare the widget text with the logo.
+    $widget_text_content = '<p>' . wp_get_attachment_image(esc_attr($logo_attachment_id), 'full', false, $attributes) . '<br>Aenean Donec sed odio dui. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Curabitur blandit tempus porttitor ligula nibhes, molestie id vivers dapibus iaculis.</p>
+        <div class="media widget-address"><div class="addr-icon"><i class="fa-solid fa-location-dot"></i></div><div class="media-body"><address>SpicePress Theme<br><abbr>Chestnut Road, California (USA)</abbr></address></div></div>';
+
     /* the default titles will appear */
-   update_option('widget_text', array(
+    update_option('widget_text', array(
         1 => array('title' => '',
-        'text'=>'<p><img class="img-responsive" src="'.SPICEB_PLUGIN_URL.'inc/spicepress/images/logo-footer.png" alt="Logo" /><br>
-		Aenean Donec sed odio dui. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Curabitur blandit tempus porttitor ligula nibhes, molestie id vivers dapibus iaculis.</p>
-		<div class="media widget-address"><div class="addr-icon"><i class="fa-solid fa-location-dot"></i></div><div class="media-body"><address>SpicePress Theme<br><abbr>Chestnut Road, California (USA)</abbr></address></div></div>'), 
+        'text'=> $widget_text_content
+    ), 
         ));
         
     update_option('widget_recent-posts', array(

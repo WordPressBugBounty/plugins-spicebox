@@ -52,13 +52,13 @@
           'mime_type' => 'video',  // Required. Can be image, audio, video, application, text
           'active_callback' => 'spiceb_wpkites_slider_callback',
           'button_labels' => array( // Optional
-             'select' => esc_html__( 'Select File' ),
-             'change' => esc_html__( 'Change File' ),
-             'default' => esc_html__( 'Default' ),
-             'remove' => esc_html__( 'Remove' ),
-             'placeholder' => esc_html__( 'No file selected' ),
-             'frame_title' => esc_html__( 'Select File' ),
-             'frame_button' => esc_html__( 'Choose File' ),
+             'select' => esc_html__( 'Select File','spicebox' ),
+             'change' => esc_html__( 'Change File','spicebox' ),
+             'default' => esc_html__( 'Default','spicebox' ),
+             'remove' => esc_html__( 'Remove','spicebox' ),
+             'placeholder' => esc_html__( 'No file selected','spicebox' ),
+             'frame_title' => esc_html__( 'Select File','spicebox' ),
+             'frame_button' => esc_html__( 'Choose File','spicebox' ),
 
           )
        )
@@ -143,9 +143,9 @@
         'section' => 'slider_section',
         'active_callback' => 'spiceb_wpkites_slider_callback',
         'choices' => array(
-            'left' => esc_html__( 'Left' ), // Required. Setting for this particular radio button choice and the text to display
-            'center' => esc_html__( 'Center' ), // Required. Setting for this particular radio button choice and the text to display
-            'right' => esc_html__( 'Right' ) // Required. Setting for this particular radio button choice and the text to display
+            'left' => esc_html__( 'Left','spicebox' ), // Required. Setting for this particular radio button choice and the text to display
+            'center' => esc_html__( 'Center','spicebox' ), // Required. Setting for this particular radio button choice and the text to display
+            'right' => esc_html__( 'Right','spicebox' ) // Required. Setting for this particular radio button choice and the text to display
 		        )
 		    )
 		) );
@@ -190,7 +190,7 @@
 
 	// Slider button link
 	$wp_customize->add_setting('home_slider_btn_link', array(
-	    'default' => esc_html__('#', 'spicebox'),
+	    'default' => '#',
 	    'sanitize_callback' => 'esc_url_raw',
 	));
 	$wp_customize->add_control('home_slider_btn_link', array(
@@ -228,7 +228,7 @@
 
 	// Slider button link
 	$wp_customize->add_setting('home_slider_btn_link2', array(
-	    'default' => esc_html__('#', 'spicebox'),
+	    'default' => '#',
 	    'sanitize_callback' => 'esc_url_raw',
 	));
 	$wp_customize->add_control('home_slider_btn_link2', array(

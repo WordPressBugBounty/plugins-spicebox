@@ -19,22 +19,27 @@ $activate = array(
         ),
     );
 
-    /* the default titles will appear */
-    update_option('widget_text', array(
-        1 => array('title' => '',
-        'text'=>'<img src="'.esc_url(SPICEB_PLUGIN_URL).'/inc/spice-software/images/logo-footer.png" alt="'.esc_attr("Logo","spicebox").'" />
+    $logo_attachment_id = spiceb_save_image_to_media_library(SPICEB_PLUGIN_URL.'/inc/spice-software/images/logo-footer.png');
+    $attributes = array(
+       'alt'   => esc_attr__('Logo', 'spicebox'),
+    );
 
-            &nbsp;
+    // Prepare the widget text with the logo.
+    $widget_text_content = wp_get_attachment_image(esc_attr($logo_attachment_id), 'full', false, $attributes) . '<p>Lorem ipsum dolor sit amet, ut ius audiam denique tractatos, pro cu dicat quidam neglegentur. Vel mazim aliquid.</p>
 
-            <p>Lorem ipsum dolor sit amet, ut ius audiam denique  tractatos, pro cu dicat quidam neglegentur. Vel mazim aliquid.</p>
-
-            <address>
+        <address>
             <i class="fa-solid fa-location-dot"></i>Lorem Ipsum? dolor sit<br>
             <i class="fa fa-solid fa-envelope"></i><a href="mailto:abc@example.com">abc@example.com</a><br>
             <i class="fa fa-phone"></i><a href="tel:+99 999 999 99">+99 999 999 99</a><br>
-            </address>
-            '), 
-        ));
+        </address>';
+
+    /* the default titles will appear */
+    update_option('widget_text', array(
+        1 => array(
+            'title' => '',
+            'text'=> $widget_text_content
+        ), 
+    ));
         
     update_option('widget_recent-posts', array(
         1 => array('title' => 'Recent Posts'), 

@@ -69,8 +69,8 @@
 		//plus Button
 		class Innofit_services__section_upgrade extends WP_Customize_Control {
 			public function render_content() { ?>
-			<h3 class="customizer_service_upgrade_section" style="display: none;"><?php _e('To add More Service? Then','spicebox'); ?><a href="<?php echo esc_url( 'https://helpdoc.spicethemes.com/innofit-plus/homepage-section-settings-2/#innofitService' ); ?>" target="_blank">
-			<?php _e('Upgrade to Plus','spicebox'); ?> </a>  
+			<h3 class="customizer_service_upgrade_section" style="display: none;"><?php esc_html_e('To add More Service? Then','spicebox'); ?><a href="<?php echo esc_url( 'https://helpdoc.spicethemes.com/innofit-plus/homepage-section-settings-2/#innofitService' ); ?>" target="_blank">
+			<?php esc_html_e('Upgrade to Plus','spicebox'); ?> </a>  
 			<?php
 			}
 		}

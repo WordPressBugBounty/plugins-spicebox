@@ -7,11 +7,15 @@ function innofit_about_section()
 	$about_section_background = get_theme_mod('innofit_about_section_background');
 	if($about_section_enabled !='off')
 	{
-$about_image = SPICEB_PLUGIN_URL .'inc/innofit/images/about/about.jpg';
-$default = '<div class="row v-center">
+		$attachment_id = spiceb_save_image_to_media_library(SPICEB_PLUGIN_URL.'inc/innofit/images/about/about.jpg');
+		$attributes = array(
+	       'alt'   => esc_attr__('Logo', 'spicebox')
+	    );
+    	$about_image = wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes);
+			$default = '<div class="row v-center">
 						<div class="col-md-5 col-sm-5 col-xs-12">	
 							<figure class="about-thumbnail mbottom-50">	
-								<img src="'.esc_url($about_image).'" alt="About">
+								'. $about_image .'
 							</figure>
 						</div>
 						
@@ -27,10 +31,10 @@ $default = '<div class="row v-center">
 					</div>';
 			$about_section_content = get_theme_mod('about_section_content',$default);
 			?> 
-			<section class="section-module about bg-grey <?php if($about_section_background=='') {?> left-right-half<?php }?>"  <?php if($about_section_background!='') {?> style="background-image: url(<?php echo $about_section_background; ?>);"<?php } ?> id="about">
+			<section class="section-module about bg-grey <?php if($about_section_background=='') {?> left-right-half<?php }?>"  <?php if($about_section_background!='') {?> style="background-image: url(<?php echo esc_url($about_section_background); ?>);"<?php } ?> id="about">
 				<div class="container">
 				<?php
-			echo $about_section_content;
+			echo wp_kses_post($about_section_content);
 			?> </div>
 			</section> <?php
 	}

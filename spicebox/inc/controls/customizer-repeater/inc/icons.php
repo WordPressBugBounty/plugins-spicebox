@@ -1,3 +1,8 @@
+<?php
+// Your PHP code here
+?>
+
+<!-- Your HTML content here -->
 <div class="iconpicker-popover popover bottomLeft">
 <div class="arrow"></div><div class="popover-title">
 <input type="search" class="form-control iconpicker-search" placeholder="Type to filter"></div>

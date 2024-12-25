@@ -28,12 +28,12 @@ if (!function_exists('spiceb_honeypress_slider_customize_register')) :
         $wp_customize->add_setting( 'slide_variation', array( 'default' => 'slide') );
         $wp_customize->add_control( 'slide_variation',
         array(
-            'label'    => __( 'Slider Background Type', 'honeypress' ),
+            'label'    => __( 'Slider Background Type', 'spicebox' ),
             'section'  => 'slider_section',
             'type'     => 'select',
             'choices'=>array(
-                'slide'=>__('Image', 'honeypress'),
-                'video'=>__('Video', 'honeypress')
+                'slide'=>__('Image', 'spicebox'),
+                'video'=>__('Video', 'spicebox')
                 )
         ));
 
@@ -47,18 +47,18 @@ if (!function_exists('spiceb_honeypress_slider_customize_register')) :
         );
         $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'slide_video_upload',
            array(
-              'label' => __( 'Slider video' ),
-              'description' => esc_html__( 'Upload your video in .mp4 format and minimize its file size for best results. For this theme the recommended size is 1150 × 2000 pixels.','innofit' ),
+              'label' => __( 'Slider video','spicebox' ),
+              'description' => esc_html__( 'Upload your video in .mp4 format and minimize its file size for best results. For this theme the recommended size is 1150 × 2000 pixels.','spicebox' ),
               'section' => 'slider_section',
               'mime_type' => 'video',  // Required. Can be image, audio, video, application, text
               'button_labels' => array( // Optional
-                 'select' => __( 'Select File' ),
-                 'change' => __( 'Change File' ),
-                 'default' => __( 'Default' ),
-                 'remove' => __( 'Remove' ),
-                 'placeholder' => __( 'No file selected' ),
-                 'frame_title' => __( 'Select File' ),
-                 'frame_button' => __( 'Choose File' ),
+                 'select' => __( 'Select File','spicebox' ),
+                 'change' => __( 'Change File','spicebox' ),
+                 'default' => __( 'Default','spicebox' ),
+                 'remove' => __( 'Remove','spicebox' ),
+                 'placeholder' => __( 'No file selected','spicebox' ),
+                 'frame_title' => __( 'Select File','spicebox' ),
+                 'frame_button' => __( 'Choose File','spicebox' ),
 
               )
            )
@@ -72,7 +72,7 @@ if (!function_exists('spiceb_honeypress_slider_customize_register')) :
         'transport'         => $selective_refresh,
         ));
         $wp_customize->add_control( 'slide_video_url',array(
-        'label'   => __('Or, enter a YouTube URL:','honeypress'),
+        'label'   => __('Or, enter a YouTube URL:','spicebox'),
         'section' => 'slider_section',
         'type' => 'text',
         ));
@@ -155,9 +155,9 @@ if (!function_exists('spiceb_honeypress_slider_customize_register')) :
         'label' => __( 'Slider Content Alignment', 'spicebox' ),
         'section' => 'slider_section',
         'choices' => array(
-            'left' => __( 'Left' ), // Required. Setting for this particular radio button choice and the text to display
-            'center' => __( 'Center' ), // Required. Setting for this particular radio button choice and the text to display
-            'right' => __( 'Right' ) // Required. Setting for this particular radio button choice and the text to display
+            'left' => __( 'Left', 'spicebox' ), // Required. Setting for this particular radio button choice and the text to display
+            'center' => __( 'Center', 'spicebox' ), // Required. Setting for this particular radio button choice and the text to display
+            'right' => __( 'Right', 'spicebox' ) // Required. Setting for this particular radio button choice and the text to display
         )
     )
 ) );
@@ -203,7 +203,7 @@ if (!function_exists('spiceb_honeypress_slider_customize_register')) :
 
         // Slider button link
         $wp_customize->add_setting('home_slider_btn_link', array(
-            'default' => __('#', 'spicebox'),
+            'default' => '#',
             'sanitize_callback' => 'spiceb_honeypress_home_page_sanitize_text',
             'transport' => $selective_refresh,
         ));
@@ -240,7 +240,7 @@ if (!function_exists('spiceb_honeypress_slider_customize_register')) :
 
         // Slider button link
         $wp_customize->add_setting('home_slider_btn_link2', array(
-            'default' => __('#', 'spicebox'),
+            'default' => '#',
             'sanitize_callback' => 'spiceb_honeypress_home_page_sanitize_text',
             'transport' => $selective_refresh,
         ));

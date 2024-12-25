@@ -16,7 +16,7 @@ if ('Spiko Dark' == $theme->name){
 }else{
     $testimonial_settings = array('design_id' => '#testimonial-carousel1', 'slide_items' => $slide_items, 'animationSpeed' => $testimonial_animation_speed, 'smoothSpeed' => $testimonial_smooth_speed, 'testimonial_nav_style' => $testimonial_nav_style, 'rtl' => $isRTL);
 }
-wp_register_script('spiko-testimonial', SPICEB_PLUGIN_URL . 'inc/spiko/js/front-page/testi.js', array('jquery'));
+wp_register_script('spiko-testimonial', SPICEB_PLUGIN_URL . 'inc/spiko/js/front-page/testi.js', array('jquery'), SPICEBOX_PLUGIN_VERSION, true);
 wp_localize_script('spiko-testimonial', 'testimonial_settings', $testimonial_settings);
 wp_enqueue_script('spiko-testimonial');
 
@@ -97,10 +97,10 @@ else
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="section-header">
                     <?php if ($home_testimonial_section_discription != ''):?>
-                        <p class="section-subtitle"><?php echo esc_attr($home_testimonial_section_discription); ?></p>
+                        <p class="section-subtitle"><?php echo wp_kses_post($home_testimonial_section_discription); ?></p>
                     <?php endif;?>
                     <?php if($home_testimonial_section_title):?>
-                        <h2 class="section-title"><?php echo esc_attr($home_testimonial_section_title); ?></h2>
+                        <h2 class="section-title"><?php echo wp_kses_post($home_testimonial_section_title); ?></h2>
                         <div class="section-separator border-center"></div>
                     <?php endif;?>
                     
@@ -141,15 +141,21 @@ else
                      <blockquote class="testmonial-block">
                         <?php if ($home_testimonial_thumb != ''): ?>
                             <figure class="avatar">
-                                <img src="<?php echo esc_url($home_testimonial_thumb); ?>" class="img-fluid rounded-circle" alt="<?php echo esc_attr($home_testimonial_clientname);?>" >
+                                <?php $attachment_id = spiceb_save_image_to_media_library($home_testimonial_thumb);
+                                    $attributes = array(
+                                       'alt'   => esc_attr($home_testimonial_clientname),
+                                       'class' => 'img-fluid rounded-circle'
+                                    );
+                                    echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                                ?>
                             </figure>
                         <?php endif; 
                         if (($home_testimonial_clientname != '' || $home_testimonial_designation != '')) { ?>
                             <figcaption>
                               <?php if (!empty($home_testimonial_clientname)): ?>
-                                <a href="<?php if (empty($test_link)) { echo '#'; } else { echo $test_link; } ?>" <?php if ($open_new_tab == "yes") { ?> target="_blank"<?php } ?>>   
-                            <cite class="name"><?php echo $home_testimonial_clientname; ?></cite></a><?php endif; ?>
-                            <?php if (!empty($home_testimonial_designation)): ?><span class="designation"><?php echo $home_testimonial_designation; ?></span><?php endif; ?>
+                                <a href="<?php if (empty($test_link)) { echo '#'; } else { echo esc_url($test_link); } ?>" <?php if ($open_new_tab == "yes") { ?> target="_blank"<?php } ?>>   
+                            <cite class="name"><?php echo wp_kses(html_entity_decode($home_testimonial_clientname), $allowed_html); ?></cite></a><?php endif; ?>
+                            <?php if (!empty($home_testimonial_designation)): ?><span class="designation"><?php echo esc_html($home_testimonial_designation); ?></span><?php endif; ?>
                             </figcaption>
                         <?php }  if (!empty($home_testimonial_desc)): ?>
                         <div class="entry-content">
@@ -162,7 +168,13 @@ else
                         <?php $default_arg = array('class' => "img-circle"); ?>
                         <?php if ($home_testimonial_thumb != ''): ?>
                             <figure class="avatar">
-                                <img src="<?php echo esc_url($home_testimonial_thumb); ?>" class="img-fluid" alt="<?php echo esc_attr($home_testimonial_clientname);?>" >
+                                <?php $attachment_id = spiceb_save_image_to_media_library($home_testimonial_thumb);
+                                    $attributes = array(
+                                       'alt'   => esc_attr($home_testimonial_clientname),
+                                       'class' => 'img-fluid'
+                                    );
+                                    echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                                ?>
                                 <span class="quotes-seprator"></span>
                             </figure>
                         <?php endif;
@@ -171,7 +183,7 @@ else
                                 <?php if (!empty($home_testimonial_clientname)): ?>
                                     <h4 class="name">
                                 <a href="<?php if (empty($home_testimonial_link)) {echo '#';} else { echo esc_url($home_testimonial_link);}?>" <?php if($open_new_tab=='yes') { ?> target="_blank"<?php } ?>>
-                                        <?php echo esc_html($home_testimonial_clientname); ?></a>
+                                        <?php echo wp_kses(html_entity_decode($home_testimonial_clientname), $allowed_html); ?></a>
                                     </h4>
                                 <?php endif; ?>
                                <?php if ($home_testimonial_desc != '') { ?><p><?php echo wp_kses(html_entity_decode($home_testimonial_desc), $allowed_html); ?></p> <?php } ?>

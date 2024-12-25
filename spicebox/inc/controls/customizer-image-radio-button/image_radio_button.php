@@ -13,7 +13,7 @@ class Spicebox_Image_Radio_Button_Custom_Control extends WP_Customize_Control {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue() {
-			wp_enqueue_style( 'spicebox-radio-image-controls', SPICEB_PLUGIN_URL . 'inc/css/customizer.css' );
+			wp_enqueue_style( 'spicebox-radio-image-controls', SPICEB_PLUGIN_URL . 'inc/css/customizer.css', array(), SPICEBOX_PLUGIN_VERSION );
 		}
 		/**
 		 * Render the control in the customizer
@@ -31,7 +31,14 @@ class Spicebox_Image_Radio_Button_Custom_Control extends WP_Customize_Control {
 				<?php foreach ( $this->choices as $key => $value ) { ?>
 					<label class="radio-button-label">
 						<input type="radio" name="<?php echo esc_attr( $this->id ); ?>" value="<?php echo esc_attr( $key ); ?>" <?php $this->link(); ?> <?php checked( esc_attr( $key ), $this->value() ); ?>/>
-						<img src="<?php echo esc_attr( $value['image'] ); ?>" alt="<?php echo esc_attr( $value['name'] ); ?>" title="<?php echo esc_attr( $value['name'] ); ?>" />
+						<?php 
+						$attachment_id = spiceb_save_image_to_media_library($value['image']);
+						$attributes = array(
+							'alt'	=>	esc_attr($value['name']),
+							'class' => 'img-fluid'
+						);
+                        echo wp_get_attachment_image($attachment_id, 'full', false, $attributes);
+						?>
 					</label>
 				<?php	} ?>
 			</div>

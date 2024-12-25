@@ -30,8 +30,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 				'label'                             => esc_html__( 'Funfact content', 'spicebox' ),
 				'section'                           => 'funfacts_section',
 			'priority'                          => 10,
-			'add_field_label'                   => esc_html__( 'Add new Funfact', 'cloudpress' ),
-			'item_name'                         => esc_html__( 'Funfact', 'cloudpress' ),
+			'add_field_label'                   => esc_html__( 'Add new Funfact', 'spicebox' ),
+			'item_name'                         => esc_html__( 'Funfact', 'spicebox' ),
 			'customizer_repeater_icon_control'  => true,
 			'customizer_repeater_title_control' => true,
 			'customizer_repeater_text_control'  => true,
@@ -41,8 +41,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		//plus Button
 		class Honyepress_funfacts__section_upgrade extends WP_Customize_Control {
 			public function render_content() { ?>
-				<h3 class="customizer_cloudpressfunfact_upgrade_section" style="display: none;">		<?php _e('To add More funfact? Then','spicebox'); ?><a href="<?php echo esc_url( 'https://spicethemes.com/cloudpress-pro' ); ?>" target="_blank">
-					<?php _e('Upgrade to Plus','spicebox'); ?> </a>  
+				<h3 class="customizer_cloudpressfunfact_upgrade_section" style="display: none;"> <?php esc_html_e('To add More funfact? Then','spicebox'); ?><a href="<?php echo esc_url( 'https://spicethemes.com/cloudpress-pro' ); ?>" target="_blank">
+					<?php esc_html_e('Upgrade to Plus','spicebox'); ?> </a>  
 				</h3>
 			<?php
 			}

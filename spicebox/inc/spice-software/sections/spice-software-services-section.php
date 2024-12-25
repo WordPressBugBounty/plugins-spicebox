@@ -57,7 +57,7 @@ if($spice_software_service_section_enabled ==true)
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="section-header">
                         <?php if($spice_software_service_section_title != ''){ ?>
-                        <h2 class="section-title"><?php echo esc_html($spice_software_service_section_title); ?></h2><div class="title_seprater"></div>
+                        <h2 class="section-title"><?php echo wp_kses_post($spice_software_service_section_title); ?></h2><div class="title_seprater"></div>
                         <?php } ?>
                         <?php if($spice_software_service_section_discription != ''){ ?>
                         <h5 class="section-subtitle"><?php echo wp_kses_post($spice_software_service_section_discription); ?></h5>
@@ -70,12 +70,22 @@ if($spice_software_service_section_enabled ==true)
             <?php
             $service_data = json_decode($service_data);
             if (!empty($service_data)) {
+                $allowed_html = array(
+                    'br' => array(),
+                    'em' => array(),
+                    'strong' => array(),
+                    'b' => array(),
+                    'i' => array(),
+                );
                 foreach ($service_data as $service_team) {
                     $service_icon = !empty($service_team->icon_value) ? apply_filters('spice_software_translate_single_string', $service_team->icon_value, 'Service section') : '';
                     $service_image = !empty($service_team->image_url) ? apply_filters('spice_software_translate_single_string', $service_team->image_url, 'Service section') : '';
                     $service_title = !empty($service_team->title) ? apply_filters('spice_software_translate_single_string', $service_team->title, 'Service section') : '';
                     $service_desc = !empty($service_team->text) ? apply_filters('spice_software_translate_single_string', $service_team->text, 'Service section') : '';
                     $service_link = !empty($service_team->link) ? apply_filters('spice_software_translate_single_string', $service_team->link, 'Service section') : '';
+
+                    // Convert image URL to attachment ID if necessary
+                    $attachment_id = attachment_url_to_postid($service_image);
                     ?>
                     <div class="col-md-4 col-sm-6 col-xs-12">               
                         <article class="post <?php echo esc_attr($service_article_classes); ?>">
@@ -97,7 +107,7 @@ if($spice_software_service_section_enabled ==true)
                                 <?php
                                 }
                             } else if ($service_team->choice == 'customizer_repeater_image') {
-                                if ($service_image != '') {
+                                if ($service_image != '' && $attachment_id) {
                                     ?>
                                     <figure class="post-thumbnail"> 
                                             <?php if ($service_link != '') { ?>
@@ -105,7 +115,7 @@ if($spice_software_service_section_enabled ==true)
                                                     echo "target='_blank'";
                                                 } ?> href="<?php echo esc_url($service_link); ?>">
                                         <?php } ?>
-                                            <img class='img-fluid' src="<?php echo esc_url($service_image); ?>">
+                                            <?php echo wp_get_attachment_image($attachment_id, 'full', false, ['class' => 'img-fluid']); ?>
                                     <?php if ($service_link != '') { ?>
                                             </a>
                                     <?php } ?>
@@ -113,26 +123,20 @@ if($spice_software_service_section_enabled ==true)
                                 <?php
                                 }
                             }
-                            if ($service_title != "") {
-                                ?>
+                            if ($service_title != "") { ?>
                                 <div class="entry-header">
                                     <h4 class="entry-title">
-                                <?php if ($service_link != '') { ?>
-                                            <a href="<?php echo esc_url($service_link); ?>" <?php if ($service_team->open_new_tab == 'yes') {
-                        echo "target='_blank'";
-                    } ?>><?php } echo esc_html($service_title);
-                if ($service_link != '') { ?></a>
-            <?php } ?>
+                                        <?php if ($service_link != '') { ?>
+                                            <a href="<?php echo esc_url($service_link); ?>" <?php if ($service_team->open_new_tab == 'yes') { echo "target='_blank'"; } ?>><?php } echo wp_kses(html_entity_decode($service_title), $allowed_html);
+                                                if ($service_link != '') { ?></a> <?php } ?>
                                     </h4>
                                 </div>
-            <?php
-        }
-        if ($service_desc != ""):
-            ?>
+                            <?php }
+                            if ($service_desc != ""): ?>
                                 <div class="entry-content">
-                                    <p><?php echo wp_kses_post($service_desc); ?></p>
+                                    <p><?php echo wp_kses(html_entity_decode($service_desc), $allowed_html); ?></p>
                                 </div>
-        <?php endif; ?>
+                            <?php endif; ?>
                         </article>
                     </div>
         <?php

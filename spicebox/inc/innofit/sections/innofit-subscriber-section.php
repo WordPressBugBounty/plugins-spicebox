@@ -18,14 +18,14 @@ $innofit_subscribe_subtitle = get_theme_mod('innofit_subscribe_subtitle',esc_htm
 <!--Subscribe Newsletter Section-->
 <section class="subscribe-newsletter" id="subscribe" style="background-image:url('<?php echo esc_url($innofit_subscribe_background);?>');">
 <?php if($innofit_subscribe_image_overlay != false) { ?>
-<div class="overlay" style="background-color:<?php echo $innofit_overlay_section_color; ?>"></div>
+<div class="overlay" style="background-color:<?php echo esc_attr($innofit_overlay_section_color); ?>"></div>
 <?php }?>
 	<div class="container">			
 		<div class="row">
 			<div class="col-md-12">
 				<div class="section-header text-center">
-					<h1 class="section-title text-white"><?php echo $innofit_subscribe_title; ?></h1>
-					<p class="section-subtitle text-white"><?php echo $innofit_subscribe_subtitle; ?></p>
+					<h1 class="section-title text-white"><?php echo esc_html($innofit_subscribe_title); ?></h1>
+					<p class="section-subtitle text-white"><?php echo esc_html($innofit_subscribe_subtitle); ?></p>
 				</div>
 			</div>
 			<div class="col-md-12">

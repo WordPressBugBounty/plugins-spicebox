@@ -62,7 +62,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 
 	// CTA button link
 	$wp_customize->add_setting( 'home_cta_btn_link',array(
-	'default' => __('#','spicebox'),
+	'default' => '#',
 	'sanitize_callback' => 'spiceb_cloudpress_home_page_sanitize_text',
 	'transport'         => $selective_refresh,
 	));	
@@ -82,7 +82,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			'home_call_out_btn_link_target',
 			array(
 				'type' => 'checkbox',
-				'label' => __('Open link in new tab','cloudpress'),
+				'label' => __('Open link in new tab','spicebox'),
 				'section' => 'cta_section',
 			)
 		);
@@ -111,32 +111,12 @@ function spiceb_cloudpress_register_home_cta_section_partials( $wp_customize ){
 	
 	) );
 	
-	// $wp_customize->selective_refresh->add_partial( 'home_cta_desc', array(
-	// 	'selector'            => '.testmonial-block.text-center .text-white',
-	// 	'settings'            => 'home_cta_desc',
-	// 	'render_callback'  => 'spiceb_cloudpress_cta_desc_render_callback',
-	
-	// ) );
-
-	// $wp_customize->selective_refresh->add_partial( 'home_cta_title', array(
-	// 	'selector'            => '.section-module.cta .name',
-	// 	'settings'            => 'home_cta_title',
-	// 	'render_callback'  => 'spiceb_cloudpress_cta_title_render_callback',
-	
-	// ) );
-	
 	$wp_customize->selective_refresh->add_partial( 'home_cta_btn', array(
 		'selector'            => '.section-module.call-to-action-one .pbottom-5',
 		'settings'            => 'home_cta_btn',
 		'render_callback'  => 'spiceb_cloudpress_cta_designation_render_callback',
 	
 	) );
-	
-	// $wp_customize->selective_refresh->add_partial( 'home_cta_thumb', array(
-	// 	'selector'            => '.section.cta-section .avatar ',
-	// 	'settings'            => 'home_cta_thumb',
-	
-	// ) );
 }
 
 add_action( 'customize_register', 'spiceb_cloudpress_register_home_cta_section_partials' );
@@ -148,14 +128,6 @@ function spiceb_cloudpress_cta_section_title_render_callback() {
 function spiceb_cloudpress_cta_section_discription_render_callback() {
 	return get_theme_mod( 'home_cta_section_discription' );
 }
-
-// function spiceb_cloudpress_cta_desc_render_callback() {
-// 	return get_theme_mod( 'home_cta_desc' );
-// }
-
-// function spiceb_cloudpress_cta_title_render_callback() {
-// 	return get_theme_mod( 'home_cta_title' );
-// }
 
 function spiceb_cloudpress_cta_designation_render_callback() {
 	return get_theme_mod( 'home_cta_btn' );

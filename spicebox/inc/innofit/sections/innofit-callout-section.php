@@ -17,15 +17,15 @@ function innofit_callout_section()
 			<div class="row">
 				<div class="col-md-9 col-sm-9 col-xs-12">
 					<div class="text-left">
-						<h4 class="title"><?php echo $home_call_out_title; ?></h4>
-						<p><?php echo $home_call_out_desc;?></p>
+						<h4 class="title"><?php echo esc_html($home_call_out_title); ?></h4>
+						<p><?php echo wp_kses_post($home_call_out_desc);?></p>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-3 col-xs-12">
 					<div class="ptop-15 pbottom-5 text-right">
 						<?php if($home_call_out_btn_text!='') {?>
-						<a <?php if($home_call_out_btn_link !='' ) { ?> href="<?php echo $home_call_out_btn_link; ?>" class="btn-small btn-border-dark
-						" <?php if($home_call_out_btn_link_target== true) { echo "target='_blank'"; } } ?>><?php echo $home_call_out_btn_text; ?>
+						<a <?php if($home_call_out_btn_link !='' ) { ?> href="<?php echo esc_url($home_call_out_btn_link); ?>" class="btn-small btn-border-dark
+						" <?php if($home_call_out_btn_link_target== true) { echo "target='_blank'"; } } ?>><?php echo esc_html($home_call_out_btn_text); ?>
 						</a>
 						<?php } ?>
 					</div>

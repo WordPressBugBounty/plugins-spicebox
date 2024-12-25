@@ -1,15 +1,26 @@
 <?php
 /*
-Plugin Name: SpiceBox
-Description: Enhances SpiceThemes with extra functionality.
-Version: 2.3.1
-Author: Spicethemes
-Author URI: https://spicethemes.com
-Text Domain: spicebox
+Plugin Name:		SpiceBox
+Description: 		Enhances SpiceThemes with extra functionality.
+Version: 			2.4
+Requires at least: 	3.3
+Requires PHP:		5.2
+Tested up to:       6.7.1
+Author: 			Spicethemes
+Author URI: 		https://spicethemes.com
+License:            GPLv2 or later
+License URI:        http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: 		spicebox
+Domain Path:        /languages
 */
 define( 'SPICEB_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'SPICEB_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-error_reporting(0);
+
+// Assuming WC_PLUGIN_VERSION is defined somewhere in your plugin
+if ( ! defined( 'SPICEBOX_PLUGIN_VERSION' ) ) {
+    define( 'SPICEBOX_PLUGIN_VERSION', '2.4' );
+}
+
 function spiceb_activate() {
 	$theme = wp_get_theme(); // gets the current theme
 	if ( 'SpicePress' == $theme->name || 'SpicePress Dark' == $theme->name || 'Rockers' == $theme->name || 'Content' == $theme->name  || 'Certify' == $theme->name || 'Stacy' == $theme->name || 'SpicePress Child Theme' == $theme->name || 'SpicePress Child' == $theme->name){
@@ -410,52 +421,6 @@ function spiceb_activate() {
 		
 		endif;
 	}
-
-//WPBlack
-	if ( 'WPBlack' == $theme->name || 'WPBlack Child' == $theme->name ||  'WPBlack Dark' == $theme->name){
-		
-		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-		
-		if ( ! is_plugin_active( 'wpblack-plus/wpblack-plus.php' ) ):
-
-			require_once('inc/controls/customizer-alpha-color-picker/class-spicepress-customize-alpha-color-control.php');
-	        require_once('inc/controls/customizer-repeater/functions.php');
-	        require ('inc/controls/customizer-text-radio/customizer-text-radio.php');
-
-			if ( ! function_exists( 'spiceb_wpblack_customize_register' ) ) :
-				function spiceb_wpblack_customize_register($wp_customize){
-					
-					$selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
-					$sections_customizer_data = array('slider','services','team','news','testimonial');	
-															
-						
-					
-					if (!empty($sections_customizer_data))
-					{ 
-						foreach($sections_customizer_data as $section_customizer_data)
-						{ 
-							require_once('inc/wpblack/customizer/'.$section_customizer_data.'-section.php');
-						}	
-					}
-					$wp_customize->remove_control('header_textcolor');
-					
-				}
-				add_action( 'customize_register', 'spiceb_wpblack_customize_register' );
-			endif;
-				
-			$sections_data = array('slider','services','team','news','testimonial');
-				
-			if (!empty($sections_data)){ 
-
-				foreach($sections_data as $section_data){ 
-					require_once('inc/wpblack/sections/wpblack-'.$section_data.'-section.php');
-				}	
-			}
-				
-			require_once('inc/wpblack/customizer.php');
-		
-		endif;
-	}
 }
 add_action( 'init', 'spiceb_activate' );
 
@@ -610,19 +575,6 @@ if ( 'WPHester' == $theme->name || 'WPHester Child' == $theme->name  ||  'WPHest
 	    }
 	}
 }
-// WPBlack
-if ( 'WPBlack' == $theme->name || 'WPBlack Child' == $theme->name  ||  'WPBlack Dark' == $theme->name){
-	register_activation_hook( __FILE__, 'spiceb_wpblack_install_function');
-	function spiceb_wpblack_install_function(){	
-		$item_details_page = get_option('item_details_page'); 
-	    if(!$item_details_page){
-			require_once('inc/wpblack/default-pages/upload-media.php');
-			require_once('inc/wpblack/default-pages/home-page.php');
-			require_once('inc/wpblack/default-pages/blog-page.php');
-			update_option( 'item_details_page', 'Done' );
-	    }
-	}
-}
 //Sanatize for spicepress
 //radio box sanitization function
 function spiceb_sanitize_radio( $input, $setting ){
@@ -704,46 +656,81 @@ function spiceb_wphester_sanitize_checkbox($checked) {
     // Boolean check.
     return ( ( isset($checked) && true == $checked ) ? true : false );
 }
-//Sanatize for wpblack theme
-function spiceb_wpblack_home_page_sanitize_text($input){
-			return wp_kses_post( force_balance_tags( $input ) );
-}
-function spiceb_wpblack_sanitize_checkbox($checked) {
-    // Boolean check.
-    return ( ( isset($checked) && true == $checked ) ? true : false );
-}
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 if ( ! is_plugin_active( 'innofit-plus/innofit-plus.php' ) ):
 	function spiceb_innofit_home_page_sanitize_text( $input ) {
 		return wp_kses_post( force_balance_tags( $input ) );
 	}
 endif;
-if ('SpicePress' == $theme->name || 'SpicePress Dark' == $theme->name || 'Rockers' == $theme->name || 'Content' == $theme->name || 'Certify' == $theme->name || 'Stacy' == $theme->name || 'SpicePress Child Theme' == $theme->name || 'SpicePress Child' == $theme->name || 'Chilly' == $theme->name)
-{
-add_action( 'switch_theme', 'spicepresstheme_deactivate_message' );
-	function spicepresstheme_deactivate_message()
-	{
-	    $theme = wp_get_theme();
-	    if($theme->template!='spicepress'){
-	    require_once('inc/feedback-pop-up-form.php');
-	    }
-	}
-}
-if ( 'Innofit' == $theme->name || 'Innofit Child' == $theme->name)
-{
-add_action( 'switch_theme', 'innofittheme_deactivate_message' );
-	function innofittheme_deactivate_message()
-	{
-	    $theme = wp_get_theme();
-	    if($theme->template!='innofit'){
-	    require_once('inc/innofit-feedback-pop-up-form.php');
-	    }
-	}
-}
+
 add_action( 'init', 'spiceb_load_textdomain' );
 /**
  * Load plugin textdomain.
  */
 function spiceb_load_textdomain() {
   load_plugin_textdomain( 'spicebox', false, plugin_dir_url(__FILE__). 'languages' );
+}
+
+function spiceb_save_image_to_media_library($image_url, $image_name = 'image') {
+    // Get the upload directory
+    $upload_dir = wp_upload_dir();
+    
+    // Get the file name and path
+    $filename = basename($image_url);
+    $file_path = trailingslashit($upload_dir['path']) . $filename;
+    
+    // Check if the image exists in the upload directory (if it's already uploaded)
+    if (file_exists($file_path)) {
+        // Check if this file is already in the Media Library
+        $attachment_id = attachment_url_to_postid($upload_dir['url'] . '/' . $filename);
+        if ($attachment_id) {
+            return $attachment_id; // Return existing attachment ID if found
+        }
+    }
+
+    // Fetch the image data if it's not found
+    $response = wp_remote_get($image_url);
+    if (is_wp_error($response)) {
+        return new WP_Error('download_error', 'Failed to fetch the image.');
+    }
+
+    $image_data = wp_remote_retrieve_body($response);
+    if (empty($image_data)) {
+        return new WP_Error('invalid_image_data', 'The image data is empty.');
+    }
+
+    // Save the image data to the upload directory
+    global $wp_filesystem;
+    if (!function_exists('WP_Filesystem')) {
+        require_once ABSPATH . 'wp-admin/includes/file.php';
+    }
+    WP_Filesystem();
+
+    // Save the image using WP_Filesystem
+    if (!$wp_filesystem->put_contents($file_path, $image_data, FS_CHMOD_FILE)) {
+        return new WP_Error('file_write_error', 'Failed to write the image file.');
+    }
+
+    // Prepare the file array for insertion
+    $filetype = wp_check_filetype($filename, null);
+    $attachment_data = array(
+        'post_mime_type' => $filetype['type'],
+        'post_title'     => sanitize_file_name($image_name),
+        'post_content'   => '',
+        'post_status'    => 'inherit',
+    );
+
+    // Insert the attachment into the WordPress Media Library
+    $attachment_id = wp_insert_attachment($attachment_data, $file_path);
+
+    if (is_wp_error($attachment_id)) {
+        return $attachment_id; // Return error if something went wrong
+    }
+
+    // Generate and save the attachment metadata
+    require_once ABSPATH . 'wp-admin/includes/image.php';
+    $attachment_metadata = wp_generate_attachment_metadata($attachment_id, $file_path);
+    wp_update_attachment_metadata($attachment_id, $attachment_metadata);
+
+    return $attachment_id; // Return the attachment ID
 }

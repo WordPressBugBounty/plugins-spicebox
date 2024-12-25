@@ -34,7 +34,7 @@ if (!function_exists('spiceb_honeypress_testimonial')) :
                 $testimonial_overlay_section_color = get_theme_mod('testimonial_overlay_section_color', 'rgba(0, 76, 236, 0.9)');
                 $testimonial_section_class="section-module testimonial";
             }?>
-            <section class="<?php echo esc_attr($testimonial_section_class);?>" style="background-color:<?php echo $testimonial_overlay_section_color; ?>;">
+            <section class="<?php echo esc_attr($testimonial_section_class);?>" style="background-color:<?php echo esc_attr($testimonial_overlay_section_color); ?>;">
                 <div class="container">
                     <?php
                     $home_testimonial_section_title = get_theme_mod('home_testimonial_section_title', __('Proin Egestas', 'spicebox'));
@@ -98,15 +98,18 @@ if (!function_exists('honeypress_testimonial_variant')) :
                     <article class="testmonial-block">
                         <?php if ($home_testimonial_thumb != '') { ?>
                             <figure class="avatar">
-                                <img src="<?php echo $home_testimonial_thumb; ?>" class="img-fluid rounded-circle" alt="img">
+                                <?php $attachment_id = spiceb_save_image_to_media_library($home_testimonial_thumb);
+                                $attributes = array('class' => 'img-fluid rounded-circle', 'alt' => 'img');
+                                echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                                ?>
                             </figure>
                         <?php } ?>
                         <div class="entry-content">
-                            <p class="text-white"><?php echo $home_testimonial_desc; ?></p>
+                            <p class="text-white"><?php echo wp_kses_post($home_testimonial_desc); ?></p>
                         </div>
                         <figcaption>
-                            <cite class="name"><?php echo $home_testimonial_title; ?></cite>
-                            <span class="designation"><?php echo $home_testimonial_designation; ?></span>
+                            <cite class="name"><?php echo esc_html($home_testimonial_title); ?></cite>
+                            <span class="designation"><?php echo esc_html($home_testimonial_designation); ?></span>
                         </figcaption>
                     </article>
                 </div>
@@ -117,18 +120,21 @@ if (!function_exists('honeypress_testimonial_variant')) :
                         <div class="col-lg-4 col-md-4 col-sm-12">
                             <?php if ($home_testimonial_thumb != '') { ?>
                             <figure class="avatar">
-                                <img src="<?php echo $home_testimonial_thumb; ?>" class="img-fluid" alt="img">
+                                <?php $attachment_id = spiceb_save_image_to_media_library($home_testimonial_thumb);
+                                $attributes = array('class' => 'img-fluid', 'alt' => 'img');
+                                echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                                ?>
                             </figure>
                         <?php } ?>
                         </div>
                         <div class="col-lg-8 col-md-8 col-sm-12 testimonial-text">
                             <div class="testmonial-content">
                                 <div class="entry-content">
-                                    <p class="text-white"><?php echo $home_testimonial_desc; ?></p>
+                                    <p class="text-white"><?php echo wp_kses_post($home_testimonial_desc); ?></p>
                                 </div>
                                 <figcaption>
-                                    <cite class="name"><?php echo $home_testimonial_title; ?></cite>
-                                    <span class="designation"><?php echo $home_testimonial_designation; ?></span>
+                                    <cite class="name"><?php echo esc_html($home_testimonial_title); ?></cite>
+                                    <span class="designation"><?php echo esc_html($home_testimonial_designation); ?></span>
                                 </figcaption>
                             </div>
                         </div>
@@ -140,15 +146,18 @@ if (!function_exists('honeypress_testimonial_variant')) :
                 <article class="testmonial-block text-center">
                     <?php if ($home_testimonial_thumb != '') { ?>
                         <figure class="avatar">
-                            <img src="<?php echo $home_testimonial_thumb; ?>" class="img-fluid rounded-circle" alt="img">
+                            <?php $attachment_id = spiceb_save_image_to_media_library($home_testimonial_thumb);
+                                $attributes = array('class' => 'img-fluid rounded-circle', 'alt' => 'img');
+                                echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                            ?>
                         </figure>
                     <?php } ?>
                     <div class="entry-content">
-                        <p class="text-white"><?php echo $home_testimonial_desc; ?></p>
+                        <p class="text-white"><?php echo wp_kses_post($home_testimonial_desc); ?></p>
                     </div>
                     <figcaption>
-                        <cite class="name"><?php echo $home_testimonial_title; ?></cite>
-                        <span class="designation"><?php echo $home_testimonial_designation; ?></span>
+                        <cite class="name"><?php echo esc_html($home_testimonial_title); ?></cite>
+                        <span class="designation"><?php echo esc_html($home_testimonial_designation); ?></span>
                     </figcaption>
                 </article>
             </div>
@@ -159,15 +168,18 @@ if (!function_exists('honeypress_testimonial_variant')) :
                     <article class="testmonial-block text-center">
                         <?php if ($home_testimonial_thumb != '') { ?>
                             <figure class="avatar">
-                                <img src="<?php echo $home_testimonial_thumb; ?>" class="img-fluid rounded-circle" alt="img">
+                                <?php $attachment_id = spiceb_save_image_to_media_library($home_testimonial_thumb);
+                                $attributes = array('class' => 'img-fluid rounded-circle', 'alt' => 'img');
+                                echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                                ?>
                             </figure>
                         <?php } ?>
                         <figcaption>
-                            <cite class="name"><?php echo $home_testimonial_title; ?></cite>
-                            <span class="designation"><?php echo $home_testimonial_designation; ?></span>
+                            <cite class="name"><?php echo esc_html($home_testimonial_title); ?></cite>
+                            <span class="designation"><?php echo esc_html($home_testimonial_designation); ?></span>
                         </figcaption>
                         <div class="entry-content">
-                            <p class="text-white"><?php echo $home_testimonial_desc; ?></p>
+                            <p class="text-white"><?php echo wp_kses_post($home_testimonial_desc); ?></p>
                         </div>
                     </article>
                 </div>
@@ -178,17 +190,20 @@ if (!function_exists('honeypress_testimonial_variant')) :
                 <article class="testmonial-block text-center">
                     <?php if ($home_testimonial_thumb != '') { ?>
                         <figure class="avatar">
-                            <img src="<?php echo $home_testimonial_thumb; ?>" class="img-fluid rounded-circle" alt="img">
+                            <?php $attachment_id = spiceb_save_image_to_media_library($home_testimonial_thumb);
+                                $attributes = array('class' => 'img-fluid rounded-circle', 'alt' => 'img');
+                                echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                            ?>
                         </figure>
                     <?php } ?>
 
                     <figcaption>
-                        <cite class="name"><?php echo $home_testimonial_title; ?></cite>
-                        <span class="designation"><?php echo $home_testimonial_designation; ?></span>
+                        <cite class="name"><?php echo esc_html($home_testimonial_title); ?></cite>
+                        <span class="designation"><?php echo esc_html($home_testimonial_designation); ?></span>
                     </figcaption>
 
                     <div class="entry-content">
-                        <p class="text-white"><?php echo $home_testimonial_desc; ?></p>
+                        <p class="text-white"><?php echo wp_kses_post($home_testimonial_desc); ?></p>
                     </div>
 
                 </article>
@@ -200,15 +215,18 @@ if (!function_exists('honeypress_testimonial_variant')) :
                     <article class="testmonial-block5 text-center">
                         <?php if ($home_testimonial_thumb != '') { ?>
                             <figure class="avatar">
-                                <img src="<?php echo $home_testimonial_thumb; ?>" class="img-fluid rounded-circle" alt="img">
+                                <?php $attachment_id = spiceb_save_image_to_media_library($home_testimonial_thumb);
+                                $attributes = array('class' => 'img-fluid rounded-circle', 'alt' => 'img');
+                                echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                                ?>
                             </figure>
                         <?php } ?>
                         <div class="entry-content">
-                            <p class="text-white"><?php echo $home_testimonial_desc; ?></p>
+                            <p class="text-white"><?php echo wp_kses_post($home_testimonial_desc); ?></p>
                         </div>
                         <figcaption>
-                            <cite class="name"><?php echo $home_testimonial_title; ?></cite>
-                            <span class="designation"><?php echo $home_testimonial_designation; ?></span>
+                            <cite class="name"><?php echo esc_html($home_testimonial_title); ?></cite>
+                            <span class="designation"><?php echo esc_html($home_testimonial_designation); ?></span>
                         </figcaption>
                     </article>
                 </div>
@@ -219,14 +237,17 @@ if (!function_exists('honeypress_testimonial_variant')) :
       					<div class="col-lg-12">
       						<article class="testmonial-block5">
       							<figure class="avatar">
-      								<img src="<?php echo $home_testimonial_thumb; ?>" class="img-fluid rounded-circle" alt="<?php echo $home_testimonial_title; ?>" >
+                                    <?php $attachment_id = spiceb_save_image_to_media_library($home_testimonial_thumb);
+                                    $attributes = array('class' => 'img-fluid rounded-circle', 'alt' => esc_attr($home_testimonial_title));
+                                    echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                                    ?>
       							</figure>
       							<div class="entry-content">
-      								<p><?php echo $home_testimonial_desc; ?></p>
+      								<p><?php echo wp_kses_post($home_testimonial_desc); ?></p>
       							</div>
       							<figcaption>
-      								<cite class="name"><?php echo $home_testimonial_title; ?></cite>
-      								<span class="designation"><?php echo $home_testimonial_designation; ?></span>
+      								<cite class="name"><?php echo esc_html($home_testimonial_title); ?></cite>
+      								<span class="designation"><?php echo esc_html($home_testimonial_designation); ?></span>
       							</figcaption>
       						</article>
       					</div>
@@ -237,25 +258,22 @@ if (!function_exists('honeypress_testimonial_variant')) :
                 <article class="testmonial-block text-center">
                     <?php if ($home_testimonial_thumb != '') { ?>
                         <figure class="avatar">
-                            <img src="<?php echo $home_testimonial_thumb; ?>" class="img-fluid rounded-circle" alt="img">
+                            <?php $attachment_id = spiceb_save_image_to_media_library($home_testimonial_thumb);
+                            $attributes = array('class' => 'img-fluid rounded-circle', 'alt' => 'img');
+                            echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                            ?>
                         </figure>
                     <?php } ?>
                     <div class="entry-content">
-                        <p class="text-white"><?php echo $home_testimonial_desc; ?></p>
+                        <p class="text-white"><?php echo wp_kses_post($home_testimonial_desc); ?></p>
                     </div>
                     <figcaption>
-                        <cite class="name"><?php echo $home_testimonial_title; ?></cite>
-                        <span class="designation"><?php echo $home_testimonial_designation; ?></span>
+                        <cite class="name"><?php echo esc_html($home_testimonial_title); ?></cite>
+                        <span class="designation"><?php echo esc_html($home_testimonial_designation); ?></span>
                     </figcaption>
                 </article>
             </div>
             <?php
         }
     }
-
-
-
-
-
-
 endif;

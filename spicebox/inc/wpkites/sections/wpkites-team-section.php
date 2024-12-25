@@ -9,7 +9,7 @@ $team_smooth_speed = get_theme_mod('team_smooth_speed', 1000);
 $team_nav_style = get_theme_mod('team_nav_style', 'bullets');
 $isRTL = (is_rtl()) ? (bool) true : (bool) false;
 $teamsettings = array('team_animation_speed' => $team_animation_speed, 'team_smooth_speed' => $team_smooth_speed, 'team_nav_style' => $team_nav_style, 'rtl' => $isRTL);
-wp_register_script('wpkites-team', SPICEB_PLUGIN_URL . 'inc/wpkites/js/front-page/team.js', array('jquery'));
+wp_register_script('wpkites-team', SPICEB_PLUGIN_URL . 'inc/wpkites/js/front-page/team.js', array('jquery'), SPICEBOX_PLUGIN_VERSION, true);
 wp_localize_script('wpkites-team', 'team_settings', $teamsettings);
 wp_enqueue_script('wpkites-team');
 
@@ -159,8 +159,8 @@ $team_section_class = 'team team1 bg-default';
             <div class="col-lg-12 col-md-12 col-xs-12">
                 <div class="section-header">
                 <?php                
-                if(!empty($home_team_section_title)):?><h2 class="section-title"><?php echo esc_html($home_team_section_title); ?></h2><?php endif;
-                if(!empty($home_team_section_discription)):?><h5 class="section-subtitle"><?php echo esc_html($home_team_section_discription); ?></h5>
+                if(!empty($home_team_section_title)):?><h2 class="section-title"><?php echo wp_kses_post($home_team_section_title); ?></h2><?php endif;
+                if(!empty($home_team_section_discription)):?><h5 class="section-subtitle"><?php echo wp_kses_post($home_team_section_discription); ?></h5>
                 <?php endif;?>
                 <div class="separator"><i class="fa fa-crosshairs"></i></div>
                 </div>
@@ -172,6 +172,13 @@ $team_section_class = 'team team1 bg-default';
             <?php
             $team_options = json_decode($team_options);            
             if (!empty($team_options)) {
+                $allowed_html = array(
+                    'br' => array(),
+                    'em' => array(),
+                    'strong' => array(),
+                    'b' => array(),
+                    'i' => array(),
+                );
                 foreach ($team_options as $team_item) {
                     $image = !empty($team_item->image_url) ? apply_filters('wpkites_translate_single_string', $team_item->image_url, 'Team section') : '';
                    
@@ -181,9 +188,15 @@ $team_section_class = 'team team1 bg-default';
                     <div class="item">
                         <div class="team-grid">                            
                             <div class="img-holder">
-                                <?php if(!empty($image)){ ?> 
-                                    <img src="<?php echo esc_url($image); ?>" class="img-fluid">
-                                <?php } 
+                                <?php 
+                                $open_new_tab = 'yes';
+                                if(!empty($image)){ 
+                                    $attachment_id = spiceb_save_image_to_media_library($image);
+                                    $attributes = array(
+                                       'class' => 'img-fluid'
+                                    );
+                                    echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                                } 
                                 $icons = html_entity_decode($team_item->social_repeater);
                                 $icons_decoded = json_decode($icons, true);
                                 $socails_counts = $icons_decoded;
@@ -208,7 +221,7 @@ $team_section_class = 'team team1 bg-default';
                                 endif;?>
                                 </div>
                                 <figcaption class="details">
-                                   <h4 class="name"><?php echo esc_html($title);?></h4>    
+                                   <h4 class="name"><?php echo wp_kses_post($title);?></h4>    
                                    <span class="position"><?php echo esc_html($subtitle);?></span>
                                 </figcaption>                                                 
                              <!-- Back Side -->

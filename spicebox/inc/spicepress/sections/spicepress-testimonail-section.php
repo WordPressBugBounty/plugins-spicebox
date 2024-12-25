@@ -36,7 +36,7 @@ if($testimonial_callout_background != '') { ?>
 $testimonial_overlay_section_color = get_theme_mod('testimonial_overlay_section_color','rgba(0,0,0,0.6)');
 $testimonial_image_overlay = get_theme_mod('testimonial_image_overlay',true);
 ?>
-	<div class="overlay"<?php if($testimonial_image_overlay != false) { ?>style="background-color:<?php echo $testimonial_overlay_section_color; } ?>">
+	<div class="overlay"<?php if($testimonial_image_overlay != false) { ?>style="background-color:<?php echo esc_attr($testimonial_overlay_section_color); } ?>">
 	<div class="container">
 		<?php
 		$home_testimonial_section_title = get_theme_mod('home_testimonial_section_title',__('Lorem ipsum dolor','spicebox'));
@@ -54,11 +54,11 @@ $testimonial_image_overlay = get_theme_mod('testimonial_image_overlay',true);
 				<div class="col-md-12">
 					<div class="section-header">
 						<h1 class="white wow fadeInUp animated" data-wow-delay="0ms" data-wow-duration="500ms">
-						<?php echo esc_attr($home_testimonial_section_title); ?>
+						<?php echo wp_kses_post($home_testimonial_section_title); ?>
 						</h1>
 						<div class="widget-separator"><span></span></div>
 						<p class="white wow fadeInDown animated">
-						<?php echo esc_attr($home_testimonial_section_discription); ?>
+						<?php echo wp_kses_post($home_testimonial_section_discription); ?>
 						</p>
 					</div>
 				</div>
@@ -71,18 +71,24 @@ $testimonial_image_overlay = get_theme_mod('testimonial_image_overlay',true);
 						<div class="media testmonial-area">
 							<?php if($home_testimonial_thumb !=''){ ?>
 							<div class="author-box">
-								<img src="<?php echo $home_testimonial_thumb; ?>" class="img-circle" alt="img">
+								<?php $attachment_id = spiceb_save_image_to_media_library($home_testimonial_thumb);
+                                    $attributes = array(
+                                       'alt'   => esc_attr__('img', 'spicebox'),
+                                       'class' => 'img-circle'
+                                    );
+                                    echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+								?>
 							</div>
 							<?php } ?>
 							<div class="media-body">
 								<div class="description-box">
 									<div class="author-description">
-									<p><?php echo $home_testimonial_desc;  ?>
+									<p><?php echo wp_kses_post($home_testimonial_desc);  ?>
 									</p>
 									</div>									
 								</div>
 								<?php if($home_testimonial_title != '' || $home_testimonial_designation !='' ){?>
-								<h4><?php echo $home_testimonial_title; ?> <?php if($home_testimonial_designation !=''){ ?> - <?php } ?><span class="designation"><?php echo $home_testimonial_designation; ?></span>
+								<h4><?php echo esc_html($home_testimonial_title); ?> <?php if($home_testimonial_designation !=''){ ?> - <?php } ?><span class="designation"><?php echo esc_html($home_testimonial_designation); ?></span>
 								</h4>
 								<?php } ?>
 							</div>
@@ -113,7 +119,7 @@ if($testimonial_callout_background != '') { ?>
 $testimonial_overlay_section_color = get_theme_mod('testimonial_overlay_section_color','rgba(0,0,0,0.6)');
 $testimonial_image_overlay = get_theme_mod('testimonial_image_overlay',true);
 ?>
-	<div class="overlay"<?php if($testimonial_image_overlay != false) { ?>style="background-color:<?php echo $testimonial_overlay_section_color; } ?>">
+	<div class="overlay"<?php if($testimonial_image_overlay != false) { ?>style="background-color:<?php echo esc_attr($testimonial_overlay_section_color); } ?>">
 	<div class="container">
 		<?php
 		$home_testimonial_section_title = get_theme_mod('home_testimonial_section_title',__('Lorem ipsum dolor','spicebox'));
@@ -131,11 +137,11 @@ $testimonial_image_overlay = get_theme_mod('testimonial_image_overlay',true);
 				<div class="col-md-12">
 					<div class="section-header">
 						<h1 class="white wow fadeInUp animated" data-wow-delay="0ms" data-wow-duration="500ms">
-						<?php echo esc_attr($home_testimonial_section_title); ?>
+						<?php echo wp_kses_post($home_testimonial_section_title); ?>
 						</h1>
 						<div class="widget-separator"><span></span></div>
 						<p class="white wow fadeInDown animated">
-						<?php echo esc_attr($home_testimonial_section_discription); ?>
+						<?php echo wp_kses_post($home_testimonial_section_discription); ?>
 						</p>
 					</div>
 				</div>
@@ -149,18 +155,24 @@ $testimonial_image_overlay = get_theme_mod('testimonial_image_overlay',true);
                                      <article class="testmonial-block text-center">
 							<?php if($home_testimonial_thumb !=''){ ?>
 							<figure class="avatar">
-								<img src="<?php echo $home_testimonial_thumb; ?>" class="img-responsive img-circle" alt="img">
+								<?php $attachment_id = spiceb_save_image_to_media_library($home_testimonial_thumb);
+                                    $attributes = array(
+                                       'alt'   => esc_attr__('img', 'spicebox'),
+                                       'class' => 'img-responsive img-circle'
+                                    );
+                                    echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+								?>
 							</figure>
 							<?php }  ?>
                                          
                                                             <?php if($home_testimonial_title != '' || $home_testimonial_designation !='' ){?>
-								<h4><?php echo $home_testimonial_title; ?> <?php if($home_testimonial_designation !=''){ ?> - <?php } ?><span class="designation"><?php echo $home_testimonial_designation; ?></span>
+								<h4><?php echo esc_html($home_testimonial_title); ?> <?php if($home_testimonial_designation !=''){ ?> - <?php } ?><span class="designation"><?php echo esc_html($home_testimonial_designation); ?></span>
 								</h4>
 								<?php } ?>
                                          
                                          <?php if($home_testimonial_desc !=''){ ?>
                                                 <div class="entry-content">
-                                                    <p class="text-white"><?php echo $home_testimonial_desc;  ?></p>
+                                                    <p class="text-white"><?php echo wp_kses_post($home_testimonial_desc);  ?></p>
 						</div>	
                                          <?php } ?>
 								
@@ -188,7 +200,7 @@ if($testimonial_callout_background != '') { ?>
 $testimonial_overlay_section_color = get_theme_mod('testimonial_overlay_section_color','rgba(0,0,0,0.6)');
 $testimonial_image_overlay = get_theme_mod('testimonial_image_overlay',true);
 ?>
-	<div class="overlay"<?php if($testimonial_image_overlay != false) { ?>style="background-color:<?php echo $testimonial_overlay_section_color; } ?>">
+	<div class="overlay"<?php if($testimonial_image_overlay != false) { ?>style="background-color:<?php echo esc_attr($testimonial_overlay_section_color); } ?>">
 	<div class="container">
 		<?php
 		$home_testimonial_section_title = get_theme_mod('home_testimonial_section_title',__('Lorem ipsum dolor','spicebox'));
@@ -206,11 +218,11 @@ $testimonial_image_overlay = get_theme_mod('testimonial_image_overlay',true);
 				<div class="col-md-12">
 					<div class="section-header">
 						<h1 class="white wow fadeInUp animated" data-wow-delay="0ms" data-wow-duration="500ms">
-						<?php echo esc_attr($home_testimonial_section_title); ?>
+						<?php echo wp_kses_post($home_testimonial_section_title); ?>
 						</h1>
 						<div class="widget-separator"><span></span></div>
 						<p class="white wow fadeInDown animated">
-						<?php echo esc_attr($home_testimonial_section_discription); ?>
+						<?php echo wp_kses_post($home_testimonial_section_discription); ?>
 						</p>
 					</div>
 				</div>
@@ -225,7 +237,13 @@ $testimonial_image_overlay = get_theme_mod('testimonial_image_overlay',true);
                     	<div class="col-lg-4">
 							<?php if($home_testimonial_thumb !=''){ ?>
 							<figure class="avatar">
-								<img src="<?php echo $home_testimonial_thumb; ?>" class="img-responsive img-circle" alt="img">
+								<?php $attachment_id = spiceb_save_image_to_media_library($home_testimonial_thumb);
+                                    $attributes = array(
+                                       'alt'   => esc_attr__('img', 'spicebox'),
+                                       'class' => 'img-responsive img-circle'
+                                    );
+                                    echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+								?>
 							</figure>
 							<?php }  ?>
 						</div>
@@ -233,11 +251,11 @@ $testimonial_image_overlay = get_theme_mod('testimonial_image_overlay',true);
 						<?php 
 						if($home_testimonial_desc !=''){ ?>
 	                        <div class="entry-content">
-	                            <p class="text-white"><?php echo $home_testimonial_desc;  ?></p>
+	                            <p class="text-white"><?php echo wp_kses_post($home_testimonial_desc);  ?></p>
 							</div>	
                         <?php }
                         if($home_testimonial_title != '' || $home_testimonial_designation !='' ){?>
-							<h4><?php echo $home_testimonial_title; ?> <?php if($home_testimonial_designation !=''){ ?> - <?php } ?><span class="designation"><?php echo $home_testimonial_designation; ?></span>
+							<h4><?php echo esc_html($home_testimonial_title); ?> <?php if($home_testimonial_designation !=''){ ?> - <?php } ?><span class="designation"><?php echo esc_html($home_testimonial_designation); ?></span>
 							</h4>
 						<?php }?>
 						</div>		

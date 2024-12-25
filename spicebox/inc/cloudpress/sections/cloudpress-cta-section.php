@@ -19,13 +19,13 @@ if($cta_section_enable !='off')
 				<div class="row">
 					<div class="col-md-9 col-sm-9 col-xs-12">
 						<div class="text-left">
-							<?php if(!empty($home_cta_section_title)):?><h3 class="title"><?php echo $home_cta_section_title; ?></h3><?php endif;?>
-							<?php if(!empty($home_cta_section_discription)):?><p><?php echo $home_cta_section_discription; ?></p><?php endif;?>
+							<?php if(!empty($home_cta_section_title)):?><h3 class="title"><?php echo esc_html($home_cta_section_title); ?></h3><?php endif;?>
+							<?php if(!empty($home_cta_section_discription)):?><p><?php echo wp_kses_post($home_cta_section_discription); ?></p><?php endif;?>
 						</div>
 					</div>
 					<?php if(!empty($home_cta_btn)):?>
 					<div class="col-md-3 col-sm-3 col-xs-12">
-						<div class="ptop-15 pbottom-5 text-right"><a href="<?php echo get_theme_mod('home_cta_btn_link','#');?>"  class="btn-small btn-animate border btn-shadow-lg"  <?php if($cta_open_new_tab==true) { ?> target="_blank"<?php } ?>><?php echo $home_cta_btn; ?></a></div>						
+						<div class="ptop-15 pbottom-5 text-right"><a href="<?php echo esc_url(get_theme_mod('home_cta_btn_link','#'));?>"  class="btn-small btn-animate border btn-shadow-lg"  <?php if($cta_open_new_tab==true) { ?> target="_blank"<?php } ?>><?php echo esc_html($home_cta_btn); ?></a></div>						
 					</div>
 				<?php endif;?>
 				</div>

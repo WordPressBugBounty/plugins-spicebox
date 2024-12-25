@@ -5,7 +5,7 @@
 		  'comment_status' => 'closed',
 		  'ping_status' =>  'closed' ,
 		  'post_author' => 1,
-		  'post_date' => date('Y-m-d H:i:s'),
+		  'post_date' => gmdate('Y-m-d H:i:s'),
 		  'post_name' => 'Portfolio',
 		  'post_status' => 'publish' ,
 		  'post_title' => 'Portfolio',

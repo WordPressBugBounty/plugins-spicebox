@@ -60,7 +60,7 @@ if($spiko_service_section_enabled ==true)
                     <p class="section-subtitle"><?php echo wp_kses_post($spiko_service_section_discription); ?></p>
                     <?php }?>
                     <?php if($spiko_service_section_title != ''){ ?>
-                    <h2 class="section-title"><?php echo esc_html($spiko_service_section_title); ?></h2><div class="section-separator border-center"></div>
+                    <h2 class="section-title"><?php echo wp_kses_post($spiko_service_section_title); ?></h2><div class="section-separator border-center"></div>
                     <?php } ?>
                     
                 </div>
@@ -71,12 +71,22 @@ if($spiko_service_section_enabled ==true)
             <?php
             $service_data = json_decode($service_data);
             if (!empty($service_data)) {
+                $allowed_html = array(
+                    'br' => array(),
+                    'em' => array(),
+                    'strong' => array(),
+                    'b' => array(),
+                    'i' => array(),
+                );
                 foreach ($service_data as $service_team) {
                     $service_icon = !empty($service_team->icon_value) ? apply_filters('spiko_translate_single_string', $service_team->icon_value, 'Service section') : '';
                     $service_image = !empty($service_team->image_url) ? apply_filters('spiko_translate_single_string', $service_team->image_url, 'Service section') : '';
                     $service_title = !empty($service_team->title) ? apply_filters('spiko_translate_single_string', $service_team->title, 'Service section') : '';
                     $service_desc = !empty($service_team->text) ? apply_filters('spiko_translate_single_string', $service_team->text, 'Service section') : '';
                     $service_link = !empty($service_team->link) ? apply_filters('spiko_translate_single_string', $service_team->link, 'Service section') : '';
+
+                    // Convert image URL to attachment ID if necessary
+                    $attachment_id = attachment_url_to_postid($service_image);
             ?>
             <div class="col-md-4 col-sm-6 col-xs-12">  
              <?php if ('Spiko Dark' == $theme->name){ ?> 
@@ -97,7 +107,7 @@ if($spiko_service_section_enabled ==true)
                                         <?php
                                     }
                                 } else if ($service_team->choice == 'customizer_repeater_image') {
-                                        if ($service_image != '') { ?> 
+                                        if ($service_image != '' && $attachment_id) { ?> 
                                              <figure class="post-thumbnail">
                                         <?php
                                             if ($service_link != '') { ?>
@@ -106,7 +116,7 @@ if($spiko_service_section_enabled ==true)
                                                         } ?> href="<?php echo esc_url($service_link); ?>">
                                                 <?php }
                                             ?>
-                                            <img class='img-fluid' src="<?php echo esc_url($service_image); ?>">
+                                            <?php echo wp_get_attachment_image($attachment_id, 'full', false, ['class' => 'img-fluid']); ?>
                                             <?php if ($service_link != '') { ?>
                                                 </a>
                                             <?php } 
@@ -121,7 +131,7 @@ if($spiko_service_section_enabled ==true)
                                         <?php if ($service_link != '') { ?>
                                             <a href="<?php echo esc_url($service_link); ?>" <?php if ($service_team->open_new_tab == 'yes') {
                                                     echo "target='_blank'";
-                                                } ?>><?php } echo esc_html($service_title);
+                                                } ?>><?php } echo wp_kses(html_entity_decode($service_title), $allowed_html);
                                             if ($service_link != '') { ?></a>
                                         <?php } ?>
                                     </h4>
@@ -130,7 +140,7 @@ if($spiko_service_section_enabled ==true)
                                 }
                                 if ($service_desc != ""): ?>
                                 <div class="entry-content">
-                                    <p><?php echo wp_kses_post($service_desc); ?></p>    
+                                    <p><?php echo wp_kses(html_entity_decode($service_desc), $allowed_html); ?></p>    
                                 </div>                  
                                 <?php endif; ?>
                 </article>
@@ -155,15 +165,15 @@ if($spiko_service_section_enabled ==true)
                                     <?php
                                     }
                             } else if ($service_team->choice == 'customizer_repeater_image') {
-                                    if ($service_image != '') {
+                                    if ($service_image != '' && $attachment_id) {
                                         ?>
                                         <p class="service-icon"> 
-                                                <?php if ($service_link != '') { ?>
+                                            <?php if ($service_link != '') { ?>
                                                 <a <?php if ($service_team->open_new_tab == 'yes') {
                                                         echo "target='_blank'";
                                                     } ?> href="<?php echo esc_url($service_link); ?>">
-                                            <?php } ?>
-                                                <img class='img-fluid' src="<?php echo esc_url($service_image); ?>">
+                                            <?php } 
+                                            echo wp_get_attachment_image($attachment_id, 'full', false, ['class' => 'img-fluid']); ?>
                                         <?php if ($service_link != '') { ?>
                                                 </a>
                                         <?php } ?>
@@ -176,14 +186,14 @@ if($spiko_service_section_enabled ==true)
                                     <?php if ($service_link != '') { ?>
                                         <a href="<?php echo esc_url($service_link); ?>" <?php if ($service_team->open_new_tab == 'yes') {
                                                 echo "target='_blank'";
-                                            } ?>><?php } echo esc_html($service_title);
+                                            } ?>><?php } echo wp_kses(html_entity_decode($service_title), $allowed_html);
                                         if ($service_link != '') { ?></a>
                                     <?php } ?>
                                 </h4>
                             <?php
                             }
                             if ($service_desc != ""): ?>
-                               <p class="description"><?php echo wp_kses_post($service_desc); ?></p>                      
+                               <p class="description"><?php echo wp_kses(html_entity_decode($service_desc), $allowed_html); ?></p>                      
                             <?php endif; ?>
                     </div>
                 </div>

@@ -28,7 +28,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'testimonial_callout_background', array(
-	  'label'    => __( 'Background Image', 'cloudpress' ),
+	  'label'    => __( 'Background Image', 'spicebox' ),
 	  'section'  => 'testimonial_section',
 	  'settings' => 'testimonial_callout_background',
 	) ) );
@@ -126,7 +126,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 
 	// testimonial link
 	$wp_customize->add_setting( 'home_testimonial_link',array(
-	'default' => __('#','spicebox'),
+	'default' => '#',
 	'sanitize_callback' => 'spiceb_cloudpress_agency_home_page_sanitize_text',
 	
 	));

@@ -53,9 +53,9 @@ function innofit_services_section()
 			<div class="col-md-12">
 				<div class="section-header">
 					<?php if($innofit_service_section_discription!=''){ ?>
-					<p class="section-subtitle"><?php echo $innofit_service_section_discription; ?></p>
+					<p class="section-subtitle"><?php echo wp_kses_post($innofit_service_section_discription); ?></p>
 					<?php } if($innofit_service_section_title){?>
-					<h1 class="section-title"><?php echo $innofit_service_section_title; ?></h1>
+					<h1 class="section-title"><?php echo esc_html($innofit_service_section_title); ?></h1>
 					<?php }?>
 				</div>
 			</div>
@@ -79,21 +79,23 @@ function innofit_services_section()
 						if($service_team->icon_value!=''){?>
 						<figure class="post-thumbnail">
 						<?php if($service_team->link!=''){?>
-							<a <?php if($service_team->open_new_tab== 'yes'){echo "target='_blank'";} ?> href="<?php echo $service_team->link; ?>">
-							<i class="fa <?php echo $service_team->icon_value; ?>"></i>
+							<a <?php if($service_team->open_new_tab== 'yes'){echo "target='_blank'";} ?> href="<?php echo esc_url($service_team->link); ?>">
+							<i class="fa <?php echo esc_attr($service_team->icon_value); ?>"></i>
 							</a>
 						<?php }else{ ?>
-							<a><i class="fa <?php echo $service_team->icon_value; ?>"></i></a>
+							<a><i class="fa <?php echo esc_attr($service_team->icon_value); ?>"></i></a>
 					    <?php } ?>
 						</figure>
 						 <?php }} else if($service_team->choice =='customizer_repeater_image'){
 							if($service_team->image_url!=''){ ?>
 							<figure class="post-thumbnail">	
 							<?php if($service_team->link!=''){?>
-							<a <?php if($service_team->open_new_tab== 'yes'){echo "target='_blank'";} ?> href="<?php echo $service_team->link; ?>">
-							<?php }?>
-							<img src="<?php echo $service_team->image_url; ?>">
-							<?php if($service_team->link!=''){ ?>
+							<a <?php if($service_team->open_new_tab== 'yes'){echo "target='_blank'";} ?> href="<?php echo esc_url($service_team->link); ?>">
+							<?php }
+							$attachment_id = spiceb_save_image_to_media_library($service_team->image_url);
+						    echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full') : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+							
+							if($service_team->link!=''){ ?>
 							
 							</a>
 							<?php }?>
@@ -105,10 +107,10 @@ function innofit_services_section()
 						<div class="entry-header">
 							<h5 class="entry-title text-center"> 
 							<?php if($service_team->link!=''){ ?>
-							<a href="<?php echo $service_team->link; ?>" <?php if($service_team->open_new_tab== 'yes'){echo "target='_blank'";} ?>> 
+							<a href="<?php echo esc_url($service_team->link); ?>" <?php if($service_team->open_new_tab== 'yes'){echo "target='_blank'";} ?>> 
 							<?php } 
 							
-							echo $service_team->title;
+							echo esc_html($service_team->title);
 							
 							if($service_team->link!=''){?>
 							</a>
@@ -117,7 +119,7 @@ function innofit_services_section()
 						</div>
 						<?php } if($service_team->text !="")?>
 						<div class="entry-content">
-							<p><?php echo $service_team->text ; ?></p>
+							<p><?php echo esc_html($service_team->text) ; ?></p>
 						</div>
 					</article>
 				</div>

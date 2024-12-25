@@ -7,7 +7,7 @@ function spiceb_busicare_testimonial_section()
     $isRTL = (is_rtl()) ? (bool) true : (bool) false;
     $testimonial_nav_style = get_theme_mod('testimonial_nav_style', 'bullets');
     $testimonialsettings = array('design_id' => '#testimonial-carousel', 'testimonial_nav_style' => $testimonial_nav_style, 'rtl' => $isRTL);
-    wp_register_script('busicare-testimonial', SPICEB_PLUGIN_URL . 'inc/busicare/js/front-page/testi.js', array('jquery'));
+    wp_register_script('busicare-testimonial', SPICEB_PLUGIN_URL . 'inc/busicare/js/front-page/testi.js', array('jquery'), SPICEBOX_PLUGIN_VERSION, true);
     wp_localize_script('busicare-testimonial', 'testimonial_settings', $testimonialsettings);
     wp_enqueue_script('busicare-testimonial');
 $home_testimonial_section_title = get_theme_mod('home_testimonial_section_title', __('Nam Viverra Iaculis Finibus', 'spicebox'));
@@ -19,8 +19,8 @@ if (empty($testimonial_options)) {
                 array(
                     'title' => 'Nam Viverra Iaculis Finibus',
                     'text' => 'Sed ut Perspiciatis Unde Omnis Iste Sed ut perspiciatis unde omnis iste natu error sit voluptatem accu tium neque fermentum veposu miten a tempor nise. Duis autem vel eum iriure dolor in hendrerit in vulputate velit consequat reprehender in voluptate velit esse cillum duis dolor fugiat nulla pariatur.',
-                    'clientname' => esc_html__('Cras Vitae', 'busicare-plus'),
-                    'designation' => esc_html__('Eu Suscipit', 'busicare-plus'),
+                    'clientname' => esc_html__('Cras Vitae', 'spicebox'),
+                    'designation' => esc_html__('Eu Suscipit', 'spicebox'),
                     'link' => '#',
                     'image_url' => SPICEB_PLUGIN_URL . '/inc/busicare/images/testimonial/user1.jpg',
                     'open_new_tab' => 'no',
@@ -29,8 +29,8 @@ if (empty($testimonial_options)) {
                 array(
                     'title' => 'Nam Viverra Iaculis Finibus',
                     'text' => 'Sed ut Perspiciatis Unde Omnis Iste Sed ut perspiciatis unde omnis iste natu error sit voluptatem accu tium neque fermentum veposu miten a tempor nise. Duis autem vel eum iriure dolor in hendrerit in vulputate velit consequat reprehender in voluptate velit esse cillum duis dolor fugiat nulla pariatur.',
-                    'clientname' => esc_html__('Cras Vitae', 'busicare-plus'),
-                    'designation' => esc_html__('Eu Suscipit', 'busicare-plus'),
+                    'clientname' => esc_html__('Cras Vitae', 'spicebox'),
+                    'designation' => esc_html__('Eu Suscipit', 'spicebox'),
                     'link' => '#',
                     'image_url' => SPICEB_PLUGIN_URL . '/inc/busicare/images/testimonial/user2.jpg',
                     'open_new_tab' => 'no',
@@ -39,8 +39,8 @@ if (empty($testimonial_options)) {
                 array(
                     'title' => 'Nam Viverra Iaculis Finibus',
                     'text' => 'Sed ut Perspiciatis Unde Omnis Iste Sed ut perspiciatis unde omnis iste natu error sit voluptatem accu tium neque fermentum veposu miten a tempor nise. Duis autem vel eum iriure dolor in hendrerit in vulputate velit consequat reprehender in voluptate velit esse cillum duis dolor fugiat nulla pariatur.',
-                    'clientname' => esc_html__('Cras Vitae', 'busicare-plus'),
-                    'designation' => esc_html__('Eu Suscipit', 'busicare-plus'),
+                    'clientname' => esc_html__('Cras Vitae', 'spicebox'),
+                    'designation' => esc_html__('Eu Suscipit', 'spicebox'),
                     'link' => '#',
                     'image_url' => SPICEB_PLUGIN_URL . '/inc/busicare/images/testimonial/user3.jpg',
                     'id' => 'customizer_repeater_56d7ea7f40b98',
@@ -90,9 +90,16 @@ if(get_theme_mod('testimonial_section_enable',true)==true):?>
                 <div class="item">
                 <blockquote class="testmonial-block text-center">
                     <?php $default_arg = array('class' => "img-circle"); ?>
-                    <?php if ($home_testimonial_thumb != ''): ?>
+                    <?php if ($home_testimonial_thumb != ''): 
+                    $attachment_id = spiceb_save_image_to_media_library($home_testimonial_thumb);
+                    $attributes = array(
+                       'alt'   => esc_attr($home_testimonial_clientname),
+                       'class' => 'img-fluid rounded-circle',
+                       'width' => '100', // Optional: Set width
+                       'height'=> '100', // Optional: Set height
+                    );?>
                         <figure class="avatar">
-                            <img src="<?php echo esc_url($home_testimonial_thumb); ?>" class="img-fluid rounded-circle" alt="<?php echo esc_attr($home_testimonial_clientname);?>" >
+                            <?php echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message())); ?>
                         </figure>
                     <?php endif;
                     if (!empty($home_testimonial_desc)): ?>

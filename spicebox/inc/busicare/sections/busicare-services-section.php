@@ -79,6 +79,9 @@ if($busicare_service_section_enabled ==true)
                     $service_title = !empty($service_team->title) ? apply_filters('busicare_translate_single_string', $service_team->title, 'Service section') : '';
                     $service_desc = !empty($service_team->text) ? apply_filters('busicare_translate_single_string', $service_team->text, 'Service section') : '';
                     $service_link = !empty($service_team->link) ? apply_filters('busicare_translate_single_string', $service_team->link, 'Service section') : '';
+
+                    // Convert image URL to attachment ID if necessary
+                    $attachment_id = attachment_url_to_postid($service_image);
                     ?>
                     <div class="col-md-4 col-sm-6 col-xs-12">               
                         <article class="post <?php echo esc_attr($text_align);?>">
@@ -100,7 +103,7 @@ if($busicare_service_section_enabled ==true)
                                 <?php
                                 }
                             } else if ($service_team->choice == 'customizer_repeater_image') {
-                                if ($service_image != '') {
+                                if ($service_image != '' && $attachment_id) {
                                     ?>
                                     <figure class="post-thumbnail"> 
                                             <?php if ($service_link != '') { ?>
@@ -108,7 +111,7 @@ if($busicare_service_section_enabled ==true)
                                                     echo "target='_blank'";
                                                 } ?> href="<?php echo esc_url($service_link); ?>">
                                         <?php } ?>
-                                            <img class='img-fluid' src="<?php echo esc_url($service_image); ?>">
+                                            <?php echo wp_get_attachment_image($attachment_id, 'full', false, ['class' => 'img-fluid']); ?>
                                     <?php if ($service_link != '') { ?>
                                             </a>
                                     <?php } ?>

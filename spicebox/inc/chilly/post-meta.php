@@ -27,7 +27,7 @@ add_action('admin_init','chilly_metabox_init');
 			}
 			?>
 
-			<?php _e('Click Here To Activate Slider on Individually This Page','spicebox'); ?>
+			<?php esc_html_e('Click Here To Activate Slider on Individually This Page','spicebox'); ?>
 			<?php
 		}
 
@@ -49,7 +49,7 @@ add_action('admin_init','chilly_metabox_init');
 			}
 			?>
 
-			<?php _e('Click Here To Activate Slider on Individually This Post','spicebox'); ?>
+			<?php esc_html_e('Click Here To Activate Slider on Individually This Post','spicebox'); ?>
 			<?php
 		}
 
@@ -58,19 +58,23 @@ add_action('admin_init','chilly_metabox_init');
 	{	 
 		if ((defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) || (defined('DOING_AJAX') && DOING_AJAX) || isset($_REQUEST['bulk_edit']))
 	        return;
-			
+		
+	    if (!isset($_POST['chilly_meta_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['chilly_meta_nonce'])), 'chilly_save_meta')) {
+	        return;
+	    }
+
 		if ( ! current_user_can( 'edit_page', $post_id ) )
 		{   return ;	} 
 			
 		if(isset( $_POST['post_ID']))
 		{ 	
-			$post_ID = $_POST['post_ID'];				
-			$post_type=get_post_type($post_ID);
+			$post_ID = sanitize_text_field(wp_unslash($_POST['post_ID']));
+        	$post_type = get_post_type($post_ID);
 			
 			if($post_type=='page')
 			{	
-				update_post_meta($post_ID, 'chilly_banner_chkbx', sanitize_text_field(isset($_POST['chilly_banner_chkbx'])));
-								
+				$banner_checkbox = isset($_POST['chilly_banner_chkbx']) ? sanitize_text_field(wp_unslash($_POST['chilly_banner_chkbx'])) : '';
+            	update_post_meta($post_ID, 'chilly_banner_chkbx', $banner_checkbox);								
 			}
 						
 		}				
@@ -80,17 +84,22 @@ add_action('admin_init','chilly_metabox_init');
 		if ((defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) || (defined('DOING_AJAX') && DOING_AJAX) || isset($_REQUEST['bulk_edit']))
 	        return;
 			
+		if (!isset($_POST['chilly_meta_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['chilly_meta_nonce'])), 'chilly_save_meta')) {
+	        return;
+	    }
+
 		if ( ! current_user_can( 'edit_page', $post_id ) )
 		{   return ;	} 
 			
 		if(isset( $_POST['post_ID']))
 		{ 	
-			$post_ID = $_POST['post_ID'];				
-			$post_type=get_post_type($post_ID);
+			$post_ID = sanitize_text_field(wp_unslash($_POST['post_ID']));
+        	$post_type = get_post_type($post_ID);
 			
 			if($post_type=='post')
 			{	
-				update_post_meta($post_ID, 'chilly_postbanner_chkbx', sanitize_text_field(isset($_POST['chilly_postbanner_chkbx'])));
+				$postbanner_checkbox = isset($_POST['chilly_postbanner_chkbx']) ? sanitize_text_field(wp_unslash($_POST['chilly_postbanner_chkbx'])) : '';
+        		update_post_meta($post_ID, 'chilly_postbanner_chkbx', $postbanner_checkbox);
 								
 			}
 						

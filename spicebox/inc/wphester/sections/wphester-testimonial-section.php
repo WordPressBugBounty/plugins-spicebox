@@ -12,7 +12,7 @@ $isRTL = (is_rtl()) ? (bool) true : (bool) false;
 $slide_items = get_theme_mod('home_testimonial_slide_item', 1);
 $testimonial_nav_style = get_theme_mod('testimonial_nav_style', 'bullets');
 $testimonial_settings = array('design_id' => '#testimonial-carousel', 'slide_items' => $slide_items, 'animationSpeed' => $testimonial_animation_speed, 'smoothSpeed' => $testimonial_smooth_speed, 'testimonial_nav_style' => $testimonial_nav_style, 'rtl' => $isRTL);
-wp_register_script('wphester-testimonial', SPICEB_PLUGIN_URL . 'inc/wphester/js/front-page/testi.js', array('jquery'));
+wp_register_script('wphester-testimonial', SPICEB_PLUGIN_URL . 'inc/wphester/js/front-page/testi.js', array('jquery'), SPICEBOX_PLUGIN_VERSION, true);
 wp_localize_script('wphester-testimonial', 'testimonial_settings', $testimonial_settings);
 wp_enqueue_script('wphester-testimonial');
 
@@ -72,10 +72,10 @@ $testimonial_class='testimonial-1';
             <div class="col-lg-12 col-md-12 col-xs-12">
                 <div class="section-header">                
                 <?php if($home_testimonial_section_title):?>
-                    <h2 class="section-title"><?php echo esc_html($home_testimonial_section_title); ?></h2>                    
+                    <h2 class="section-title"><?php echo wp_kses_post($home_testimonial_section_title); ?></h2>                    
                 <?php endif;?>
                 <?php if ($home_testimonial_section_discription != ''):?>
-                    <p class="section-subtitle"><?php echo esc_html($home_testimonial_section_discription); ?></p>
+                    <p class="section-subtitle"><?php echo wp_kses_post($home_testimonial_section_discription); ?></p>
                 <?php endif;?>                                      
                 </div>
             </div>
@@ -110,7 +110,13 @@ $testimonial_class='testimonial-1';
                     <div class="testimonial-block">
                         <?php if ($testimonial_iteam->image_url != ''){ ?>
                         <figure class="avatar">
-                            <img src="<?php echo esc_url($testimonial_iteam->image_url); ?>" class="img-fluid" alt="<?php echo esc_attr($clientname); ?>">
+                            <?php $attachment_id = spiceb_save_image_to_media_library($testimonial_iteam->image_url);
+                                $attributes = array(
+                                   'alt'   => esc_attr($clientname),
+                                   'class' => 'img-fluid'
+                                );
+                                echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                            ?>
                         </figure>
                         <?php } ?>
                         <?php if ($test_desc != '' || $clientname != '' || $designation != '') { ?>
@@ -120,7 +126,7 @@ $testimonial_class='testimonial-1';
                                 <?php }  
                                 if ($clientname != '') {?>
                                     <p><a href="<?php if (empty($test_link)) { echo '#'; } else { echo esc_url($test_link); } ?>" <?php if ($open_new_tab == "yes") { ?> target="_blank"<?php } ?>>
-                                        <?php echo '- '.esc_html($clientname); ?>
+                                        <?php echo '- '.wp_kses(html_entity_decode($clientname), $allowed_html); ?>
                                     </a></p>
                                 <?php } 
                                 if ($designation != '') {?>

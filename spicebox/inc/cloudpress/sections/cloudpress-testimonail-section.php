@@ -7,7 +7,7 @@ if (!function_exists('spiceb_cloudpress_testimonial')) :
     function spiceb_cloudpress_testimonial() {
 		$home_testimonial_title = get_theme_mod('home_testimonial_title',__('Cras Vitae','spicebox'));
 		$home_testimonial_desc = get_theme_mod('home_testimonial_desc',__('Sed ut Perspiciatis Unde Omnis Iste Sed ut perspiciatis unde omnis iste natu error sit voluptatem accu tium neque fermentum veposu miten a tempor nise. Duis autem vel eum iriure dolor in hendrerit in vulputate velit consequat reprehender in voluptate velit esse cillum duis dolor fugiat nulla pariatur.','spicebox'));
-		$test_link = get_theme_mod('home_testimonial_link',__('#','spicebox'));
+		$test_link = get_theme_mod('home_testimonial_link', '#');
 		$open_new_tab = get_theme_mod('home_testimonial_open_tab',false);
 		$designation = get_theme_mod('home_testimonial_designation',__('Eu Suscipit','spicebox'));
 		$home_testimonial_thumb = get_theme_mod('home_testimonial_thumb', SPICEB_PLUGIN_URL .'inc/cloudpress/images/testimonial/user-1.jpg');
@@ -51,7 +51,10 @@ if (!function_exists('spiceb_cloudpress_testimonial')) :
 							<?php $default_arg =array('class' => "img-circle"); ?>
 								<?php if($home_testimonial_thumb != ''): ?>
 							<figure class="avatar">
-								<img class="img-circle" src="<?php echo esc_url($home_testimonial_thumb); ?>">
+								<?php $attachment_id = spiceb_save_image_to_media_library($home_testimonial_thumb);
+                $attributes = array('class' => 'img-circle');
+                echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                ?>
 							</figure>
 							<?php endif;
 
@@ -64,7 +67,7 @@ if (!function_exists('spiceb_cloudpress_testimonial')) :
   							if( $home_testimonial_title != '' || $designation != ''): ?>
   								<figcaption>
   									<?php if(!empty($home_testimonial_title)):?>
-  									<cite class="name"><a href="<?php if(empty($test_link)) { echo '#';} else { echo $test_link;} ?>" <?php if($open_new_tab==true) { ?> target="_blank"<?php } ?>><?php echo $home_testimonial_title; ?></a><?php if(!empty($designation)):?><span class="designation"><?php echo $designation; ?></span><?php endif;?></cite>
+  									<cite class="name"><a href="<?php if(empty($test_link)) { echo '#';} else { echo esc_url($test_link);} ?>" <?php if($open_new_tab==true) { ?> target="_blank"<?php } ?>><?php echo esc_html($home_testimonial_title); ?></a><?php if(!empty($designation)):?><span class="designation"><?php echo esc_html($designation); ?></span><?php endif;?></cite>
   									<?php endif;?>
   								</figcaption>
   							<?php endif;
@@ -80,7 +83,7 @@ if (!function_exists('spiceb_cloudpress_testimonial')) :
   		if(get_theme_mod('testimonial_image_overlay',true)==true):?>
     	.testimonial-wrapper:before
     	{
-    		background-color: <?php echo get_theme_mod('testimonial_overlay_section_color','rgba(1, 7, 12, 0.65)');?>
+    		background-color: <?php echo esc_attr(get_theme_mod('testimonial_overlay_section_color','rgba(1, 7, 12, 0.65)'));?>
     	}
   	   <?php endif;?>
   </style>

@@ -9,42 +9,42 @@ if (!$run_once){
 
     //then add the actuall link/ menu item and you do this for each item you want to add
     wp_update_nav_menu_item($menu->term_id, 0, array(
-        'menu-item-title' =>  __('Home'),
+        'menu-item-title' =>  __('Home','spicebox'),
         'menu-item-url' => '#totop', 
         'menu-item-status' => 'publish',
 		'menu-item-position' => 1,
 		));
 		
 	  wp_update_nav_menu_item($menu->term_id, 0, array(
-        'menu-item-title' =>  __('Service'),
+        'menu-item-title' =>  __('Service','spicebox'),
         'menu-item-url' => '#services', 
         'menu-item-status' => 'publish',
 		'menu-item-position' => 2,
 		));
 		
 	wp_update_nav_menu_item($menu->term_id, 0, array(
-        'menu-item-title' =>  __('About'),
+        'menu-item-title' =>  __('About','spicebox'),
         'menu-item-url' => '#about', 
         'menu-item-status' => 'publish',
 		'menu-item-position' => 3,
 		));
 		
 	wp_update_nav_menu_item($menu->term_id, 0, array(
-        'menu-item-title' =>  __('Team'),
+        'menu-item-title' =>  __('Team','spicebox'),
         'menu-item-url' => '#team', 
         'menu-item-status' => 'publish',
 		'menu-item-position' => 4,
 		));
 	
 	wp_update_nav_menu_item($menu->term_id, 0, array(
-        'menu-item-title' =>  __('Blog'),
+        'menu-item-title' =>  __('Blog','spicebox'),
         'menu-item-url' => '#blog', 
         'menu-item-status' => 'publish',
 		'menu-item-position' => 5,
 		));
 		
 	wp_update_nav_menu_item($menu->term_id, 0, array(
-        'menu-item-title' =>  __('Contact'),
+        'menu-item-title' =>  __('Contact','spicebox'),
         'menu-item-url' => '#contact', 
         'menu-item-status' => 'publish',
 		'menu-item-position' => 6,

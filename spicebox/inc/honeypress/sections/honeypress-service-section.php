@@ -26,7 +26,7 @@ if (!function_exists('spiceb_honeypress_service')) :
         $section_is_empty = empty($honeypress_service_content) && empty($home_service_section_discription) && empty($home_service_section_title);
         if ($home_service_section_enabled != 'off') {
             ?>
-            <section class="<?php echo $service_variant_class; ?>">
+            <section class="<?php echo esc_attr($service_variant_class); ?>">
                 <div class="container">		
             <?php if (($home_service_section_title) || ($home_service_section_discription) != '') { ?>
                         <div class="row">
@@ -35,12 +35,12 @@ if (!function_exists('spiceb_honeypress_service')) :
                                     <div class="section-separator border-center"></div>
                         <?php if (!empty($home_service_section_title) || is_customize_preview()) : ?>
                                         <p class="section-subtitle">
-                    <?php echo $home_service_section_title; ?>
+                    <?php echo esc_html($home_service_section_title); ?>
                                         </p>
                                     <?php endif; ?>
                                     <?php if ($home_service_section_discription) { ?>
                                         <h2 class="section-title">
-                                            <?php echo $home_service_section_discription; ?>
+                                            <?php echo wp_kses_post($home_service_section_discription); ?>
                                         </h2>
                                     <?php } ?>
                                 </div>
@@ -102,7 +102,7 @@ if (!function_exists('spiceb_honeypress_service')) :
                 $open_new_tab = !empty($service_item->open_new_tab) ? $service_item->open_new_tab : 'no';
                 ?>
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="post <?php echo $post_class; ?>"<?php if ($theme->name == 'HoneyPress') {
+                    <div class="post <?php echo esc_attr($post_class); ?>"<?php if ($theme->name == 'HoneyPress') {
                     echo 'data-wow-delay=".5s"';
                 } ?>>
                 <?php if ($choice == 'customizer_repeater_image') { ?>	

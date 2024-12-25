@@ -6,7 +6,7 @@ $team_options = get_theme_mod('busicare_team_content');
 $team_nav_style = get_theme_mod('team_nav_style', 'bullets');
 $isRTL = (is_rtl()) ? (bool) true : (bool) false;
 $teamsettings = array('teamcarouselid' => '#team-carousel','team_nav_style' => $team_nav_style, 'rtl' => $isRTL);
-wp_register_script('busicare-team', SPICEB_PLUGIN_URL . 'inc/busicare/js/front-page/team.js', array('jquery'));
+wp_register_script('busicare-team', SPICEB_PLUGIN_URL . 'inc/busicare/js/front-page/team.js', array('jquery'), SPICEBOX_PLUGIN_VERSION, true);
 wp_localize_script('busicare-team', 'team_settings', $teamsettings);
 wp_enqueue_script('busicare-team');
 
@@ -15,7 +15,7 @@ if (empty($team_options)) {
                 array(
                     'image_url' => SPICEB_PLUGIN_URL . '/inc/busicare/images/team/team1.jpg',
                     'membername' => 'Danial Wilson',
-                    'designation' => esc_html__('Senior Manager', 'busicare-plus'),
+                    'designation' => esc_html__('Senior Manager', 'spicebox'),
                     'link' => '#',
                     'open_new_tab' => 'no',
                     'id' => 'customizer_repeater_56d7ea7f40c56',
@@ -47,7 +47,7 @@ if (empty($team_options)) {
                 array(
                     'image_url' => SPICEB_PLUGIN_URL . '/inc/busicare/images/team/team2.jpg',
                     'membername' => 'Amanda Smith',
-                    'designation' => esc_html__('Founder & CEO', 'busicare-plus'),
+                    'designation' => esc_html__('Founder & CEO', 'spicebox'),
                     'link' => '#',
                     'open_new_tab' => 'no',
                     'id' => 'customizer_repeater_56d7ea7f40c66',
@@ -79,7 +79,7 @@ if (empty($team_options)) {
                 array(
                     'image_url' => SPICEB_PLUGIN_URL . '/inc/busicare/images/team/team3.jpg',
                     'membername' => 'Victoria Wills',
-                    'designation' => esc_html__('Web Master', 'busicare-plus'),
+                    'designation' => esc_html__('Web Master', 'spicebox'),
                     'link' => '#',
                     'open_new_tab' => 'no',
                     'id' => 'customizer_repeater_56d7ea7f40c76',
@@ -111,7 +111,7 @@ if (empty($team_options)) {
                 array(
                     'image_url' => SPICEB_PLUGIN_URL . '/inc/busicare/images/team/team4.jpg',
                     'membername' => 'Travis Marcus',
-                    'designation' => esc_html__('UI Developer', 'busicare-plus'),
+                    'designation' => esc_html__('UI Developer', 'spicebox'),
                     'link' => '#',
                     'open_new_tab' => 'no',
                     'id' => 'customizer_repeater_56d7ea7f40c86',
@@ -195,11 +195,17 @@ if ($team_section_enable != false) {?>
                                             $link_html .= '>';
                                             echo wp_kses_post($link_html);
                                         endif;
-                                        echo '<img class="img-fluid" src="' . esc_url($image) . '"';
-                                        if (!empty($title)) {
-                                            echo 'alt="' . esc_attr($title) . '" title="' . esc_attr($title) . '"';
-                                        }
-                                        echo '/>';
+
+                                        $attachment_id = spiceb_save_image_to_media_library($image);
+                                        $attributes = array(
+                                           'alt'   => esc_attr($title),
+                                           'class' => 'img-fluid',
+                                           'title' => esc_attr($title),
+                                           'width' => '100', // Optional: Set width
+                                           'height'=> '100', // Optional: Set height
+                                        );
+                                        echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+
                                         if (!empty($link)) {
                                             echo '</a>';
                                         }

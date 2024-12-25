@@ -31,9 +31,9 @@ if ( ! function_exists( 'spiceb_spicepress_portfolio' ) ) :
 		<div class="row">
 			<div class="col-md-12">
 				<div class="section-header">
-					<h1 class="widget-title wow fadeInUp animated animated" data-wow-duration="500ms" data-wow-delay="0ms"><?php echo $home_portfolio_section_title; ?></h1>
+					<h1 class="widget-title wow fadeInUp animated animated" data-wow-duration="500ms" data-wow-delay="0ms"><?php echo esc_html($home_portfolio_section_title); ?></h1>
 					<div class="widget-separator"><span></span></div>
-					<p class="wow fadeInDown animated"><?php echo $home_portfolio_section_discription; ?></p>
+					<p class="wow fadeInDown animated"><?php echo wp_kses_post($home_portfolio_section_discription); ?></p>
 				</div>
 			</div>
 		</div>
@@ -46,13 +46,19 @@ if ( ! function_exists( 'spiceb_spicepress_portfolio' ) ) :
 					<div class="col-md-4 col-sm-6 col-xs-12 port1">						
 						<article class="post">
 							<figure class="post-thumbnail">
-								<img class="img-responsive" alt="img" src="<?php echo $portfolio_one_thumb; ?>">
+								<?php $attachment_id = spiceb_save_image_to_media_library($portfolio_one_thumb);
+                                    $attributes = array(
+                                       'alt'   => esc_attr__('img', 'spicebox'),
+                                       'class' => 'img-responsive'
+                                    );
+                                    echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+								?>
 							</figure>
 							<header class="entry-header">
-								<h4 class="entry-title"><a href="#"><?php echo $portfolio_one_title; ?></a></h4>
+								<h4 class="entry-title"><a href="#"><?php echo esc_html($portfolio_one_title); ?></a></h4>
 							</header>	
 							<div class="entry-content">
-								<p><?php echo $portfolio_one_desc; ?></p>
+								<p><?php echo wp_kses_post($portfolio_one_desc); ?></p>
 							</div>	
 						</article>
 					</div>
@@ -60,13 +66,19 @@ if ( ! function_exists( 'spiceb_spicepress_portfolio' ) ) :
 					<div class="col-md-4 col-sm-6 col-xs-12 port2">						
 						<article class="post">
 							<figure class="post-thumbnail">
-								<img class="img-responsive" alt="img" src="<?php echo $portfolio_two_thumb?>">
+								<?php $attachment_id = spiceb_save_image_to_media_library($portfolio_two_thumb);
+                                    $attributes = array(
+                                       'alt'   => esc_attr__('img', 'spicebox'),
+                                       'class' => 'img-responsive'
+                                    );
+                                    echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+								?>
 							</figure>
 							<header class="entry-header">
-								<h4 class="entry-title"><a href="#"><?php echo $portfolio_two_title; ?></a></h4>
+								<h4 class="entry-title"><a href="#"><?php echo esc_html($portfolio_two_title); ?></a></h4>
 							</header>	
 							<div class="entry-content">
-								<p><?php echo $portfolio_two_desc; ?></p>
+								<p><?php echo wp_kses_post($portfolio_two_desc); ?></p>
 							</div>	
 						</article>
 					</div>
@@ -74,13 +86,19 @@ if ( ! function_exists( 'spiceb_spicepress_portfolio' ) ) :
 					<div class="col-md-4 col-sm-6 col-xs-12 port3">						
 						<article class="post">
 							<figure class="post-thumbnail">
-								<img class="img-responsive" alt="img" src="<?php echo $portfolio_three_thumb?>">
+								<?php $attachment_id = spiceb_save_image_to_media_library($portfolio_three_thumb);
+                                    $attributes = array(
+                                       'alt'   => esc_attr__('img', 'spicebox'),
+                                       'class' => 'img-responsive'
+                                    );
+                                    echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+								?>
 							</figure>
 							<header class="entry-header">
-								<h4 class="entry-title"><a href="#"><?php echo $portfolio_three_title; ?></a></h4>
+								<h4 class="entry-title"><a href="#"><?php echo esc_html($portfolio_three_title); ?></a></h4>
 							</header>
 							<div class="entry-content">
-								<p><?php echo $portfolio_three_desc; ?></p>
+								<p><?php echo wp_kses_post($portfolio_three_desc); ?></p>
 							</div>	
 						</article>
 					</div>

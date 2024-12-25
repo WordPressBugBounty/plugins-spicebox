@@ -13,7 +13,7 @@ $testimonial_nav_style = get_theme_mod('testimonial_nav_style', 'bullets');
 
 $testimonial_settings = array('design_id' => '#testimonial-carousel', 'slide_items' => $slide_items, 'animationSpeed' => $testimonial_animation_speed, 'smoothSpeed' => $testimonial_smooth_speed, 'testimonial_nav_style' => $testimonial_nav_style, 'rtl' => $isRTL);
 
-wp_register_script('spice-software-testimonial', SPICEB_PLUGIN_URL . 'inc/spice-software/js/front-page/testi.js', array('jquery'));
+wp_register_script('spice-software-testimonial', SPICEB_PLUGIN_URL . 'inc/spice-software/js/front-page/testi.js', array('jquery'), SPICEBOX_PLUGIN_VERSION, true);
 wp_localize_script('spice-software-testimonial', 'testimonial_settings', $testimonial_settings);
 wp_enqueue_script('spice-software-testimonial');
 
@@ -25,10 +25,10 @@ $testimonial_callout_background = get_theme_mod('testimonial_callout_background'
 if (empty($testimonial_options)) {
     $testimonial_options = json_encode(array(
                     array(
-                        'title' => 'Exellent Theme & Very Fast Support',
+                        'title' => __('Exellent Theme & Very Fast Support','spicebox'),
                         'text' => 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem ipsum dolor sit amet,<br> temp consectetur adipisicing elit.',
-                        'clientname' => __('Amanda Smith', 'spice-software-plus'),
-                        'designation' => __('Developer', 'spice-software-plus'),
+                        'clientname' => __('Amanda Smith', 'spicebox'),
+                        'designation' => __('Developer', 'spicebox'),
                         'home_testimonial_star' => '4.5',
                         'link' => '#',
                         'image_url' => SPICEB_PLUGIN_URL . '/inc/spice-software/images/testimonial/user1.jpg',
@@ -37,10 +37,10 @@ if (empty($testimonial_options)) {
                         'home_slider_caption' => 'customizer_repeater_star_4.5',
                     ),
                     array(
-                        'title' => 'Exellent Theme & Very Fast Support',
+                        'title' => __('Exellent Theme & Very Fast Support','spicebox'),
                         'text' => 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem ipsum dolor sit amet,<br> temp consectetur adipisicing elit.',
-                        'clientname' => __('Travis Cullan', 'spice-software-plus'),
-                        'designation' => __('Team Leader', 'spice-software-plus'),
+                        'clientname' => __('Travis Cullan', 'spicebox'),
+                        'designation' => __('Team Leader', 'spicebox'),
                         'home_testimonial_star' => '5',
                         'link' => '#',
                         'image_url' => SPICEB_PLUGIN_URL . '/inc/spice-software/images/testimonial/user2.jpg',
@@ -49,10 +49,10 @@ if (empty($testimonial_options)) {
                         'home_slider_caption' => 'customizer_repeater_star_5',
                     ),
                     array(
-                        'title' => 'Exellent Theme & Very Fast Support',
+                        'title' => __('Exellent Theme & Very Fast Support','spicebox'),
                         'text' => 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem ipsum dolor sit amet,<br> temp consectetur adipisicing elit.',
-                        'clientname' => __('Victoria Wills', 'spice-software-plus'),
-                        'designation' => __('Volunteer', 'spice-software-plus'),
+                        'clientname' => __('Victoria Wills', 'spicebox'),
+                        'designation' => __('Volunteer', 'spicebox'),
                         'home_testimonial_star' => '3.5',
                         'link' => '#',
                         'image_url' => SPICEB_PLUGIN_URL . '/inc/spice-software/images/testimonial/user3.jpg',
@@ -75,12 +75,12 @@ endif;
 $testimonial_callout_background = get_theme_mod('testimonial_callout_background',SPICEB_PLUGIN_URL . '/inc/spice-software/images/testimonial/bg-img.jpg');
 if(get_theme_mod('testimonial_section_enable',true)==true):
     if('Spice Software Dark'==$theme->name):?>
-         <section class="section-space testimonial <?php echo $sectionClass; ?>"  style="background:url('<?php echo esc_url($testimonial_callout_background); ?>') 100% 100% no-repeat; -webkit-background-size: cover;
+         <section class="section-space testimonial <?php echo esc_attr($sectionClass); ?>"  style="background:url('<?php echo esc_url($testimonial_callout_background); ?>') 100% 100% no-repeat; -webkit-background-size: cover;
                   -moz-background-size: cover;
                   -o-background-size: cover;
                   background-size: cover;">
     <?php else:?>
-    <section class="section-space testimonial <?php echo $sectionClass; ?>">
+    <section class="section-space testimonial <?php echo esc_attr($sectionClass); ?>">
     <?php endif;?>
     <div class="owl-carousel owl-theme">
      <div class="container">
@@ -89,10 +89,10 @@ if(get_theme_mod('testimonial_section_enable',true)==true):
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="section-header">
                     <?php if($home_testimonial_section_title):?>
-                        <h2 class="section-title <?php echo $textColor; ?>"><?php echo esc_attr($home_testimonial_section_title); ?></h2>
+                        <h2 class="section-title <?php echo esc_attr($textColor); ?>"><?php echo wp_kses_post($home_testimonial_section_title); ?></h2>
                     <?php endif;?>
                     <?php if ($home_testimonial_section_discription != ''):?>
-                        <p class="<?php echo $textColor; ?>"><?php echo esc_attr($home_testimonial_section_discription); ?></p>
+                        <p class="<?php echo esc_attr($textColor); ?>"><?php echo wp_kses_post($home_testimonial_section_discription); ?></p>
                     <?php endif;?>
                     <div class="title_seprater"></div>
                 </div>
@@ -124,11 +124,17 @@ if(get_theme_mod('testimonial_section_enable',true)==true):
                     $stars = !empty($testimonial_iteam->home_testimonial_star) ? apply_filters('spice_software_translate_single_string', $testimonial_iteam->home_testimonial_star, 'Testimonial section') : '';
                     ?>
                 <div class="item">
-                    <blockquote class="testmonial-block <?php echo $textAlign; ?>">
+                    <blockquote class="testmonial-block <?php echo esc_attr($textAlign); ?>">
                         <?php $default_arg = array('class' => "img-circle"); ?>
                         <?php if ($home_testimonial_thumb != ''): ?>
                             <figure class="avatar">
-                                <img src="<?php echo esc_url($home_testimonial_thumb); ?>" class="img-fluid rounded-circle" alt="<?php echo esc_attr($home_testimonial_clientname);?>" >
+                                <?php $attachment_id = spiceb_save_image_to_media_library($home_testimonial_thumb);
+                                    $attributes = array(
+                                       'alt'   => esc_attr($home_testimonial_clientname),
+                                       'class' => 'img-fluid rounded-circle'
+                                    );
+                                    echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                                ?>
                             </figure>
                         <?php endif;
                         if ('Spice Software Dark' == $theme->name):
@@ -136,7 +142,7 @@ if(get_theme_mod('testimonial_section_enable',true)==true):
                             <figcaption>
                                 <?php if (!empty($home_testimonial_designation)): ?>
                                 <a href="<?php if (empty($home_testimonial_link)) {echo '#';} else { echo esc_url($home_testimonial_link);}?>" <?php if($open_new_tab==true) { ?> target="_blank"<?php } ?>>
-                                        <cite class="name"><?php echo esc_html($home_testimonial_clientname); ?></cite></a>
+                                        <cite class="name"><?php echo wp_kses(html_entity_decode($home_testimonial_clientname), $allowed_html); ?></cite></a>
                                 <?php endif; ?>
                                 <?php if (!empty($home_testimonial_designation)): ?>
                                  <span class="designation <?php echo esc_attr($textColor);?>"><?php echo esc_html($home_testimonial_designation); ?></span>
@@ -155,7 +161,7 @@ if(get_theme_mod('testimonial_section_enable',true)==true):
                                 <figcaption>
                                     <?php if (!empty($home_testimonial_designation)): ?>
                                     <a href="<?php if (empty($home_testimonial_link)) {echo '#';} else { echo esc_url($home_testimonial_link);}?>" <?php if($open_new_tab==true) { ?> target="_blank"<?php } ?>>
-                                            <cite class="name"><?php echo esc_html($home_testimonial_clientname); ?></cite></a>
+                                            <cite class="name"><?php echo wp_kses(html_entity_decode($home_testimonial_clientname), $allowed_html); ?></cite></a>
                                     <?php endif; ?>
                                     <?php if (!empty($home_testimonial_designation)): ?>
                                      <span class="designation"><?php echo esc_html($home_testimonial_designation); ?></span>
@@ -164,16 +170,23 @@ if(get_theme_mod('testimonial_section_enable',true)==true):
                             <?php } 
                         endif;  
 
-                        if(!empty($stars)) { ?>
+                        if(!empty($stars)) {
+                            // First, split the stars and get the last part
+                            $stars_parts = explode('_', $stars);
+                            $last_part = end($stars_parts);
+
+                            // Now, split the last part by '.' and get the integer value
+                            $stars = explode('.', $last_part);
+
+                            // Ensure that the array has at least one element, and if there are two, use the second
+                            $full_stars = isset($stars[0]) ? $stars[0] : 0; 
+                            $half_star = isset($stars[1]) && $stars[1] > 0 ? true : false; ?>
                             <div class="rating">   
                                 <?php
-                                $stars = end(explode('_', $stars));
-                                $stars = explode('.', end(explode('_', $stars)));
-                                for ($i = 1; $i <= $stars[0]; $i++) {
-                                    ?>
+                                for ($i = 1; $i <= $full_stars; $i++) { ?>
                                     <span class="fa fa-star"></span>
                                 <?php } ?>
-                                <?php if ($stars[1]) { ?>
+                                <?php if ($half_star) { ?>
                                     <span class="fa fa-star-half-o"></span>
                                 <?php } ?>
                             </div>

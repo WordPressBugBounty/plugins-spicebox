@@ -18,23 +18,32 @@ $activate = array(
             'search-2'
         ),
     );
+    
+    $logo_attachment_id = spiceb_save_image_to_media_library(SPICEB_PLUGIN_URL . '/inc/busicare/images/logo-footer.png');
+    $attributes = array(
+       'alt'   => esc_attr__('Logo', 'spicebox'),
+       'class' => 'img-fluid',
+       'width' => '100', // Optional: Set width
+       'height'=> '100', // Optional: Set height
+    );
 
-    /* the default titles will appear */
-    update_option('widget_text', array(
-        1 => array('title' => '',
-        'text'=>'<img src="'.esc_url(SPICEB_PLUGIN_URL).'/inc/busicare/images/logo-footer.png" alt="'.esc_attr("Logo","spicebox").'" />
-
-            &nbsp;
-
-            <p>Lorem ipsum dolor sit amet, ut ius audiam denique  tractatos, pro cu dicat quidam neglegentur. Vel mazim aliquid.</p>
-
-            <address>
+    // Prepare the widget text with the logo.
+    $widget_text_content = wp_get_attachment_image(esc_attr($logo_attachment_id), 'full', false, $attributes) . '
+        <p>Lorem ipsum dolor sit amet, ut ius audiam denique tractatos, pro cu dicat quidam neglegentur. Vel mazim aliquid.</p>
+        <address>
             <i class="fa-solid fa-location-dot"></i>Lorem Ipsum? dolor sit<br>
             <i class="fa-solid fa-envelope"></i><a href="mailto:abc@example.com">abc@example.com</a><br>
             <i class="fa-solid fa-phone"></i><a href="tel:+99 999 999 99">+99 999 999 99</a><br>
-            </address>
-            '), 
-        ));
+        </address>
+    ';
+
+    // Update the widget text content.
+    update_option('widget_text', array(
+        1 => array(
+            'title' => '',
+            'text' => $widget_text_content,
+        ),
+    ));
         
     update_option('widget_recent-posts', array(
         1 => array('title' => 'Recent Posts'), 

@@ -93,16 +93,16 @@ if (wp_get_theme()->name == 'Stacy' && version_compare(wp_get_theme()->get('Vers
     
         $wp_customize->add_control(new Spicebox_Image_Radio_Button_Custom_Control($wp_customize, 'service_design',
             array(
-                'label' => esc_html__('Service Design', 'stacy'),
+                'label' => esc_html__('Service Design', 'spicebox'),
                 'section' => 'services_section',
                 'choices' => array(
                     'default' => array(
                         'image' => SPICEB_PLUGIN_URL . '/inc/spicepress/images/stacy/stacy-service-default.png',
-                        'name' => esc_html__('Standard', 'stacy')
+                        'name' => esc_html__('Standard', 'spicebox')
                     ),
                     'slide-effect' => array(
                         'image' => SPICEB_PLUGIN_URL . '/inc/spicepress/images/stacy/stacy-service-slide-type.png',
-                        'name' => esc_html__('Slide-effect', 'stacy')
+                        'name' => esc_html__('Slide-effect', 'spicebox')
                     )
                 )
             )

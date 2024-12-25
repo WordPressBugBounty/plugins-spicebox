@@ -9,7 +9,7 @@ $team_smooth_speed = get_theme_mod('team_smooth_speed', 1000);
 $team_nav_style = get_theme_mod('team_nav_style', 'bullets');
 $isRTL = (is_rtl()) ? (bool) true : (bool) false;
 $teamsettings = array('team_animation_speed' => $team_animation_speed, 'team_smooth_speed' => $team_smooth_speed, 'team_nav_style' => $team_nav_style, 'rtl' => $isRTL);
-wp_register_script('spice-software-team', SPICEB_PLUGIN_URL . 'inc/spice-software/js/front-page/team.js', array('jquery'));
+wp_register_script('spice-software-team', SPICEB_PLUGIN_URL . 'inc/spice-software/js/front-page/team.js', array('jquery'), SPICEBOX_PLUGIN_VERSION, true);
 wp_localize_script('spice-software-team', 'team_settings', $teamsettings);
 wp_enqueue_script('spice-software-team');
 
@@ -19,7 +19,7 @@ if (empty($team_options)) {
                     'image_url' => SPICEB_PLUGIN_URL . '/inc/spice-software/images/team/item1.jpg',
                     'image_url2' => SPICEB_PLUGIN_URL . '/inc/spice-software/images/team/item-bg1.jpg',
                     'membername' => 'Danial Wilson',
-                    'designation' => esc_html__('Senior Manager', 'spice-software-plus'),
+                    'designation' => esc_html__('Senior Manager', 'spicebox'),
                     'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quae, dolores dicta. Blanditiis rem amet repellat, dolores nihil quae in mollitia asperiores ut rerum repellendus, voluptatum eum, officia laudantium quaerat?',
                     'open_new_tab' => 'no',
                     'id' => 'customizer_repeater_26d7ea7f40c56',
@@ -52,7 +52,7 @@ if (empty($team_options)) {
                     'image_url' => SPICEB_PLUGIN_URL . '/inc/spice-software/images/team/item2.jpg',
                     'image_url2' => SPICEB_PLUGIN_URL . '/inc/spice-software/images/team/item-bg2.jpg',
                     'membername' => 'Amanda Smith',
-                    'designation' => esc_html__('Founder & CEO', 'spice-software-plus'),
+                    'designation' => esc_html__('Founder & CEO', 'spicebox'),
                     'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quae, dolores dicta. Blanditiis rem amet repellat, dolores nihil quae in mollitia asperiores ut rerum repellendus, voluptatum eum, officia laudantium quaerat?',
                     'open_new_tab' => 'no',
                     'id' => 'customizer_repeater_56d1ea2f40c66',
@@ -85,7 +85,7 @@ if (empty($team_options)) {
                     'image_url' => SPICEB_PLUGIN_URL . '/inc/spice-software/images/team/item3.jpg',
                     'image_url2' => SPICEB_PLUGIN_URL . '/inc/spice-software/images/team/item-bg1.jpg',
                     'membername' => 'Victoria Wills',
-                    'designation' => esc_html__('Web Master', 'spice-software-plus'),
+                    'designation' => esc_html__('Web Master', 'spicebox'),
                     'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quae, dolores dicta. Blanditiis rem amet repellat, dolores nihil quae in mollitia asperiores ut rerum repellendus, voluptatum eum, officia laudantium quaerat?',
                     'open_new_tab' => 'no',
                     'id' => 'customizer_repeater_56d7ea7f40c76',
@@ -118,7 +118,7 @@ if (empty($team_options)) {
                     'image_url' => SPICEB_PLUGIN_URL . '/inc/spice-software/images/team/item4.jpg',
                     'image_url2' => SPICEB_PLUGIN_URL . '/inc/spice-software/images/team/item-bg2.jpg',
                     'membername' => 'Travis Marcus',
-                    'designation' => esc_html__('UI Developer', 'spice-software-plus'),
+                    'designation' => esc_html__('UI Developer', 'spicebox'),
                     'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quae, dolores dicta. Blanditiis rem amet repellat, dolores nihil quae in mollitia asperiores ut rerum repellendus, voluptatum eum, officia laudantium quaerat?',
                     'open_new_tab' => 'no',
                     'id' => 'customizer_repeater_56d7ea7f40c86',
@@ -162,14 +162,14 @@ if ($team_section_enable != false) {?>
                 <div class="col-lg-12 col-md-12 col-xs-12">
                     <div class="section-header">
                         <?php if (!empty($home_team_section_title)): ?>
-                            <h2 class="section-title"><?php echo esc_html($home_team_section_title); ?></h2>
+                            <h2 class="section-title"><?php echo wp_kses_post($home_team_section_title); ?></h2>
                             <div class="title_seprater"></div>
                             <?php
                         endif;
 
                         if (!empty($home_team_section_discription)):
                             ?>
-                            <h5 class="section-subtitle"><?php echo esc_html($home_team_section_discription); ?></h5>
+                            <h5 class="section-subtitle"><?php echo wp_kses_post($home_team_section_discription); ?></h5>
                         <?php endif; ?>
                     </div>
                 </div>						
@@ -192,13 +192,19 @@ if ($team_section_enable != false) {?>
                                 <div class="overlay">
                                     <?php if(!empty($image)){ ?>
                                     <div class="img-holder">
-                                        <img src="<?php echo esc_url($image); ?>" class="img-fluid"alt="<?php echo $title; ?>">
+                                        <?php $attachment_id = spiceb_save_image_to_media_library($image);
+                                        $attributes = array(
+                                           'alt'   => esc_attr($title),
+                                           'class' => 'img-fluid'
+                                        );
+                                        echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message())); ?>
                                     </div>
                                     <?php } ?>
 
                                     <!-- Social Icons -->
 
                                     <?php
+                                    $open_new_tab = 'yes';
                                     $icons = html_entity_decode($team_item->social_repeater);
                                     $icons_decoded = json_decode($icons, true);
                                     $socails_counts = $icons_decoded;
@@ -230,7 +236,7 @@ if ($team_section_enable != false) {?>
 
                                 <div class="card-body">
                                     <?php if (!empty($title)) : ?>
-                                    <h4 class="font-weight-bold mt-1 mb-2"><?php echo esc_html($title); ?></h4>
+                                    <h4 class="font-weight-bold mt-1 mb-2"><?php echo wp_kses_post($title); ?></h4>
                                     <?php endif;
                                     if (!empty($subtitle)) : ?>
                                         <p class="font-weight-bold dark-grey-text"><?php echo esc_html($subtitle); ?></p>
@@ -246,21 +252,30 @@ if ($team_section_enable != false) {?>
                                 <div class="face front">
                                     <!-- Image -->
                                     <div class="card-up">
-                                    <?php if(!empty($image2)){ ?>
-                                        <img class="card-img-top" src="<?php echo esc_url($image2); ?>" alt="<?php echo esc_attr($title); ?>">
-                                    <?php } ?>
+                                    <?php if(!empty($image2)){
+                                        $attachment_id = spiceb_save_image_to_media_library($image2);
+                                        $attributes = array(
+                                           'alt'   => esc_attr($title),
+                                           'class' => 'card-img-top'
+                                        );
+                                        echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                                    } ?>
                                     </div>
                                     <!-- Avatar -->
                                     <?php if(!empty($image)){ ?>
                                     <div class="avatar mx-auto white">
-                                        <img src="<?php echo esc_url($image); ?>" class="rounded-circle img-fluid"
-                                             alt="<?php echo esc_attr($title); ?>">
+                                        <?php $attachment_id = spiceb_save_image_to_media_library($image);
+                                        $attributes = array(
+                                           'alt'   => esc_attr($title),
+                                           'class' => 'rounded-circle img-fluid'
+                                        );
+                                        echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message())); ?>
                                     </div>
                                     <?php } ?>
                                     <!-- Content -->
                                     <div class="card-body">
                                         <?php if (!empty($title)) : ?>
-                                        <h4 class="font-weight-bold mt-1 mb-2"><?php echo esc_html($title); ?></h4>
+                                        <h4 class="font-weight-bold mt-1 mb-2"><?php echo wp_kses_post($title); ?></h4>
                                         <?php endif; 
                                         if (!empty($subtitle)) : ?>
                                             <p class="font-weight-bold dark-grey-text"><?php echo esc_html($subtitle); ?></p>
@@ -274,7 +289,7 @@ if ($team_section_enable != false) {?>
                                     <div class="card-body">
                                         <!-- Content -->
                                         <h4 class="font-weight-bold mt-4 mb-2">
-                                            <strong>About me</strong>
+                                            <strong><?php echo esc_html__('About me','spicebox'); ?></strong>
                                         </h4>
                                         <?php if (!empty($aboutme)) : ?>
                                         <hr>
@@ -283,6 +298,7 @@ if ($team_section_enable != false) {?>
                                     <?php endif;?>
                                     <!-- Social Icons -->
                                     <?php
+                                    $open_new_tab = 'yes';
                                     $icons = html_entity_decode($team_item->social_repeater);
                                     $icons_decoded = json_decode($icons, true);
                                     $socails_counts = $icons_decoded;

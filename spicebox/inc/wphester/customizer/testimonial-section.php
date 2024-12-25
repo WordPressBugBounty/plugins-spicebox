@@ -88,7 +88,7 @@ $wp_customize->add_setting('testimonial_image_overlay', array(
 ));
 
 $wp_customize->add_control('testimonial_image_overlay', array(
-    'label' => __('Enable testimonial image overlay', 'spiko-plus'),
+    'label' => __('Enable testimonial image overlay', 'spicebox'),
     'section' => 'testimonial_section',
     'type' => 'checkbox',
     'active_callback' => 'spiceb_wphester_testimonial_callback'
@@ -100,7 +100,7 @@ $wp_customize->add_setting('testimonial_overlay_section_color', array(
 ));
 
 $wp_customize->add_control(new SpiceBox_Customize_Alpha_Color_Control($wp_customize, 'testimonial_overlay_section_color', array(
-            'label' => __('Testimonial Image Overlay Color', 'spiko-plus'),
+            'label' => __('Testimonial Image Overlay Color', 'spicebox'),
             'palette' => true,
             'section' => 'testimonial_section',
             'active_callback' => 'spiceb_wphester_testimonial_callback')

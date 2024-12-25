@@ -25,8 +25,8 @@ if($team_section_enable !='off')
 		<div class="row">
 			<div class="col-md-12">
 				<div class="section-header">
-					<p class="section-subtitle"><?php echo $home_team_section_title; ?></p>
-					<h1 class="section-title"><?php echo $home_team_section_discription; ?></h1>
+					<p class="section-subtitle"><?php echo esc_html($home_team_section_title); ?></p>
+					<h1 class="section-title"><?php echo esc_html($home_team_section_discription); ?></h1>
 				</div>
 			</div>						
 		</div>
@@ -62,11 +62,15 @@ if($team_section_enable !='off')
 									$link_html .= '>';
 									echo wp_kses_post( $link_html );
 								endif;
-								echo '<img class="img" src="' . esc_url( $image ) . '"';
-								if ( ! empty( $title ) ) {
-									echo 'alt="' . esc_attr( $title ) . '" title="' . esc_attr( $title ) . '"';
-								}
-								echo '/>';
+
+								$attachment_id = spiceb_save_image_to_media_library($image);
+                                $attributes = array(
+                                   'alt'   => esc_attr($title),
+                                   'class' => 'img',
+                                   'title' => esc_attr($title)
+                                );
+                                echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+
 								if ( ! empty( $link ) ) {
 									echo '</a>';
 								}
@@ -77,7 +81,7 @@ if($team_section_enable !='off')
 						   <?php if ( ! empty( $title ) ) : ?>
 							
 							        <?php if ( ! empty( $link ) ) : ?>
-							        <a href="<?php echo $link ?>" <?php if($open_new_tab == 'yes'){ echo 'target="_blank"';}?>>
+							        <a href="<?php echo esc_url($link) ?>" <?php if($open_new_tab == 'yes'){ echo 'target="_blank"';}?>>
 									<?php endif; ?>
 										<h6 class="name"><?php echo esc_html( $title ); ?></h6>
 									<?php if ( ! empty( $link ) ) : ?>	
@@ -125,11 +129,16 @@ if($team_section_enable !='off')
 				<div class="col-md-3 col-sm-6 col-xs-12 p-0">
 					<div class="team-grid">
 					   <div class="img-holder">
-						   <img src="<?php echo SPICEB_PLUGIN_URL ?>inc/innofit/images/team/team1.jpg" alt="Danial Wilson">
+					   		<?php $attachment_id = spiceb_save_image_to_media_library(SPICEB_PLUGIN_URL . 'inc/innofit/images/team/team1.jpg');
+                                $attributes = array(
+                                  'alt' => esc_attr__('Danial Wilson', 'spicebox')
+                                );
+                                echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                            ?>
 					   </div>
 					   <div class="details">
-						   <h6 class="name"><?php echo 'Danial Wilson'; ?></h6>
-						   <span class="position"><?php _e('Senior Manager','spicebox'); ?></span>
+						   <h6 class="name"><?php echo esc_html__('Danial Wilson','spicebox'); ?></h6>
+						   <span class="position"><?php esc_html_e('Senior Manager','spicebox'); ?></span>
 						   <ul class="social-links">
 							   <li><a href="#" class="btn btn-just-icon btn-simple"><i class="fa-brands fa-facebook-f"></i></a></li>
 							   <li><a href="#" class="btn btn-just-icon btn-simple"><i class="fa-brands fa-x-twitter"></i></a></li>
@@ -142,11 +151,16 @@ if($team_section_enable !='off')
 				<div class="col-md-3 col-sm-6 col-xs-12 p-0">
 					<div class="team-grid">
 					   <div class="img-holder">
-						   <img src="<?php echo SPICEB_PLUGIN_URL ?>inc/innofit/images/team/team2.jpg" alt="Danial Wilson">
+					   		<?php $attachment_id = spiceb_save_image_to_media_library(SPICEB_PLUGIN_URL . 'inc/innofit/images/team/team2.jpg');
+                                $attributes = array(
+                                  'alt' => esc_attr__('Amanda Smith', 'spicebox')
+                                );
+                                echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                            ?>
 					   </div>
 					   <div class="details">
-						   <h6 class="name"><?php echo 'Amanda Smith'; ?></h6>
-						   <span class="position"><?php _e('Founder & CEO','spicebox'); ?></span>
+						   <h6 class="name"><?php echo esc_html__('Amanda Smith','spicebox'); ?></h6>
+						   <span class="position"><?php esc_html_e('Founder & CEO','spicebox'); ?></span>
 						   <ul class="social-links">
 							   <li><a href="#" class="btn btn-just-icon btn-simple"><i class="fa-brands fa-facebook-f"></i></a></li>
 							   <li><a href="#" class="btn btn-just-icon btn-simple"><i class="fa-brands fa-x-twitter"></i></a></li>
@@ -159,11 +173,16 @@ if($team_section_enable !='off')
 				<div class="col-md-3 col-sm-6 col-xs-12 p-0">
 					<div class="team-grid">
 					   <div class="img-holder">
-						  <img src="<?php echo SPICEB_PLUGIN_URL ?>inc/innofit/images/team/team3.jpg" alt="Danial Wilson">
+					   		<?php $attachment_id = spiceb_save_image_to_media_library(SPICEB_PLUGIN_URL . 'inc/innofit/images/team/team3.jpg');
+                                $attributes = array(
+                                  'alt' => esc_attr__('Victoria Wills', 'spicebox')
+                                );
+                                echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                            ?>
 					   </div>
 					   <div class="details">
-						   <h6 class="name"><?php echo 'Victoria Wills'; ?></h6>
-						   <span class="position"><?php _e('Web Master','spicebox'); ?></span>
+						   <h6 class="name"><?php echo esc_html__('Victoria Wills','spicebox'); ?></h6>
+						   <span class="position"><?php esc_html_e('Web Master','spicebox'); ?></span>
 						   <ul class="social-links">
 							   <li><a href="#" class="btn btn-just-icon btn-simple"><i class="fa-brands fa-facebook-f"></i></a></li>
 							   <li><a href="#" class="btn btn-just-icon btn-simple"><i class="fa-brands fa-x-twitter"></i></a></li>
@@ -176,11 +195,16 @@ if($team_section_enable !='off')
 				<div class="col-md-3 col-sm-6 col-xs-12 p-0">
 					<div class="team-grid">
 					   <div class="img-holder">
-						  <img src="<?php echo SPICEB_PLUGIN_URL ?>inc/innofit/images/team/team4.jpg" alt="Danial Wilson">
+					   		<?php $attachment_id = spiceb_save_image_to_media_library(SPICEB_PLUGIN_URL . 'inc/innofit/images/team/team4.jpg');
+                                $attributes = array(
+                                  'alt' => esc_attr__('Travis Marcus', 'spicebox')
+                                );
+                                echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+                            ?>
 					   </div>
 					   <div class="details">
-						   <h6 class="name"><?php echo 'Travis Marcus'; ?></h6>
-						   <span class="position"><?php _e('UI Developer','spicebox'); ?></span>
+						   <h6 class="name"><?php echo esc_html__('Travis Marcus','spicebox'); ?></h6>
+						   <span class="position"><?php esc_html_e('UI Developer','spicebox'); ?></span>
 						   <ul class="social-links">
 							   <li><a href="#" class="btn btn-just-icon btn-simple"><i class="fa-brands fa-facebook-f"></i></a></li>
 							   <li><a href="#" class="btn btn-just-icon btn-simple"><i class="fa-brands fa-x-twitter"></i></a></li>

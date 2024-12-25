@@ -53,8 +53,8 @@ if (!function_exists('spiceb_busicare_testimonial_default_customize_register')) 
                 array(
                     'title' => 'Nam Viverra Iaculis Finibus',
                     'text' => 'Sed ut Perspiciatis Unde Omnis Iste Sed ut perspiciatis unde omnis iste natu error sit voluptatem accu tium neque fermentum veposu miten a tempor nise. Duis autem vel eum iriure dolor in hendrerit in vulputate velit consequat reprehender in voluptate velit esse cillum duis dolor fugiat nulla pariatur.',
-                    'clientname' => esc_html__('Cras Vitae', 'busicare-plus'),
-                    'designation' => esc_html__('Eu Suscipit', 'busicare-plus'),
+                    'clientname' => esc_html__('Cras Vitae', 'spicebox'),
+                    'designation' => esc_html__('Eu Suscipit', 'spicebox'),
                     'link' => '#',
                     'image_url' => SPICEB_PLUGIN_URL . '/inc/busicare/images/testimonial/user1.jpg',
                     'open_new_tab' => 'no',
@@ -63,8 +63,8 @@ if (!function_exists('spiceb_busicare_testimonial_default_customize_register')) 
                 array(
                     'title' => 'Nam Viverra Iaculis Finibus',
                     'text' => 'Sed ut Perspiciatis Unde Omnis Iste Sed ut perspiciatis unde omnis iste natu error sit voluptatem accu tium neque fermentum veposu miten a tempor nise. Duis autem vel eum iriure dolor in hendrerit in vulputate velit consequat reprehender in voluptate velit esse cillum duis dolor fugiat nulla pariatur.',
-                    'clientname' => esc_html__('Cras Vitae', 'busicare-plus'),
-                    'designation' => esc_html__('Eu Suscipit', 'busicare-plus'),
+                    'clientname' => esc_html__('Cras Vitae', 'spicebox'),
+                    'designation' => esc_html__('Eu Suscipit', 'spicebox'),
                     'link' => '#',
                     'image_url' => SPICEB_PLUGIN_URL . '/inc/busicare/images/testimonial/user2.jpg',
                     'open_new_tab' => 'no',
@@ -73,8 +73,8 @@ if (!function_exists('spiceb_busicare_testimonial_default_customize_register')) 
                 array(
                     'title' => 'Nam Viverra Iaculis Finibus',
                     'text' => 'Sed ut Perspiciatis Unde Omnis Iste Sed ut perspiciatis unde omnis iste natu error sit voluptatem accu tium neque fermentum veposu miten a tempor nise. Duis autem vel eum iriure dolor in hendrerit in vulputate velit consequat reprehender in voluptate velit esse cillum duis dolor fugiat nulla pariatur.',
-                    'clientname' => esc_html__('Cras Vitae', 'busicare-plus'),
-                    'designation' => esc_html__('Eu Suscipit', 'busicare-plus'),
+                    'clientname' => esc_html__('Cras Vitae', 'spicebox'),
+                    'designation' => esc_html__('Eu Suscipit', 'spicebox'),
                     'link' => '#',
                     'image_url' => SPICEB_PLUGIN_URL . '/inc/busicare/images/testimonial/user3.jpg',
                     'id' => 'customizer_repeater_56d7ea7f40b98',
@@ -99,7 +99,7 @@ if (!function_exists('spiceb_busicare_team_default_customize_register')) :
                 array(
                     'image_url' => SPICEB_PLUGIN_URL . '/inc/busicare/images/team/team1.jpg',
                     'membername' => 'Danial Wilson',
-                    'designation' => esc_html__('Senior Manager', 'busicare-plus'),
+                    'designation' => esc_html__('Senior Manager', 'spicebox'),
                     'open_new_tab' => 'no',
                     'id' => 'customizer_repeater_56d7ea7f40c56',
                     'social_repeater' => json_encode(
@@ -130,7 +130,7 @@ if (!function_exists('spiceb_busicare_team_default_customize_register')) :
                 array(
                     'image_url' => SPICEB_PLUGIN_URL . '/inc/busicare/images/team/team2.jpg',
                     'membername' => 'Amanda Smith',
-                    'designation' => esc_html__('Founder & CEO', 'busicare-plus'),
+                    'designation' => esc_html__('Founder & CEO', 'spicebox'),
                     'open_new_tab' => 'no',
                     'id' => 'customizer_repeater_56d7ea7f40c66',
                     'social_repeater' => json_encode(
@@ -161,7 +161,7 @@ if (!function_exists('spiceb_busicare_team_default_customize_register')) :
                 array(
                     'image_url' => SPICEB_PLUGIN_URL . '/inc/busicare/images/team/team3.jpg',
                     'membername' => 'Victoria Wills',
-                    'designation' => esc_html__('Web Master', 'busicare-plus'),
+                    'designation' => esc_html__('Web Master', 'spicebox'),
                     'open_new_tab' => 'no',
                     'id' => 'customizer_repeater_56d7ea7f40c76',
                     'social_repeater' => json_encode(
@@ -192,7 +192,7 @@ if (!function_exists('spiceb_busicare_team_default_customize_register')) :
                 array(
                     'image_url' => SPICEB_PLUGIN_URL . '/inc/busicare/images/team/team4.jpg',
                     'membername' => 'Travis Marcus',
-                    'designation' => esc_html__('UI Developer', 'busicare-plus'),
+                    'designation' => esc_html__('UI Developer', 'spicebox'),
                     'open_new_tab' => 'no',
                     'id' => 'customizer_repeater_56d7ea7f40c86',
                     'social_repeater' => json_encode(
@@ -235,7 +235,7 @@ function spiceb_busicare_sections_settings($wp_customize) {
     $wp_customize->add_panel('section_settings', array(
         'priority' => 126,
         'capability' => 'edit_theme_options',
-        'title' => esc_html__('Homepage Section Settings', 'busicare'),
+        'title' => esc_html__('Homepage Section Settings', 'spicebox'),
     ));
 }
 

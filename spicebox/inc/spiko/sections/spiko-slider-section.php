@@ -17,11 +17,11 @@ function spiceb_spiko_slider_section()
 	$home_slider_subtitle = get_theme_mod('home_slider_subtitle',__('Lorem Ipsum','spicebox'));		
 	$home_slider_discription = get_theme_mod('home_slider_discription',__('Sea summo mazim ex, ea errem eleifend definitionem vim. Ut nec hinc dolor possim <br> mei ludus  efficiendi ei sea summo mazim ex.','spicebox'));
 	$home_slider_btn_txt = get_theme_mod('home_slider_btn_txt',__('Nec Sem','spicebox'));
-	$home_slider_btn_link = get_theme_mod('home_slider_btn_link',__(esc_url('#'),'spicebox'));
+	$home_slider_btn_link = get_theme_mod('home_slider_btn_link', esc_url('#'));
 	$home_slider_btn_target = get_theme_mod('home_slider_btn_target',false);
 
 	$home_slider_btn_txt2 = get_theme_mod('home_slider_btn_txt2',__('Cras Vitae','spicebox'));
-	$home_slider_btn_link2 = get_theme_mod('home_slider_btn_link2',__(esc_url('#'),'spicebox'));
+	$home_slider_btn_link2 = get_theme_mod('home_slider_btn_link2', esc_url('#'));
 	$home_slider_btn_target2 = get_theme_mod('home_slider_btn_target2',false);
 	$slider_align_split = get_theme_mod('slider_content_alignment','left');
 
@@ -46,12 +46,12 @@ function spiceb_spiko_slider_section()
                     if($home_slider_subtitle!='')
                     {
                     ?>
-                    <p class="heading"><span class="sub"><?php echo  esc_html($home_slider_subtitle); ?></span></p>
+                    <p class="heading"><span class="sub"><?php echo  wp_kses_post($home_slider_subtitle); ?></span></p>
                     <?php
                     }
 					if($home_slider_title!=''){ ?>
 						<div class="inner-title">
-						<h2 class="title"><?php echo  esc_html($home_slider_title); ?></h2>
+						<h2 class="title"><?php echo  wp_kses_post($home_slider_title); ?></h2>
 						</div>
 					<?php } 
 					if($home_slider_discription!=''){ ?>
@@ -86,12 +86,12 @@ function spiceb_spiko_slider_section()
                     if($home_slider_subtitle!='')
                     {
                     ?>
-                    <p class="heading"><span class="sub"><?php echo  esc_html($home_slider_subtitle); ?></span></p>
+                    <p class="heading"><span class="sub"><?php echo  wp_kses_post($home_slider_subtitle); ?></span></p>
                     <?php
                     }
 					if($home_slider_title!=''){ ?>
 						<div class="inner-title">
-						<h2 class="title"><?php echo  esc_html($home_slider_title); ?></h2>
+						<h2 class="title"><?php echo  wp_kses_post($home_slider_title); ?></h2>
 					</div>
 					<?php } 
 					if($home_slider_discription!=''){ ?>
