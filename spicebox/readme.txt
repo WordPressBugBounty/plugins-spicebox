@@ -5,7 +5,7 @@ Tags:                   widget, admin, widgets
 Requires at least:      3.3
 Requires PHP:           5.2
 Tested up to:           6.7.1
-Stable tag:             2.4
+Stable tag:             2.4.1
 License:                GPLv2 or later
 License URI:            http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -288,6 +288,9 @@ Fixed minor issues of HoneyPress child themes.
 = 2.4 =
 1. Fixed PCP plugin issues.
 2. Removed WPBlack theme, feedback form and email code.
+
+= 2.4.1 =
+1. Updated freemius directory.
 
 =======External resources=======
 
