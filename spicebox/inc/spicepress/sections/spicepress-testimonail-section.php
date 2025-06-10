@@ -74,7 +74,7 @@ $testimonial_image_overlay = get_theme_mod('testimonial_image_overlay',true);
 								<?php $attachment_id = spiceb_save_image_to_media_library($home_testimonial_thumb);
                                     $attributes = array(
                                        'alt'   => esc_attr__('img', 'spicebox'),
-                                       'class' => 'img-circle'
+                                       'class' => 'rounded-circle'
                                     );
                                     echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
 								?>
@@ -158,7 +158,7 @@ $testimonial_image_overlay = get_theme_mod('testimonial_image_overlay',true);
 								<?php $attachment_id = spiceb_save_image_to_media_library($home_testimonial_thumb);
                                     $attributes = array(
                                        'alt'   => esc_attr__('img', 'spicebox'),
-                                       'class' => 'img-responsive img-circle'
+                                       'class' => 'img-responsive rounded-circle'
                                     );
                                     echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
 								?>
@@ -231,37 +231,33 @@ $testimonial_image_overlay = get_theme_mod('testimonial_image_overlay',true);
 			<!-- /Section Title -->
 
 			<!-- Testimonial -->
-			<div class="row">
-                <div class="col-md-12">
-                    <article class="testmonial-block">
-                    	<div class="col-lg-4">
-							<?php if($home_testimonial_thumb !=''){ ?>
-							<figure class="avatar">
-								<?php $attachment_id = spiceb_save_image_to_media_library($home_testimonial_thumb);
-                                    $attributes = array(
-                                       'alt'   => esc_attr__('img', 'spicebox'),
-                                       'class' => 'img-responsive img-circle'
-                                    );
-                                    echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
-								?>
-							</figure>
-							<?php }  ?>
-						</div>
-						<div class="col-lg-8 testimonial-text">
-						<?php 
-						if($home_testimonial_desc !=''){ ?>
-	                        <div class="entry-content">
-	                            <p class="text-white"><?php echo wp_kses_post($home_testimonial_desc);  ?></p>
-							</div>	
-                        <?php }
-                        if($home_testimonial_title != '' || $home_testimonial_designation !='' ){?>
-							<h4><?php echo esc_html($home_testimonial_title); ?> <?php if($home_testimonial_designation !=''){ ?> - <?php } ?><span class="designation"><?php echo esc_html($home_testimonial_designation); ?></span>
-							</h4>
-						<?php }?>
-						</div>		
-					</article>
+            <article class="row testmonial-block">
+            	<div class="col-lg-4">
+					<?php if($home_testimonial_thumb !=''){ ?>
+					<figure class="avatar">
+						<?php $attachment_id = spiceb_save_image_to_media_library($home_testimonial_thumb);
+                            $attributes = array(
+                               'alt'   => esc_attr__('img', 'spicebox'),
+                               'class' => 'img-responsive'
+                            );
+                            echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
+						?>
+					</figure>
+					<?php }  ?>
 				</div>
-			</div>
+				<div class="col-lg-8 testimonial-text">
+				<?php 
+				if($home_testimonial_desc !=''){ ?>
+                    <div class="entry-content">
+                        <p class="text-white"><?php echo wp_kses_post($home_testimonial_desc);  ?></p>
+					</div>	
+                <?php }
+                if($home_testimonial_title != '' || $home_testimonial_designation !='' ){?>
+					<h4><?php echo esc_html($home_testimonial_title); ?> <?php if($home_testimonial_designation !=''){ ?> - <?php } ?><span class="designation"><?php echo esc_html($home_testimonial_designation); ?></span>
+					</h4>
+				<?php }?>
+				</div>		
+			</article>
 		</div>
 		<!-- /Testimonial -->			
 	</div>	

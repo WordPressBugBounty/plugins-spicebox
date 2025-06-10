@@ -4,8 +4,8 @@ Contributors:           spicethemes
 Tags:                   widget, admin, widgets
 Requires at least:      3.3
 Requires PHP:           5.2
-Tested up to:           6.7.1
-Stable tag:             2.4.1
+Tested up to:           6.8
+Stable tag:             2.4.2
 License:                GPLv2 or later
 License URI:            http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -291,6 +291,9 @@ Fixed minor issues of HoneyPress child themes.
 
 = 2.4.1 =
 1. Updated freemius directory.
+
+= 2.4.2 =
+1. Fixed spicepress style issues with bootstrap 5.3.3.
 
 =======External resources=======
 

@@ -42,7 +42,6 @@ if ( ! function_exists( 'spiceb_spicepress_portfolio' ) ) :
 				
 		<!-- Item Scroll -->	
 			<div class="row">
-				<div id="portfolio-carousel">
 					<div class="col-md-4 col-sm-6 col-xs-12 port1">						
 						<article class="post">
 							<figure class="post-thumbnail">
@@ -102,9 +101,7 @@ if ( ! function_exists( 'spiceb_spicepress_portfolio' ) ) :
 							</div>	
 						</article>
 					</div>
-					
-					
-				</div>			
+								
 			</div>
 		<!-- /Item Scroll -->
 		
