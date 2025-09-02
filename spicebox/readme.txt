@@ -5,7 +5,7 @@ Tags:                   widget, admin, widgets
 Requires at least:      3.3
 Requires PHP:           5.2
 Tested up to:           6.8
-Stable tag:             2.4.2
+Stable tag:             2.4.3
 License:                GPLv2 or later
 License URI:            http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -294,6 +294,9 @@ Fixed minor issues of HoneyPress child themes.
 
 = 2.4.2 =
 1. Fixed spicepress style issues with bootstrap 5.3.3.
+
+= 2.4.3 =
+1. Fixed innofit style issues with bootstrap 5.3.3.
 
 =======External resources=======
 

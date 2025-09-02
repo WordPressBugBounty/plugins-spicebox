@@ -22,10 +22,14 @@
 	//About section content
 		if ( class_exists( 'Innofit_Page_Editor' ) ) {
 		$attachment_id = spiceb_save_image_to_media_library(SPICEB_PLUGIN_URL.'inc/innofit/images/about/about.jpg');
-		$attributes = array(
-	       'alt'   => esc_attr__('Logo', 'spicebox')
-	    );
-    	$about_image = wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes);
+		if ( is_wp_error( $attachment_id ) ) {
+         $about_image = ''; 
+        } else {
+            $attributes = array(
+                'alt' => esc_attr__('Logo', 'spicebox')
+           );
+          $about_image = wp_get_attachment_image($attachment_id, 'full', false, $attributes);
+        }
 		$default = '<div class="row v-center">
 						<div class="col-md-5 col-sm-5 col-xs-12">	
 							<figure class="about-thumbnail mbottom-50">	

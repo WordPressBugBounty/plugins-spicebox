@@ -30,8 +30,7 @@ function innofit_wooproduct_section() {
 					<div class="row">
 						<?php if ($loop->have_posts()) :
 			    			while ($loop->have_posts()) : $loop->the_post(); global $product; ?>
-								<div class="item <?php echo esc_attr(get_the_title()); ?>" data-profile="<?php echo esc_attr($loop->post->ID); ?>">
-									<div class="col-md-3 col-sm-6 col-xs-12">
+									<div class="col-md-3 col-sm-6 col-xs-12 <?php echo esc_attr(get_the_title()); ?>" data-profile="<?php echo esc_attr($loop->post->ID); ?>">
 										<div class="products">
 											<div class="item-img">
 												<?php the_post_thumbnail(); ?>
@@ -69,7 +68,6 @@ function innofit_wooproduct_section() {
 
 											</div>
 										</div>
-									</div>
 								</div>
 							<?php endwhile; 
 							wp_reset_postdata(); 

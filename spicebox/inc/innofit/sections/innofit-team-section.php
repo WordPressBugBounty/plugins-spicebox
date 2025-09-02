@@ -47,8 +47,7 @@ if($team_section_enable !='off')
 					$subtitle = ! empty( $team_item->subtitle ) ? apply_filters( 'innofit_translate_single_string', $team_item->subtitle, 'Team section' ) : '';
 					$link     = ! empty( $team_item->link ) ? apply_filters( 'innofit_translate_single_string', $team_item->link, 'Team section' ) : '';
 					$open_new_tab = $team_item->open_new_tab; ?>
-				<div class="item">
-				  <div class="col-md-3 col-sm-6 col-xs-12 p-0">
+				<div class="col-md-3 col-sm-6 col-xs-12 p-0">
 				    
 					<div class="team-grid">
 					<div class="img-holder">
@@ -119,7 +118,6 @@ if($team_section_enable !='off')
 														
 														?>
 										</ul>
-				   </div>
 				   </div>
 				   </div>
 				</div>

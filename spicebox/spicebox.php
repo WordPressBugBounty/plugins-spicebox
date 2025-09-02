@@ -2,7 +2,7 @@
 /*
 Plugin Name:		SpiceBox
 Description: 		Enhances SpiceThemes with extra functionality.
-Version: 			2.4.2
+Version: 			2.4.3
 Requires at least: 	3.3
 Requires PHP:		5.2
 Tested up to:       6.8
