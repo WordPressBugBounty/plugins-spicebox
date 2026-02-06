@@ -2,7 +2,7 @@
 /*
 Plugin Name:		SpiceBox
 Description: 		Enhances SpiceThemes with extra functionality.
-Version: 			2.4.3
+Version: 			2.4.4
 Requires at least: 	3.3
 Requires PHP:		5.2
 Tested up to:       6.8
@@ -18,7 +18,7 @@ define( 'SPICEB_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 // Assuming WC_PLUGIN_VERSION is defined somewhere in your plugin
 if ( ! defined( 'SPICEBOX_PLUGIN_VERSION' ) ) {
-    define( 'SPICEBOX_PLUGIN_VERSION', '2.4.1' );
+    define( 'SPICEBOX_PLUGIN_VERSION', '2.4.4' );
 }
 
 function spiceb_activate() {
@@ -689,7 +689,10 @@ function spiceb_save_image_to_media_library($image_url, $image_name = 'image') {
     }
 
     // Fetch the image data if it's not found
-    $response = wp_remote_get($image_url);
+    $response = wp_remote_get($image_url, array(
+        'sslverify' => false, // Disable SSL verification
+    ));
+
     if (is_wp_error($response)) {
         return new WP_Error('download_error', 'Failed to fetch the image.');
     }
@@ -733,4 +736,17 @@ function spiceb_save_image_to_media_library($image_url, $image_name = 'image') {
     wp_update_attachment_metadata($attachment_id, $attachment_metadata);
 
     return $attachment_id; // Return the attachment ID
+}
+
+function spiceb_text_align_fn($align) {
+    switch ($align) {
+        case 'left':
+            return 'start';
+        case 'right':
+            return 'end';
+        case 'center':
+            return 'center';
+        default:
+            return 'start'; // fallback
+    }
 }

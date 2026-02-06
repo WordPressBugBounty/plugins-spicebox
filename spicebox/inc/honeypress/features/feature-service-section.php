@@ -7,7 +7,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		$wp_customize->add_section( 'services_section' , array(
 			'title'      => __('Service settings', 'spicebox'),
 			'panel'  => 'section_settings',
-			'priority'   => 1,
+			'priority'   => 3,
 		) );
 		
 		// Enable service

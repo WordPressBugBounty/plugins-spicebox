@@ -35,7 +35,7 @@ function spiceb_wphester_slider_section()
 	         </video>
 	     	<?php }?>
 	     	<div class="container slider-caption">
-				<div class="caption-content <?php echo 'text-'.esc_attr($slider_align_split);?>">
+				<div class="caption-content <?php echo 'text-'.esc_attr(spiceb_text_align_fn($slider_align_split));?>">
                     <?php if($home_slider_subtitle!=''){ ?>
                     	<p class="heading"><span><?php echo wp_kses_post($home_slider_subtitle); ?></span></p> 
 					<?php }                   
@@ -72,7 +72,7 @@ function spiceb_wphester_slider_section()
 	<section class="spice-slider">
 		<div class="home-section active back-img" <?php if($home_slider_image!='') { ?>style="background-image:url( <?php echo esc_url($home_slider_image); ?> );" <?php } ?>>
 			<div class="container slider-caption">
-				<div class="caption-content <?php echo 'text-'.esc_attr($slider_align_split);?>">
+				<div class="caption-content <?php echo 'text-'.esc_attr(spiceb_text_align_fn($slider_align_split));?>">
                     <?php 
                     if($home_slider_subtitle!=''){ ?>
                     	<p class="heading"><span><?php echo wp_kses_post($home_slider_subtitle); ?></span></p> 

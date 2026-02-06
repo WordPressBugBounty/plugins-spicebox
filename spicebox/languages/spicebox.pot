@@ -5,16 +5,14 @@ msgstr ""
 "Spiceboxv1.0.0\n"
 "Report-Msgid-Bugs-To: "
 "Translator Name "
-"<translations@example."
-"com>\n"
+"<translations@example.com>\n"
 "POT-Creation-Date: "
-"2024-12-17 17:41+0530\n"
+"2025-11-21 15:01+0530\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Your "
 "Name <you@example.com>\n"
 "Language-Team: Your Team "
-"<translations@example."
-"com>\n"
+"<translations@example.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/"
@@ -30,19 +28,9 @@ msgstr ""
 "X-Poedit-SourceCharset: "
 "UTF-8\n"
 "X-Poedit-KeywordsList: "
-"__;_e;esc_html_e;"
-"esc_html_x:1,2c;"
-"esc_html__;esc_attr_e;"
-"esc_attr_x:1,2c;"
-"esc_attr__;_ex:1,2c;"
-"_nx:4c,1,2;"
-"_nx_noop:4c,1,2;_x:1,2c;"
-"_n:1,2;_n_noop:1,2;"
-"__ngettext:1,2;"
-"__ngettext_noop:1,2;_c,"
-"_nc:4c,1,2\n"
+"__;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.8\n"
 "X-Poedit-"
 "SearchPath-0: .\n"
 
@@ -190,7 +178,7 @@ msgstr ""
 #: inc/busicare/customizer.php:102
 #: inc/busicare/sections/busicare-team-section.php:18
 #: inc/innofit/customizer.php:107
-#: inc/innofit/sections/innofit-team-section.php:141
+#: inc/innofit/sections/innofit-team-section.php:139
 #: inc/spice-software/customizer.php:109
 #: inc/spice-software/sections/spice-software-team-section.php:22
 #: inc/spiko/customizer.php:109
@@ -205,7 +193,7 @@ msgstr ""
 #: inc/busicare/customizer.php:133
 #: inc/busicare/sections/busicare-team-section.php:50
 #: inc/innofit/customizer.php:139
-#: inc/innofit/sections/innofit-team-section.php:163
+#: inc/innofit/sections/innofit-team-section.php:161
 #: inc/spice-software/customizer.php:142
 #: inc/spice-software/sections/spice-software-team-section.php:55
 #: inc/spiko/customizer.php:142
@@ -220,7 +208,7 @@ msgstr ""
 #: inc/busicare/customizer.php:164
 #: inc/busicare/sections/busicare-team-section.php:82
 #: inc/innofit/customizer.php:170
-#: inc/innofit/sections/innofit-team-section.php:185
+#: inc/innofit/sections/innofit-team-section.php:183
 #: inc/spice-software/customizer.php:175
 #: inc/spice-software/sections/spice-software-team-section.php:88
 #: inc/spiko/customizer.php:175
@@ -235,7 +223,7 @@ msgstr ""
 #: inc/busicare/customizer.php:195
 #: inc/busicare/sections/busicare-team-section.php:114
 #: inc/innofit/customizer.php:203
-#: inc/innofit/sections/innofit-team-section.php:207
+#: inc/innofit/sections/innofit-team-section.php:205
 #: inc/spice-software/customizer.php:208
 #: inc/spice-software/sections/spice-software-team-section.php:121
 #: inc/spiko/customizer.php:208
@@ -593,7 +581,7 @@ msgstr ""
 #: inc/honeypress/features/feature-slider-section.php:35
 #: inc/honeypress/features/feature-slider-section.php:113
 #: inc/honeypress/features/feature-testimonial-section.php:131
-#: inc/innofit/customizer/about-section.php:77
+#: inc/innofit/customizer/about-section.php:81
 #: inc/innofit/customizer/slider-section.php:32
 #: inc/spice-software/customizer/slider-section.php:34
 #: inc/spice-software/customizer/slider-section.php:99
@@ -640,12 +628,13 @@ msgstr ""
 #: inc/wphester/customizer/slider-section.php:50
 #: inc/wpkites/customizer/slider-section.php:50
 msgid ""
-"Upload your video in ."
-"mp4 format and minimize "
-"its file size for best "
-"results. For this theme "
-"the recommended size is "
-"1150 × 2000 pixels."
+"Upload your video "
+"in .mp4 format and "
+"minimize its file size "
+"for best results. For "
+"this theme the "
+"recommended size is 1150 "
+"× 2000 pixels."
 msgstr ""
 
 #: inc/busicare/customizer/slider-section.php:64
@@ -1122,8 +1111,8 @@ msgid ""
 msgstr ""
 
 #: inc/busicare/default-widgets/default-widget.php:24
-#: inc/innofit/customizer/about-section.php:26
-#: inc/innofit/sections/innofit-about-section.php:12
+#: inc/innofit/customizer/about-section.php:29
+#: inc/innofit/sections/innofit-about-section.php:15
 #: inc/spice-software/default-widgets/default-widget.php:24
 #: inc/spicepress/default-widgets/default-widget.php:25
 msgid "Logo"
@@ -1823,25 +1812,25 @@ msgid ""
 "Enable About on homepage"
 msgstr ""
 
-#: inc/innofit/customizer/about-section.php:38
-#: inc/innofit/sections/innofit-about-section.php:24
+#: inc/innofit/customizer/about-section.php:42
+#: inc/innofit/sections/innofit-about-section.php:28
 msgid "Welcome to"
 msgstr ""
 
-#: inc/innofit/customizer/about-section.php:38
-#: inc/innofit/sections/innofit-about-section.php:24
+#: inc/innofit/customizer/about-section.php:42
+#: inc/innofit/sections/innofit-about-section.php:28
 msgid "Innofit"
 msgstr ""
 
-#: inc/innofit/customizer/about-section.php:39
-#: inc/innofit/sections/innofit-about-section.php:25
+#: inc/innofit/customizer/about-section.php:43
+#: inc/innofit/sections/innofit-about-section.php:29
 msgid ""
 "We have the right "
 "solutions"
 msgstr ""
 
-#: inc/innofit/customizer/about-section.php:40
-#: inc/innofit/sections/innofit-about-section.php:26
+#: inc/innofit/customizer/about-section.php:44
+#: inc/innofit/sections/innofit-about-section.php:30
 msgid ""
 "Sed ut perspiciatis unde "
 "omnis iste natus error "
@@ -1857,8 +1846,8 @@ msgid ""
 "voluptatem."
 msgstr ""
 
-#: inc/innofit/customizer/about-section.php:41
-#: inc/innofit/sections/innofit-about-section.php:27
+#: inc/innofit/customizer/about-section.php:45
+#: inc/innofit/sections/innofit-about-section.php:31
 msgid ""
 "Lorem ipsum dolor sit "
 "amet, consectetur "
@@ -1868,12 +1857,12 @@ msgid ""
 "dolore."
 msgstr ""
 
-#: inc/innofit/customizer/about-section.php:42
-#: inc/innofit/sections/innofit-about-section.php:28
+#: inc/innofit/customizer/about-section.php:46
+#: inc/innofit/sections/innofit-about-section.php:32
 msgid "Our Story"
 msgstr ""
 
-#: inc/innofit/customizer/about-section.php:58
+#: inc/innofit/customizer/about-section.php:62
 msgid "About content"
 msgstr ""
 
@@ -2230,13 +2219,13 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
-#: inc/innofit/sections/innofit-team-section.php:134
-#: inc/innofit/sections/innofit-team-section.php:140
+#: inc/innofit/sections/innofit-team-section.php:132
+#: inc/innofit/sections/innofit-team-section.php:138
 msgid "Danial Wilson"
 msgstr ""
 
-#: inc/innofit/sections/innofit-team-section.php:156
-#: inc/innofit/sections/innofit-team-section.php:162
+#: inc/innofit/sections/innofit-team-section.php:154
+#: inc/innofit/sections/innofit-team-section.php:160
 #: inc/spice-software/customizer.php:56
 #: inc/spice-software/sections/spice-software-testimonial-section.php:30
 #: inc/spiko/customizer.php:56
@@ -2248,8 +2237,8 @@ msgstr ""
 msgid "Amanda Smith"
 msgstr ""
 
-#: inc/innofit/sections/innofit-team-section.php:178
-#: inc/innofit/sections/innofit-team-section.php:184
+#: inc/innofit/sections/innofit-team-section.php:176
+#: inc/innofit/sections/innofit-team-section.php:182
 #: inc/spice-software/customizer.php:80
 #: inc/spice-software/sections/spice-software-testimonial-section.php:54
 #: inc/spiko/customizer.php:80
@@ -2261,21 +2250,21 @@ msgstr ""
 msgid "Victoria Wills"
 msgstr ""
 
-#: inc/innofit/sections/innofit-team-section.php:200
-#: inc/innofit/sections/innofit-team-section.php:206
+#: inc/innofit/sections/innofit-team-section.php:198
+#: inc/innofit/sections/innofit-team-section.php:204
 msgid "Travis Marcus"
 msgstr ""
 
-#: inc/innofit/sections/innofit-wooproduct-section.php:40
+#: inc/innofit/sections/innofit-wooproduct-section.php:39
 msgid "On Sale!"
 msgstr ""
 
-#: inc/innofit/sections/innofit-wooproduct-section.php:55
+#: inc/innofit/sections/innofit-wooproduct-section.php:54
 #, php-format
 msgid "Rated %s out of 5"
 msgstr ""
 
-#: inc/innofit/sections/innofit-wooproduct-section.php:61
+#: inc/innofit/sections/innofit-wooproduct-section.php:60
 msgid "out of 5"
 msgstr ""
 
@@ -2501,12 +2490,12 @@ msgid ""
 "Quis hendrerit purus"
 msgstr ""
 
-#: inc/spicepress/sections/spicepress-portfolio-section.php:51
-#: inc/spicepress/sections/spicepress-portfolio-section.php:71
-#: inc/spicepress/sections/spicepress-portfolio-section.php:91
+#: inc/spicepress/sections/spicepress-portfolio-section.php:50
+#: inc/spicepress/sections/spicepress-portfolio-section.php:70
+#: inc/spicepress/sections/spicepress-portfolio-section.php:90
 #: inc/spicepress/sections/spicepress-testimonail-section.php:76
 #: inc/spicepress/sections/spicepress-testimonail-section.php:160
-#: inc/spicepress/sections/spicepress-testimonail-section.php:242
+#: inc/spicepress/sections/spicepress-testimonail-section.php:240
 #: inc/wpkites/sections/wpkites-testimonial-section.php:159
 msgid "img"
 msgstr ""
