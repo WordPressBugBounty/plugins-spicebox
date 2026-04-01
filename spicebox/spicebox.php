@@ -2,10 +2,10 @@
 /*
 Plugin Name:		SpiceBox
 Description: 		Enhances SpiceThemes with extra functionality.
-Version: 			2.4.4
+Version: 			2.4.5
 Requires at least: 	3.3
 Requires PHP:		5.2
-Tested up to:       6.8
+Tested up to:       6.9
 Author: 			Spicethemes
 Author URI: 		https://spicethemes.com
 License:            GPLv2 or later
@@ -18,7 +18,7 @@ define( 'SPICEB_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 // Assuming WC_PLUGIN_VERSION is defined somewhere in your plugin
 if ( ! defined( 'SPICEBOX_PLUGIN_VERSION' ) ) {
-    define( 'SPICEBOX_PLUGIN_VERSION', '2.4.4' );
+    define( 'SPICEBOX_PLUGIN_VERSION', '2.4.5' );
 }
 
 function spiceb_activate() {

@@ -7,7 +7,7 @@ msgstr ""
 "Translator Name "
 "<translations@example.com>\n"
 "POT-Creation-Date: "
-"2025-11-21 15:01+0530\n"
+"2026-03-09 13:55+0530\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Your "
 "Name <you@example.com>\n"
@@ -903,6 +903,24 @@ msgstr ""
 #: inc/wphester/customizer/slider-section.php:248
 #: inc/wpkites/customizer/slider-section.php:235
 msgid "Button 2 Link"
+msgstr ""
+
+#: inc/busicare/customizer/slider-section.php:305
+#: inc/spice-software/customizer/slider-section.php:289
+#: inc/spiko/customizer/slider-section.php:305
+#: inc/wphester/customizer/slider-section.php:297
+#: inc/wpkites/customizer/slider-section.php:284
+msgid ""
+"Gutenberg Editor Settings"
+msgstr ""
+
+#: inc/busicare/customizer/slider-section.php:335
+#: inc/innofit/customizer/slider-section.php:192
+#: inc/spice-software/customizer/slider-section.php:319
+#: inc/spiko/customizer/slider-section.php:335
+#: inc/wphester/customizer/slider-section.php:327
+#: inc/wpkites/customizer/slider-section.php:314
+msgid "Page Editor Section"
 msgstr ""
 
 #: inc/busicare/customizer/team-section.php:13
@@ -2061,6 +2079,11 @@ msgstr ""
 
 #: inc/innofit/customizer/slider-section.php:93
 msgid "Read more"
+msgstr ""
+
+#: inc/innofit/customizer/slider-section.php:162
+msgid ""
+"Gutenberg Editor settings"
 msgstr ""
 
 #: inc/innofit/customizer/subscriber-section.php:24

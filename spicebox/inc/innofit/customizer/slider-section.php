@@ -156,4 +156,64 @@
 		'render_callback'  => 'spiceb_innofit_slider_btn_render_callback',
 	
 	) );
+
+	 //Page editor Section
+    $wp_customize->add_section('innofit_gutenberg_editor_section',array(
+                'title' => esc_html__('Gutenberg Editor settings','spicebox'),
+                'panel' => 'section_settings',
+                'priority'       => 2,
+    ));
+
+    // Custom Control Button
+    class Innofit_Editor_Customize_Control extends WP_Customize_Control {
+        public $type = 'new_menu';
+
+        public function render_content() {
+
+            $template_file = 'template-business.php';
+
+            $pages = get_posts(array(
+                'post_type'  => 'page',
+                'meta_key'   => '_wp_page_template',
+                'meta_value' => $template_file,
+                'posts_per_page' => 1,
+            ));
+
+            if ( !empty($pages) ) {
+                $page_id = $pages[0]->ID;
+                $edit_link = admin_url('post.php?post=' . $page_id . '&action=edit');
+            } else {
+                $edit_link = admin_url('edit.php?post_type=page');
+            }
+            ?>
+            <div class="innofit-features-customizer">
+                <p>Use this button to insert Gutenberg blocks into the Business Template page.</p>
+                <a href="<?php echo esc_url($edit_link); ?>" class="innofit-button button-primary">
+                    <?php esc_html_e('Page Editor Section', 'spicebox'); ?>
+                </a>
+            </div>
+            <?php
+        }
+    }
+
+
+    $wp_customize->add_setting(
+        'edit_homepage_button_setting',
+        array(
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'sanitize_text_field',
+        )   
+    );
+
+    $wp_customize->add_control( 
+        new Innofit_Editor_Customize_Control( 
+            $wp_customize, 
+            'edit_homepage_button_setting', 
+            array(
+                'section' => 'innofit_gutenberg_editor_section',
+                'setting' => 'edit_homepage_button_setting'
+            )
+        )
+    );
+
 	

@@ -4,8 +4,8 @@ Contributors:           spicethemes
 Tags:                   widget, admin, widgets
 Requires at least:      3.3
 Requires PHP:           5.2
-Tested up to:           6.8
-Stable tag:             2.4.4
+Tested up to:           6.9
+Stable tag:             2.4.5
 License:                GPLv2 or later
 License URI:            http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -300,6 +300,9 @@ Fixed minor issues of HoneyPress child themes.
 
 = 2.4.4 =
 1. Changed themes slider section code according to new Bootstrap version.
+
+= 2.4.5 =
+1. Added gutenberg editor section setting on business template for innofit, spice software, spiko, busicare, wphester and wpkites themes.
 
 =======External resources=======
 
