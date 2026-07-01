@@ -201,8 +201,6 @@ if ($team_section_enable != false) {?>
                                            'alt'   => esc_attr($title),
                                            'class' => 'img-fluid',
                                            'title' => esc_attr($title),
-                                           'width' => '100', // Optional: Set width
-                                           'height'=> '100', // Optional: Set height
                                         );
                                         echo !is_wp_error($attachment_id) ? wp_get_attachment_image(esc_attr($attachment_id), 'full', false, $attributes) : esc_html('Error: ' . esc_attr($attachment_id->get_error_message()));
 
